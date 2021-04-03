@@ -21,8 +21,12 @@
 <script src='assets/vendors/switcher/switcher.js'></script>
 <!-- modals -->
 <script src="assets/ajax/post.js"></script>
+<script src="assets/ajax/event.js"></script>
 <?php require_once __DIR__ . '/../modals/make_course.php'; ?>
 <?php require_once __DIR__ . '/../modals/edit_course.php'; ?>
+
+<!-- add event modal -->
+<?php require_once __DIR__ . '/../modals/make_event.php'; ?>
 <!-- end modals -->
 <script>
   $(document).ready(function() {

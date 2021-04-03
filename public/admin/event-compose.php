@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from educhamp.themetrades.com/demo/admin/add-listing.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Feb 2019 13:09:05 GMT -->
+<!-- Mirrored from educhamp.themetrades.com/demo/admin/teacher-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Feb 2019 13:11:35 GMT -->
 
 <head>
 
@@ -84,7 +84,7 @@
                         <a href="#" class="ttr-material-button ttr-submenu-toggle">QUICK MENU <i class="fa fa-angle-down"></i></a>
                         <div class="ttr-header-submenu">
                             <ul>
-                                <li><a href="../courses.html">Our Courses</a></li>
+                                <li><a href="../courses.php">Our Courses</a></li>
                                 <li><a href="../Event.php">New Event</a></li>
                                 <li><a href="../membership.html">Membership</a></li>
                             </ul>
@@ -236,7 +236,7 @@
         <div class="ttr-sidebar-wrapper content-scroll">
             <!-- side menu logo start -->
             <div class="ttr-sidebar-logo">
-                <a href=""><img alt="" src="assets/images/logo.png" width="122" height="27"></a>
+                <a href="main.php"><img alt="" src="assets/images/logo.png" width="122" height="27"></a>
                 <!-- <div class="ttr-sidebar-pin-button" title="Pin/Unpin Menu">
 					<i class="material-icons ttr-fixed-icon">gps_fixed</i>
 					<i class="material-icons ttr-not-fixed-icon">gps_not_fixed</i>
@@ -256,7 +256,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="courses.html" class="ttr-material-button">
+                        <a href="courses.php" class="ttr-material-button">
                             <span class="ttr-icon"><i class="ti-book"></i></span>
                             <span class="ttr-label">Courses</span>
                         </a>
@@ -340,10 +340,10 @@
     <main class="ttr-wrapper">
         <div class="container-fluid">
             <div class="db-breadcrumb">
-                <h4 class="breadcrumb-title">Add listing</h4>
+                <h4 class="breadcrumb-title">Teacher Profile</h4>
                 <ul class="db-breadcrumb-list">
                     <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-                    <li>Add listing</li>
+                    <li>Teacher Profile</li>
                 </ul>
             </div>
             <div class="row">
@@ -351,62 +351,117 @@
                 <div class="col-lg-12 m-b30">
                     <div class="widget-box">
                         <div class="wc-title">
-                            <h4>Add listing</h4>
+                            <h4>Teacher Profile</h4>
                         </div>
                         <div class="widget-inner">
                             <form class="edit-profile m-b30">
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="ml-auto">
-                                            <h3>1. Basic info</h3>
+                                            <h3>1. Personal Details</h3>
                                         </div>
                                     </div>
                                     <div class="form-group col-6">
-                                        <label class="col-form-label">Course title</label>
+                                        <label class="col-form-label">Full Name</label>
                                         <div>
-                                            <input class="form-control" type="text" value="">
+                                            <input class="form-control" type="text" value="Mark Andre">
                                         </div>
                                     </div>
                                     <div class="form-group col-6">
-                                        <label class="col-form-label">Course title</label>
+                                        <label class="col-form-label">Occupation</label>
                                         <div>
-                                            <input class="form-control" type="text" value="">
+                                            <input class="form-control" type="text" value="CTO">
                                         </div>
                                     </div>
                                     <div class="form-group col-6">
-                                        <label class="col-form-label">Course start</label>
+                                        <label class="col-form-label">Company Name</label>
                                         <div>
-                                            <input class="form-control" type="text" value="">
+                                            <input class="form-control" type="text" value="EduChamp">
+                                            <span class="help">If you want your invoices addressed to a company. Leave blank to use your full name.</span>
                                         </div>
                                     </div>
                                     <div class="form-group col-6">
-                                        <label class="col-form-label">Course expire</label>
+                                        <label class="col-form-label">Phone No.</label>
                                         <div>
-                                            <input class="form-control" type="text" value="">
+                                            <input class="form-control" type="text" value="+120 012345 6789">
                                         </div>
                                     </div>
-                                    <div class="form-group col-6">
-                                        <label class="col-form-label">Teacher name</label>
-                                        <div>
-                                            <input class="form-control" type="text" value="">
-                                        </div>
-                                    </div>
+
                                     <div class="seperator"></div>
 
                                     <div class="col-12 m-t20">
                                         <div class="ml-auto m-b5">
-                                            <h3>2. Description</h3>
+                                            <h3>2. Address</h3>
                                         </div>
                                     </div>
-                                    <div class="form-group col-12">
-                                        <label class="col-form-label">Course description</label>
+                                    <div class="form-group col-6">
+                                        <label class="col-form-label">Address</label>
                                         <div>
-                                            <textarea class="form-control"> </textarea>
+                                            <input class="form-control" type="text" value="5-S2-20 Dummy City, UK">
                                         </div>
                                     </div>
+                                    <div class="form-group col-6">
+                                        <label class="col-form-label">City</label>
+                                        <div>
+                                            <input class="form-control" type="text" value="US">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label class="col-form-label">State</label>
+                                        <div>
+                                            <input class="form-control" type="text" value="California">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label class="col-form-label">Postcode</label>
+                                        <div>
+                                            <input class="form-control" type="text" value="000702">
+                                        </div>
+                                    </div>
+
+                                    <div class="m-form__seperator m-form__seperator--dashed m-form__seperator--space-2x"></div>
+
                                     <div class="col-12 m-t20">
                                         <div class="ml-auto">
-                                            <h3 class="m-form__section">3. Add Item</h3>
+                                            <h3 class="m-form__section">3. Social Links</h3>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-6">
+                                        <label class="col-form-label">Linkedin</label>
+                                        <div>
+                                            <input class="form-control" type="text" value="www.linkedin.com">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label class="col-form-label">Facebook</label>
+                                        <div>
+                                            <input class="form-control" type="text" value="www.facebook.com">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label class="col-form-label">Twitter</label>
+                                        <div>
+                                            <input class="form-control" type="text" value="www.twitter.com">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label class="col-form-label">Instagram</label>
+                                        <div>
+                                            <input class="form-control" type="text" value="www.instagram.com">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="reset" class="btn">Save changes</button>
+                                        <button type="reset" class="btn-secondry">Cancel</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <form class="edit-profile">
+                                <div class="row">
+                                    <div class="col-12 m-t20">
+                                        <div class="ml-auto">
+                                            <h3 class="m-form__section">4. Add Item</h3>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -496,6 +551,360 @@
     </script>
 </body>
 
-<!-- Mirrored from educhamp.themetrades.com/demo/admin/add-listing.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Feb 2019 13:09:05 GMT -->
+<!-- Mirrored from educhamp.themetrades.com/demo/admin/teacher-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Feb 2019 13:11:35 GMT -->
+
+</html> data-toggle="tooltip" title="Snooze"><i class="fa fa-clock-o"></i></li>
+<li data-toggle="tooltip" title="Mark as unread"><i class="fa fa-envelope-open"></i></li>
+</ul>
+</div>
+<div class="mail-list-info">
+    <div class="checkbox-list">
+        <div class="custom-control custom-checkbox checkbox-st1">
+            <input type="checkbox" class="custom-control-input" id="check8">
+            <label class="custom-control-label" for="check8"></label>
+        </div>
+    </div>
+    <div class="mail-rateing">
+        <span><i class="fa fa-star-o"></i></span>
+    </div>
+    <div class="mail-list-title">
+        <h6>David Moore</h6>
+    </div>
+    <div class="mail-list-title-info">
+        <p>Change the password for your Micr</p>
+    </div>
+    <div class="mail-list-time">
+        <span>10:59 AM</span>
+    </div>
+    <ul class="Event-toolbar">
+        <li data-toggle="tooltip" title="Delete"><i class="fa fa-trash-o"></i></li>
+        <li data-toggle="tooltip" title="Archive"><i class="fa fa-arrow-down"></i></li>
+        <li data-toggle="tooltip" title="Snooze"><i class="fa fa-clock-o"></i></li>
+        <li data-toggle="tooltip" title="Mark as unread"><i class="fa fa-envelope-open"></i></li>
+    </ul>
+</div>
+<div class="mail-list-info">
+    <div class="checkbox-list">
+        <div class="custom-control custom-checkbox checkbox-st1">
+            <input type="checkbox" class="custom-control-input" id="check9">
+            <label class="custom-control-label" for="check9"></label>
+        </div>
+    </div>
+    <div class="mail-rateing">
+        <span><i class="fa fa-star-o"></i></span>
+    </div>
+    <div class="mail-list-title">
+        <h6>David Moore</h6>
+    </div>
+    <div class="mail-list-title-info">
+        <p>Change the password for your Micr</p>
+    </div>
+    <div class="mail-list-time">
+        <span>10:59 AM</span>
+    </div>
+    <ul class="Event-toolbar">
+        <li data-toggle="tooltip" title="Delete"><i class="fa fa-trash-o"></i></li>
+        <li data-toggle="tooltip" title="Archive"><i class="fa fa-arrow-down"></i></li>
+        <li data-toggle="tooltip" title="Snooze"><i class="fa fa-clock-o"></i></li>
+        <li data-toggle="tooltip" title="Mark as unread"><i class="fa fa-envelope-open"></i></li>
+    </ul>
+</div>
+<div class="mail-list-info">
+    <div class="checkbox-list">
+        <div class="custom-control custom-checkbox checkbox-st1">
+            <input type="checkbox" class="custom-control-input" id="check10">
+            <label class="custom-control-label" for="check10"></label>
+        </div>
+    </div>
+    <div class="mail-rateing">
+        <span><i class="fa fa-star-o"></i></span>
+    </div>
+    <div class="mail-list-title">
+        <h6>David Moore</h6>
+    </div>
+    <div class="mail-list-title-info">
+        <p>Change the password for your Micr</p>
+    </div>
+    <div class="mail-list-time">
+        <span>10:59 AM</span>
+    </div>
+    <ul class="Event-toolbar">
+        <li data-toggle="tooltip" title="Delete"><i class="fa fa-trash-o"></i></li>
+        <li data-toggle="tooltip" title="Archive"><i class="fa fa-arrow-down"></i></li>
+        <li data-toggle="tooltip" title="Snooze"><i class="fa fa-clock-o"></i></li>
+        <li data-toggle="tooltip" title="Mark as unread"><i class="fa fa-envelope-open"></i></li>
+    </ul>
+</div>
+<div class="mail-list-info">
+    <div class="checkbox-list">
+        <div class="custom-control custom-checkbox checkbox-st1">
+            <input type="checkbox" class="custom-control-input" id="check11">
+            <label class="custom-control-label" for="check11"></label>
+        </div>
+    </div>
+    <div class="mail-rateing">
+        <span><i class="fa fa-star-o"></i></span>
+    </div>
+    <div class="mail-list-title">
+        <h6>David Moore</h6>
+    </div>
+    <div class="mail-list-title-info">
+        <p>Change the password for your Micr</p>
+    </div>
+    <div class="mail-list-time">
+        <span>10:59 AM</span>
+    </div>
+    <ul class="Event-toolbar">
+        <li data-toggle="tooltip" title="Delete"><i class="fa fa-trash-o"></i></li>
+        <li data-toggle="tooltip" title="Archive"><i class="fa fa-arrow-down"></i></li>
+        <li data-toggle="tooltip" title="Snooze"><i class="fa fa-clock-o"></i></li>
+        <li data-toggle="tooltip" title="Mark as unread"><i class="fa fa-envelope-open"></i></li>
+    </ul>
+</div>
+<div class="mail-list-info">
+    <div class="checkbox-list">
+        <div class="custom-control custom-checkbox checkbox-st1">
+            <input type="checkbox" class="custom-control-input" id="check12">
+            <label class="custom-control-label" for="check12"></label>
+        </div>
+    </div>
+    <div class="mail-rateing">
+        <span><i class="fa fa-star-o"></i></span>
+    </div>
+    <div class="mail-list-title">
+        <h6>David Moore</h6>
+    </div>
+    <div class="mail-list-title-info">
+        <p>Change the password for your Micr</p>
+    </div>
+    <div class="mail-list-time">
+        <span>10:59 AM</span>
+    </div>
+    <ul class="Event-toolbar">
+        <li data-toggle="tooltip" title="Delete"><i class="fa fa-trash-o"></i></li>
+        <li data-toggle="tooltip" title="Archive"><i class="fa fa-arrow-down"></i></li>
+        <li data-toggle="tooltip" title="Snooze"><i class="fa fa-clock-o"></i></li>
+        <li data-toggle="tooltip" title="Mark as unread"><i class="fa fa-envelope-open"></i></li>
+    </ul>
+</div>
+<div class="mail-list-info">
+    <div class="checkbox-list">
+        <div class="custom-control custom-checkbox checkbox-st1">
+            <input type="checkbox" class="custom-control-input" id="check13">
+            <label class="custom-control-label" for="check13"></label>
+        </div>
+    </div>
+    <div class="mail-rateing">
+        <span><i class="fa fa-star-o"></i></span>
+    </div>
+    <div class="mail-list-title">
+        <h6>David Moore</h6>
+    </div>
+    <div class="mail-list-title-info">
+        <p>Change the password for your Micr</p>
+    </div>
+    <div class="mail-list-time">
+        <span>10:59 AM</span>
+    </div>
+    <ul class="Event-toolbar">
+        <li data-toggle="tooltip" title="Delete"><i class="fa fa-trash-o"></i></li>
+        <li data-toggle="tooltip" title="Archive"><i class="fa fa-arrow-down"></i></li>
+        <li data-toggle="tooltip" title="Snooze"><i class="fa fa-clock-o"></i></li>
+        <li data-toggle="tooltip" title="Mark as unread"><i class="fa fa-envelope-open"></i></li>
+    </ul>
+</div>
+<div class="mail-list-info">
+    <div class="checkbox-list">
+        <div class="custom-control custom-checkbox checkbox-st1">
+            <input type="checkbox" class="custom-control-input" id="check14">
+            <label class="custom-control-label" for="check14"></label>
+        </div>
+    </div>
+    <div class="mail-rateing">
+        <span><i class="fa fa-star-o"></i></span>
+    </div>
+    <div class="mail-list-title">
+        <h6>David Moore</h6>
+    </div>
+    <div class="mail-list-title-info">
+        <p>Change the password for your Micr</p>
+    </div>
+    <div class="mail-list-time">
+        <span>10:59 AM</span>
+    </div>
+    <ul class="Event-toolbar">
+        <li data-toggle="tooltip" title="Delete"><i class="fa fa-trash-o"></i></li>
+        <li data-toggle="tooltip" title="Archive"><i class="fa fa-arrow-down"></i></li>
+        <li data-toggle="tooltip" title="Snooze"><i class="fa fa-clock-o"></i></li>
+        <li data-toggle="tooltip" title="Mark as unread"><i class="fa fa-envelope-open"></i></li>
+    </ul>
+</div>
+<div class="mail-list-info">
+    <div class="checkbox-list">
+        <div class="custom-control custom-checkbox checkbox-st1">
+            <input type="checkbox" class="custom-control-input" id="check15">
+            <label class="custom-control-label" for="check15"></label>
+        </div>
+    </div>
+    <div class="mail-rateing">
+        <span><i class="fa fa-star-o"></i></span>
+    </div>
+    <div class="mail-list-title">
+        <h6>David Moore</h6>
+    </div>
+    <div class="mail-list-title-info">
+        <p>Change the password for your Micr</p>
+    </div>
+    <div class="mail-list-time">
+        <span>10:59 AM</span>
+    </div>
+    <ul class="Event-toolbar">
+        <li data-toggle="tooltip" title="Delete"><i class="fa fa-trash-o"></i></li>
+        <li data-toggle="tooltip" title="Archive"><i class="fa fa-arrow-down"></i></li>
+        <li data-toggle="tooltip" title="Snooze"><i class="fa fa-clock-o"></i></li>
+        <li data-toggle="tooltip" title="Mark as unread"><i class="fa fa-envelope-open"></i></li>
+    </ul>
+</div>
+<div class="mail-list-info">
+    <div class="checkbox-list">
+        <div class="custom-control custom-checkbox checkbox-st1">
+            <input type="checkbox" class="custom-control-input" id="check16">
+            <label class="custom-control-label" for="check16"></label>
+        </div>
+    </div>
+    <div class="mail-rateing">
+        <span><i class="fa fa-star-o"></i></span>
+    </div>
+    <div class="mail-list-title">
+        <h6>David Moore</h6>
+    </div>
+    <div class="mail-list-title-info">
+        <p>Change the password for your Micr</p>
+    </div>
+    <div class="mail-list-time">
+        <span>10:59 AM</span>
+    </div>
+    <ul class="Event-toolbar">
+        <li data-toggle="tooltip" title="Delete"><i class="fa fa-trash-o"></i></li>
+        <li data-toggle="tooltip" title="Archive"><i class="fa fa-arrow-down"></i></li>
+        <li data-toggle="tooltip" title="Snooze"><i class="fa fa-clock-o"></i></li>
+        <li data-toggle="tooltip" title="Mark as unread"><i class="fa fa-envelope-open"></i></li>
+    </ul>
+</div>
+<div class="mail-list-info">
+    <div class="checkbox-list">
+        <div class="custom-control custom-checkbox checkbox-st1">
+            <input type="checkbox" class="custom-control-input" id="check17">
+            <label class="custom-control-label" for="check17"></label>
+        </div>
+    </div>
+    <div class="mail-rateing">
+        <span><i class="fa fa-star-o"></i></span>
+    </div>
+    <div class="mail-list-title">
+        <h6>David Moore</h6>
+    </div>
+    <div class="mail-list-title-info">
+        <p>Change the password for your Micr</p>
+    </div>
+    <div class="mail-list-time">
+        <span>10:59 AM</span>
+    </div>
+    <ul class="Event-toolbar">
+        <li data-toggle="tooltip" title="Delete"><i class="fa fa-trash-o"></i></li>
+        <li data-toggle="tooltip" title="Archive"><i class="fa fa-arrow-down"></i></li>
+        <li data-toggle="tooltip" title="Snooze"><i class="fa fa-clock-o"></i></li>
+        <li data-toggle="tooltip" title="Mark as unread"><i class="fa fa-envelope-open"></i></li>
+    </ul>
+</div>
+<div class="mail-list-info">
+    <div class="checkbox-list">
+        <div class="custom-control custom-checkbox checkbox-st1">
+            <input type="checkbox" class="custom-control-input" id="check18">
+            <label class="custom-control-label" for="check18"></label>
+        </div>
+    </div>
+    <div class="mail-rateing">
+        <span><i class="fa fa-star-o"></i></span>
+    </div>
+    <div class="mail-list-title">
+        <h6>David Moore</h6>
+    </div>
+    <div class="mail-list-title-info">
+        <p>Change the password for your Micr</p>
+    </div>
+    <div class="mail-list-time">
+        <span>10:59 AM</span>
+    </div>
+    <ul class="Event-toolbar">
+        <li data-toggle="tooltip" title="Delete"><i class="fa fa-trash-o"></i></li>
+        <li data-toggle="tooltip" title="Archive"><i class="fa fa-arrow-down"></i></li>
+        <li data-toggle="tooltip" title="Snooze"><i class="fa fa-clock-o"></i></li>
+        <li data-toggle="tooltip" title="Mark as unread"><i class="fa fa-envelope-open"></i></li>
+    </ul>
+</div>
+<div class="mail-list-info">
+    <div class="checkbox-list">
+        <div class="custom-control custom-checkbox checkbox-st1">
+            <input type="checkbox" class="custom-control-input" id="check19">
+            <label class="custom-control-label" for="check19"></label>
+        </div>
+    </div>
+    <div class="mail-rateing">
+        <span><i class="fa fa-star-o"></i></span>
+    </div>
+    <div class="mail-list-title">
+        <h6>David Moore</h6>
+    </div>
+    <div class="mail-list-title-info">
+        <p>Change the password for your Micr</p>
+    </div>
+    <div class="mail-list-time">
+        <span>10:59 AM</span>
+    </div>
+    <ul class="Event-toolbar">
+        <li data-toggle="tooltip" title="Delete"><i class="fa fa-trash-o"></i></li>
+        <li data-toggle="tooltip" title="Archive"><i class="fa fa-arrow-down"></i></li>
+        <li data-toggle="tooltip" title="Snooze"><i class="fa fa-clock-o"></i></li>
+        <li data-toggle="tooltip" title="Mark as unread"><i class="fa fa-envelope-open"></i></li>
+    </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Your Profile Views Chart END-->
+</div>
+</div>
+</main>
+<div class="ttr-overlay"></div>
+
+<!-- External JavaScripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/vendors/bootstrap/js/popper.min.js"></script>
+<script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+<script src="assets/vendors/magnific-popup/magnific-popup.js"></script>
+<script src="assets/vendors/counter/waypoints-min.js"></script>
+<script src="assets/vendors/counter/counterup.min.js"></script>
+<script src="assets/vendors/imagesloaded/imagesloaded.js"></script>
+<script src="assets/vendors/masonry/masonry.js"></script>
+<script src="assets/vendors/masonry/filter.js"></script>
+<script src="assets/vendors/owl-carousel/owl.carousel.js"></script>
+<script src='assets/vendors/scroll/scrollbar.min.js'></script>
+<script src="assets/js/functions.js"></script>
+<script src="assets/vendors/chart/chart.min.js"></script>
+<script src="assets/js/admin.js"></script>
+<script src='assets/vendors/switcher/switcher.js'></script>
+<script>
+    $(document).ready(function() {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+</body>
+
+<!-- Mirrored from educhamp.themetrades.com/demo/admin/Event.php by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Feb 2019 13:11:35 GMT -->
 
 </html>

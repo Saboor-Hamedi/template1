@@ -36,18 +36,18 @@
 				<li>
 					<a href="#" class="ttr-material-button">
 						<span class="ttr-icon"><i class="ti-email"></i></span>
-						<span class="ttr-label">Mailbox</span>
+						<span class="ttr-label">Event</span>
 						<span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
 					</a>
 					<ul>
 						<li>
-							<a href="mailbox.html" class="ttr-material-button"><span class="ttr-label">Mail Box</span></a>
+							<a href="Event.php" class="ttr-material-button"><span class="ttr-label">Mail Box</span></a>
 						</li>
 						<li>
-							<a href="mailbox-compose.html" class="ttr-material-button"><span class="ttr-label">Compose</span></a>
+							<a href="event-compose.php" class="ttr-material-button"><span class="ttr-label">Compose</span></a>
 						</li>
 						<li>
-							<a href="mailbox-read.html" class="ttr-material-button"><span class="ttr-label">Mail Read</span></a>
+							<a href="Event-read.html" class="ttr-material-button"><span class="ttr-label">Mail Read</span></a>
 						</li>
 					</ul>
 				</li>

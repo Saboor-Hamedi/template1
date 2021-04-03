@@ -136,7 +136,7 @@ if (isset($_SESSION["userid"])) {
 						<ul>
 							<li><a href="user-profile.html">My profile</a></li>
 							<li><a href="list-view-calendar.html">Activity</a></li>
-							<li><a href="mailbox.html">Messages</a></li>
+							<li><a href="Event.html">Messages</a></li>
 							<li><a href="../login.html">Logout</a></li>
 						</ul>
 					</div>

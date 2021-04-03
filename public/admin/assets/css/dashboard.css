@@ -1176,7 +1176,7 @@
 .edit-profile textarea.form-control{
 	height:150px;
 }
-/* MailBox */
+/* Event */
 .email-wrapper{
 	display:flex;
 }
@@ -1343,8 +1343,8 @@
 .mail-list-info:nth-child(2n+1){
 	background-color:#f6f6f6;
 }
-/* Mailbox Toolbar */
-.mailbox-toolbar{
+/* Event Toolbar */
+.Event-toolbar{
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -1354,7 +1354,7 @@
 	opacity: 0;
 	transition: all 0.5s;
 }
-.mailbox-toolbar li{
+.Event-toolbar li{
 	display: inline-block;
 	width: 30px;
 	height: 30px;
@@ -1366,14 +1366,14 @@
 	font-size: 14px;
 	transition: all 0.5s;
 }
-.mailbox-toolbar li:hover{
+.Event-toolbar li:hover{
 	transform:scale(1.2);
 	-moz-transform:scale(1.2);
 	-webkit-transform:scale(1.2);
 	-ms-transform:scale(1.2);
 	-o-transform:scale(1.2);
 }
-.mail-list-info:hover .mailbox-toolbar{
+.mail-list-info:hover .Event-toolbar{
 	opacity: 1;
 }
 .btn-info-icon{
@@ -1403,16 +1403,16 @@
 }
 
 /* Read */
-.mailbox-view{
+.Event-view{
 	width: 100%;
 	padding:25px;
 }
-.mailbox-view-title {
+.Event-view-title {
     padding: 0px 0px 10px 0;
     border-bottom: 1px solid rgba(0,0,0,0.1);
 	margin-bottom: 25px;
 }
-.mailbox-view-title .send-mail-title{
+.Event-view-title .send-mail-title{
 	margin-bottom:0;
 }
 .send-mail-user{
@@ -1468,7 +1468,7 @@
 	color: #303030;
 	margin-bottom: 15px;
 }
-.mailbox-download-file a{ 
+.Event-download-file a{ 
 	font-size: 12px;
 	padding: 8px 20px;
 	display: inline-block;
@@ -1477,7 +1477,7 @@
 	color: #000;
 	margin-bottom: 4px;
 }
-.mailbox-download-file a i{
+.Event-download-file a i{
 	font-size: 14px;
     margin-right: 5px;
     position: relative;

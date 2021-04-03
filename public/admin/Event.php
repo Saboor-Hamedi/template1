@@ -112,10 +112,10 @@
 <main class="ttr-wrapper">
     <div class="container-fluid">
         <div class="db-breadcrumb">
-            <h4 class="breadcrumb-title">Courses</h4>
+            <h4 class="breadcrumb-title">Events</h4>
             <ul class="db-breadcrumb-list">
                 <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-                <li>Courses</li>
+                <li>Events</li>
             </ul>
         </div>
         <div class="row">
@@ -127,15 +127,15 @@
                 <div class="widget-box">
                     <div class="wc-title">
 
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#courseMakeModal">
-                           Add New Course
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#EventMakeModal">
+                           Add New Event
                         </button>
                     </div>
                     <div class="wc-title">
-                        <h4>All Courses</h4>
+                        <h4>All Events</h4>
                     </div>
 
-                    <?php $posts = $db->query("SELECT * FROM courses ORDER BY title DESC"); ?>
+                    <?php $posts = $db->query("SELECT * FROM event"); ?>
                     <?php
                     if (is_array($posts) || is_object($posts))
                         foreach ($posts as $item) :
@@ -156,38 +156,28 @@
                                                     <img src="assets/images/testimonials/pic3.jpg" alt="" />
                                                 </div>
                                                 <div class="card-courses-user-info">
-                                                    <h5>Teacher</h5>
-                                                    <h4>Keny White</h4>
+                                                    <h5><?php echo $item['speaker']; ?></h5>
                                                 </div>
                                             </li>
                                             <li class="card-courses-categories">
-                                                <h5>3 Categories</h5>
-                                                <h4>Backend</h4>
+                                           
+                                                <h4>Start</h4>
+                                                <small class="text-primary"> <?php echo date('g:i A',  strtotime($item['start_time']));?>
+                                                </small>
                                             </li>
-                                            <li class="card-courses-review">
-                                                <h5>3 Review</h5>
-                                                <ul class="cours-star">
-                                                    <li class="active"><i class="fa fa-star"></i></li>
-                                                    <li class="active"><i class="fa fa-star"></i></li>
-                                                    <li class="active"><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
+                                            <li class="card-courses-categories">
+                                                <h4>End</h4>
+                                                  <small class="text-primary"> <?php echo date('g:i A',  strtotime($item['start_end']));?>
+                                                </small>
                                             </li>
-                                            <li class="card-courses-stats">
-                                                <a href="#" class="btn button-sm green radius-xl">Pending</a>
-                                            </li>
-                                            <li class="card-courses-price">
-                                                <del>$190</del>
-                                                <h5 class="text-primary">$<?php echo $item['price']; ?></h5>
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                     <div class="row card-courses-dec">
                                         <div class="col-md-12" style=" overflow-wrap: break-word;
                                                 word-wrap: break-word;
                                                 hyphens: auto;">
-                                            <h6 class="m-b10">Course Description</h6>
+                                            <h6 class="m-b10">Event Description</h6>
                                             <p><?php echo $item['description']; ?></p>
                                         </div>
                                        <div class="col-md-12">
