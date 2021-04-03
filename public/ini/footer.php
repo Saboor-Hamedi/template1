@@ -28,7 +28,7 @@
                                 <li><a href="about.php"><i class="fa fa-angle-right"></i>About us</a></li>
                                 <li><a href="courses.php"><i class="fa fa-angle-right"></i>Courses</a></li>
                                 <li><a href="blog.html"><i class="fa fa-angle-right"></i>News</a></li>
-                                <li><a href="events.html"><i class="fa fa-angle-right"></i>Event</a></li>
+                                <li><a href="events.php"><i class="fa fa-angle-right"></i>Event</a></li>
                             </ul>
                             <ul>
                                 <li><a href="#"><i class="fa fa-angle-right"></i>Gallery</a></li>

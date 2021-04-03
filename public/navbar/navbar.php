@@ -82,10 +82,10 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="events.html">Events</a>
+                                        <a href="events.php">Events</a>
                                         <ul class="sub-menu">
-                                            <li><a href="events.html">Events</a></li>
-                                            <li><a href="events-singel.html">Event Singel</a></li>
+                                            <li><a href="events.php">Events</a></li>
+                                            <li><a href="events-singel.php">Event Singel</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item">

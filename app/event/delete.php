@@ -5,7 +5,7 @@
     $db_connection = $db->getConnection();
     try {
         $id = $_POST['id'];
-        $sql = "DELETE FROM courses WHERE id = " . $id;
+        $sql = "DELETE FROM event WHERE id = " . $id;
         if ($db->getConnection()->query($sql) === TRUE) {
             echo "Record deleted successfully";
         } else {

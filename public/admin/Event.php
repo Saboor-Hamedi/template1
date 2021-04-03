@@ -128,7 +128,7 @@
                     <div class="wc-title">
 
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#EventMakeModal">
-                           Add New Event
+                            Add New Event
                         </button>
                     </div>
                     <div class="wc-title">
@@ -160,17 +160,17 @@
                                                 </div>
                                             </li>
                                             <li class="card-courses-categories">
-                                           
+
                                                 <h4>Start</h4>
-                                                <small class="text-primary"> <?php echo date('g:i A',  strtotime($item['start_time']));?>
+                                                <small class="text-primary"> <?php echo date('jS, M, y, g:i A',  strtotime($item['start_time'])); ?>
                                                 </small>
                                             </li>
                                             <li class="card-courses-categories">
                                                 <h4>End</h4>
-                                                  <small class="text-primary"> <?php echo date('g:i A',  strtotime($item['start_end']));?>
+                                                    <small class="text-primary"> <?php echo date('jS, M, y, g:i A',  strtotime($item['start_end'])); ?>
                                                 </small>
                                             </li>
-                                            
+
                                         </ul>
                                     </div>
                                     <div class="row card-courses-dec">
@@ -180,12 +180,12 @@
                                             <h6 class="m-b10">Event Description</h6>
                                             <p><?php echo $item['description']; ?></p>
                                         </div>
-                                       <div class="col-md-12">
-                                        <!-- <a href="#" class="btn green radius-xl outline">Approve</a>
+                                        <div class="col-md-12">
+                                            <!-- <a href="#" class="btn green radius-xl outline">Approve</a>
                                         <a href="#" class="btn red outline radius-xl ">Cancel</a> -->
-                                        <a href="#" class="btn red outline radius-xl btn-sm post__delete__btn" id="<?php echo $item['id']; ?>">Delete</a>
-                                        <a href="#" class="btn green outline radius-xl btn-sm post__edit__btn" data-toggle="modal" data-target="#courseEditModal" id="<?php echo $item['id']; ?>">Edit</a>
-                                    </div> 
+                                            <a href="#" class="btn red outline radius-xl btn-sm event__delete__btn" id="<?php echo $item['id']; ?>">Delete</a>
+                                            <a href="#" class="btn green outline radius-xl btn-sm post__edit__btn" data-toggle="modal" data-target="#editEventModal" id="<?php echo $item['id']; ?>">Edit</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

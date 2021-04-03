@@ -1,25 +1,28 @@
 <?php
 require_once __DIR__ . '/../../vendor/autoload.php';
-
 use App\database\Database;
-
 $db = Database::getInstance();
 $db_connection = $db->getConnection();
-$postuserid = null;
-$posttitle = null;
-$postprice = null;
-$postdescription = null;
+$event_title = null;
+$event_description = null;
+$event_speaker = null;
+$starttimepicker = null;
+$endtimepicker = null;
 
 if (!empty($_POST)) {
-    $postuserid = validation(mysqli_real_escape_string($db->getConnection(), $_POST['postuserid']));
-    $posttitle = validation(mysqli_real_escape_string($db->getConnection(), $_POST['posttitle']));
-    $postprice = validation(mysqli_real_escape_string($db->getConnection(), $_POST['postprice']));
-    $postdescription = (mysqli_real_escape_string($db->getConnection(), $_POST['postdescription']));
+    $event_title = validation(mysqli_real_escape_string($db->getConnection(), $_POST['event_title']));
+    $event_description = validation(mysqli_real_escape_string($db->getConnection(), $_POST['event_description']));
+    $event_speaker = validation(mysqli_real_escape_string($db->getConnection(), $_POST['event_speaker']));
+    $starttimepicker = (mysqli_real_escape_string($db->getConnection(), $_POST['starttimepicker']));
+    $endtimepicker = (mysqli_real_escape_string($db->getConnection(), $_POST['endtimepicker']));
     try {
-        $sql = "INSERT INTO courses (`user_id`, `title`, `price`, `description`)
-                VALUES ('" . $postuserid . "', '" . $posttitle . "','" . $postprice . "', '" . $postdescription . "')";
+        $sql = "INSERT INTO event (`title`, `description`, `speaker`, `start_time`,`start_end`)
+                VALUES ('" . $event_title . "', 
+                        '" . $event_description .
+            "','" . $event_speaker .
+            "', '" . $starttimepicker . "' , '" . $endtimepicker . "' )";
         if ($db->insert($sql) === TRUE) {
-            echo 'New Post Uploaded';
+            echo 'New Event Uploaded';
         } else {
             echo 'Something went wrong';
         }

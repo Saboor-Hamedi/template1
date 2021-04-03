@@ -73,7 +73,7 @@
         <!-- row -->
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="courses-grid" role="tabpanel" aria-labelledby="courses-grid-tab">
-                <saboor class="row">
+                <div class="row">
                 <?php $posts = $db->query("SELECT title, price, description, created_at FROM courses"); ?>
 				<?php if($posts->num_rows <=0){
                    echo 'No Course available';
@@ -127,7 +127,7 @@
                     
                     <?php  endforeach; ?>
                       
-                </saboor>
+                </div>
                 <!-- row -->
             </div>
             <div class="tab-pane fade" id="courses-list" role="tabpanel" aria-labelledby="courses-list-tab">

@@ -201,7 +201,7 @@
                             <li>
                                 <div class="singel-event">
                                     <span><i class="fa fa-calendar"></i> 2 December 2018</span>
-                                    <a href="events-singel.html"><h4>Campus clean workshop</h4></a>
+                                    <a href="events-singel.php"><h4>Campus clean workshop</h4></a>
                                     <span><i class="fa fa-clock-o"></i> 10:00 Am - 3:00 Pm</span>
                                     <span><i class="fa fa-map-marker"></i> Rc Auditorim</span>
                                 </div>
@@ -209,7 +209,7 @@
                             <li>
                                 <div class="singel-event">
                                     <span><i class="fa fa-calendar"></i> 2 December 2018</span>
-                                    <a href="events-singel.html"><h4>Tech Summit</h4></a>
+                                    <a href="events-singel.php"><h4>Tech Summit</h4></a>
                                     <span><i class="fa fa-clock-o"></i> 10:00 Am - 3:00 Pm</span>
                                     <span><i class="fa fa-map-marker"></i> Rc Auditorim</span>
                                 </div>
@@ -217,7 +217,7 @@
                             <li>
                                 <div class="singel-event">
                                     <span><i class="fa fa-calendar"></i> 2 December 2018</span>
-                                    <a href="events-singel.html"><h4>Enviroement conference</h4></a>
+                                    <a href="events-singel.php"><h4>Enviroement conference</h4></a>
                                     <span><i class="fa fa-clock-o"></i> 10:00 Am - 3:00 Pm</span>
                                     <span><i class="fa fa-map-marker"></i> Rc Auditorim</span>
                                 </div>

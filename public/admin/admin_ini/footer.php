@@ -1,4 +1,3 @@
-
 <!-- External JavaScripts -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/vendors/bootstrap/js/popper.min.js"></script>
@@ -19,7 +18,9 @@
 <script src='assets/vendors/calendar/moment.min.js'></script>
 <script src='assets/vendors/calendar/fullcalendar.js'></script>
 <script src='assets/vendors/switcher/switcher.js'></script>
-<!-- modals -->
+<!-- time picker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- end timepicker -->
 <script src="assets/ajax/post.js"></script>
 <script src="assets/ajax/event.js"></script>
 <?php require_once __DIR__ . '/../modals/make_course.php'; ?>
@@ -27,7 +28,29 @@
 
 <!-- add event modal -->
 <?php require_once __DIR__ . '/../modals/make_event.php'; ?>
+<?php require_once __DIR__ . '/../modals/edit_event.php'; ?>
 <!-- end modals -->
+
+<!-- timepicker script -->
+
+<script type="text/javascript">
+  $(function() {
+    $('#startTime').datetimepicker({
+      Default: false
+    });
+  });
+  $(function() {
+    $('#endTime').datetimepicker({
+      Default: false
+
+    });
+  });
+  // 
+
+
+</script>
+
+<!-- end -->
 <script>
   $(document).ready(function() {
     $('#calendar').fullCalendar({
@@ -45,8 +68,7 @@
 
       editable: true,
       eventLimit: true, // allow "more" link when too many events
-      events: [
-        {
+      events: [{
           title: 'All Day Event',
           start: '2019-03-01'
         },
@@ -104,9 +126,9 @@
     });
 
   });
-
 </script>
 </body>
 
 <!-- Mirrored from educhamp.themetrades.com/demo/admin/main.php by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Feb 2019 13:09:05 GMT -->
+
 </html>
