@@ -4,7 +4,7 @@
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Event Modal</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+          <small aria-hidden="true">&times;</small>
         </button>
       </div>
       <div class="modal-body">
@@ -12,7 +12,7 @@
         <form id="make_course_mdal" method="POST">
           <div class="form-group">
             <input type="hidden" value="<?php echo $userid; ?>" id="event_user_id" class="form-control" name="event_user_id" placeholder="User ID">
-            <span id="event_user_idError"></span>
+            <small id="event_user_idError"></small>
           </div>
           <div class="form-group">
             <input type="text" id="event_title" name="event_title" class="form-control" placeholder="Event Title">

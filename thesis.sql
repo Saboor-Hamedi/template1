@@ -260,7 +260,7 @@ CREATE TABLE `event` (
   `start_time` varchar(80) DEFAULT current_timestamp(),
   `start_end` varchar(80) DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -269,7 +269,7 @@ CREATE TABLE `event` (
 
 LOCK TABLES `event` WRITE;
 /*!40000 ALTER TABLE `event` DISABLE KEYS */;
-INSERT INTO `event` VALUES (7,'asdfasdf','asdfasdf','asdf','04/21/2021 4:15 AM','04/23/2021 4:15 AM'),(8,'asdf','asdfas','asdfasd','04/08/2021 10:33 AM','04/16/2021 10:33 AM');
+INSERT INTO `event` VALUES (7,'New Title','This is a new title','Title','04/21/2021 4:15 AM','04/23/2021 4:15 AM'),(8,'asdf','asdfas','asdfasd','04/08/2021 10:33 AM','04/16/2021 10:33 AM'),(16,'aaa','update','aaa','04/04/2021 12:47 AM','04/04/2021 2:52 AM');
 /*!40000 ALTER TABLE `event` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -794,4 +794,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-03 23:13:17
+-- Dump completed on 2021-04-04  0:52:10

@@ -184,7 +184,7 @@
                                             <!-- <a href="#" class="btn green radius-xl outline">Approve</a>
                                         <a href="#" class="btn red outline radius-xl ">Cancel</a> -->
                                             <a href="#" class="btn red outline radius-xl btn-sm event__delete__btn" id="<?php echo $item['id']; ?>">Delete</a>
-                                            <a href="#" class="btn green outline radius-xl btn-sm post__edit__btn" data-toggle="modal" data-target="#editEventModal" id="<?php echo $item['id']; ?>">Edit</a>
+                                            <a href="#" class="btn green outline radius-xl btn-sm event_fetch_btn" data-toggle="modal" data-target="#editEventModal" id="<?php echo $item['id']; ?>">Edit</a>
                                         </div>
                                     </div>
                                 </div>

@@ -5,20 +5,21 @@ use App\database\Database;
 
 $db = Database::getInstance();
 $db_connection = $db->getConnection();
-$course_post_id = "";
-$course_post_title = "";
-$course_post_price = "";
-$course_post_desc = "";
+$event_id = "";
+$event_edit_id = "";
+$event_edit_title = "";
+$event_edit_speaker = "";
+$evet_edit_description = "";
 if (!empty($_POST)) {
     try {
-        $course_post_id = validation(mysqli_real_escape_string($db->getConnection(), $_POST['course_post_id']));
-        $course_post_title = validation(mysqli_real_escape_string($db->getConnection(), $_POST['course_post_title']));
-        $course_post_price =  validation(mysqli_real_escape_string($db->getConnection(), $_POST['course_post_price']));
-        $course_post_desc = mysqli_real_escape_string($db->getConnection(), $_POST['course_post_desc']);
-        $update = "UPDATE courses SET title =  '$course_post_title',
-                            price = '$course_post_price', 
-                            description = '$course_post_desc'
-                            WHERE id = '$course_post_id'  ";
+        $event_id = validation(mysqli_real_escape_string($db->getConnection(), $_POST['event_id']));
+        $event_edit_title =  validation(mysqli_real_escape_string($db->getConnection(), $_POST['event_edit_title']));
+        $evet_edit_description = mysqli_real_escape_string($db->getConnection(), $_POST['evet_edit_description']);
+        $event_edit_speaker = mysqli_real_escape_string($db->getConnection(), $_POST['event_edit_speaker']);
+        $update = "UPDATE event SET title =  '$event_edit_title',
+            description = '$evet_edit_description',
+            speaker = '$event_edit_speaker'
+            WHERE id = '$event_id'  ";
         if ($db->getConnection()->query($update)) {
             echo 'Data is updating...';
         } else {
@@ -29,11 +30,11 @@ if (!empty($_POST)) {
     }
     $db->getConnection()->close();
 }
-function validation($data)
-{
-    $data = trim($data);
-    $data = htmlspecialchars($data);
-    $data = stripslashes($data);
-    return $data;
-    return $data;
-}
+    function validation($data)
+    {
+        $data = trim($data);
+        $data = htmlspecialchars($data);
+        $data = stripslashes($data);
+        return $data;
+        return $data;
+    }

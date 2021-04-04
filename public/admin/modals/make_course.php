@@ -4,7 +4,7 @@
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+          <small aria-hidden="true">&times;</small>
         </button>
       </div>
       <div class="modal-body">
@@ -12,20 +12,20 @@
        <form id="make_course_mdal" method="POST">
         <div class="form-group">
             <input type="text" value= "<?php echo $userid; ?>"id="postuserid" class="form-control" name="postuserid" placeholder="post user id">
-          <span id="postuseridError"></span>
+          <small id="postuseridError"></small>
         </div>
         <div class="form-group">
             <input type="text" id="posttitle" name="posttitle" class="form-control" name="posttitle" placeholder="post title">
-            <span id="posttitleError"></span>
+            <small id="posttitleError"></small>
         </div>
         <div class="form-group">
             <input type="text" onkeypress="return isNumber(event)" id="postprice" class="form-control" name="postprice" placeholder="post price ">
-            <span id="postpriceError"></span>
+            <small id="postpriceError"></small>
         </div>
         <div class="form-group">
             <textarea name="postdescription" id="postdescription"
              class="form-control" placeholder="Post description"></textarea>
-            <span id="postdescriptionError"></span>
+            <small id="postdescriptionError"></small>
         </div>
        </form>
       </div>

@@ -6,7 +6,7 @@ use App\database\Database;
 $db = Database::getInstance();
 $db_connection = $db->getConnection();
 $id = $_POST['id'];
-$query = "SELECT id, title, price, description  FROM courses WHERE id = '" . $_POST["id"] . "'";
+$query = "SELECT id, title, speaker,description  FROM event WHERE id = '" . $_POST["id"] . "'";
 $result = $db->select($query);
 $row = $result->fetch_array();
 echo json_encode($row);
