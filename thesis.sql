@@ -246,6 +246,34 @@ INSERT INTO `eletter` VALUES (1,'Scholarship Recommendation Letter'),(2,'PKL Let
 UNLOCK TABLES;
 
 --
+-- Table structure for table `event`
+--
+
+DROP TABLE IF EXISTS `event`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `event` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) NOT NULL,
+  `description` text DEFAULT NULL,
+  `speaker` varchar(100) NOT NULL,
+  `start_time` varchar(80) DEFAULT current_timestamp(),
+  `start_end` varchar(80) DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `event`
+--
+
+LOCK TABLES `event` WRITE;
+/*!40000 ALTER TABLE `event` DISABLE KEYS */;
+INSERT INTO `event` VALUES (7,'asdfasdf','asdfasdf','asdf','04/21/2021 4:15 AM','04/23/2021 4:15 AM'),(8,'asdf','asdfas','asdfasd','04/08/2021 10:33 AM','04/16/2021 10:33 AM');
+/*!40000 ALTER TABLE `event` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `family`
 --
 
@@ -766,4 +794,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-30  9:02:00
+-- Dump completed on 2021-04-03 23:13:17

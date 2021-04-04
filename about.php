@@ -1,11 +1,8 @@
 <?php require_once __DIR__ . '../public/ini/header.php'; ?>
 <!--====== PRELOADER PART START ======-->
-<?php require_once __DIR__ . '../public/navbar/preloader.php'; ?>
+<!-- <?php require_once __DIR__ . '../public/navbar/preloader.php'; ?> -->
 <!--====== Header and PreHeader with title ======-->
 <?php require_once __DIR__ . '../public/navbar/navbar.php'; ?>
-<!--====== HEADER PART ENDS ======-->
-
-
 
 <div class="search-box">
     <div class="serach-form">
