@@ -74,68 +74,22 @@
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="courses-grid" role="tabpanel" aria-labelledby="courses-grid-tab">
                 <div class="row">
-                <?php $posts = $db->query("SELECT title, price, description, created_at FROM courses"); ?>
-				<?php if($posts->num_rows <=0){
-                   echo 'No Course available';
-                } ?>
-                <?php  foreach ($posts as $item): ?>
-                
-                    <div class="col-lg-4 col-md-6">
-                        <div class="singel-course mt-30">
-                            <div class="thum">
-                                <div class="image">
-                                    <img src="../public/images/course/cu-1.jpg" alt="Course">
-                                </div>
-                                <div class="price">
-                                    <span>Free</span>
-                                </div>
-                            </div>
-                            <div class="cont">
-                                <ul>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                                <div>(20 Reviws)</div>
-                                <div>
-                                    <a href="courses-singel.html">
-                                        <h4><?php echo $item['title']; ?></h4>
-                                    </a>
-                                </div>
-                                <div class="course-teacher">
-                                    <div class="thum">
-                                        <a href="#"><img src="../public/images/course/teacher/t-1.jpg" alt="teacher"></a>
-                                    </div>
-                                    <div class="name">
-                                        <a href="#">
-                                            <h6>Mark anthem</h6>
-                                        </a>
-                                    </div>
-                                    <div class="admin">
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-user"></i><span>31</span></a></li>
-                                            <li><a href="#"><i class="fa fa-heart"></i><span>10</span></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- singel course -->
-                    </div>
-                    
-                    <?php  endforeach; ?>
-                      
-                </div>
-                <!-- row -->
-            </div>
-            <div class="tab-pane fade" id="courses-list" role="tabpanel" aria-labelledby="courses-list-tab">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="singel-course mt-30">
-                            <div class="row no-gutters">
-                                <div class="col-md-6">
+                    <?php
+                    $number_per_page = 3;
+                    if (isset($_GET['page'])) {
+                        $page = $_GET['page'];
+                    } else {
+                        $page = 1;
+                    }
+                    $start_from = ($page - 1) * 3;
+                    $posts = $db->query("SELECT * FROM courses LIMIT $start_from, $number_per_page ");
+                    ?>
+                    <?php
+                    $number_of_result = mysqli_num_rows($posts);
+                    if ($number_of_result) {
+                        while ($item = mysqli_fetch_array($posts)) { ?>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="singel-course mt-30">
                                     <div class="thum">
                                         <div class="image">
                                             <img src="../public/images/course/cu-1.jpg" alt="Course">
@@ -144,8 +98,6 @@
                                             <span>Free</span>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
                                     <div class="cont">
                                         <ul>
                                             <li><i class="fa fa-star"></i></li>
@@ -154,10 +106,12 @@
                                             <li><i class="fa fa-star"></i></li>
                                             <li><i class="fa fa-star"></i></li>
                                         </ul>
-                                        <span>(20 Reviws)</span>
-                                        <a href="#">
-                                            <h4>Learn basis javascirpt from start for beginner</h4>
-                                        </a>
+                                        <div>(20 Reviws)</div>
+                                        <div>
+                                            <a href="courses-singel.html">
+                                                <h4><?php echo $item['title']; ?></h4>
+                                            </a>
+                                        </div>
                                         <div class="course-teacher">
                                             <div class="thum">
                                                 <a href="#"><img src="../public/images/course/teacher/t-1.jpg" alt="teacher"></a>
@@ -176,138 +130,47 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- singel course -->
                             </div>
-                            <!--  row  -->
-                        </div>
-                        <!-- singel course -->
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="singel-course mt-30">
-                            <div class="row no-gutters">
-                                <div class="col-md-6">
-                                    <div class="thum">
-                                        <div class="image">
-                                            <img src="../public/images/course/cu-2.jpg" alt="Course">
-                                        </div>
-                                        <div class="price">
-                                            <span>Free</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="cont">
-                                        <ul>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                        <span>(20 Reviws)</span>
-                                        <a href="#">
-                                            <h4>Learn basis javascirpt from start for beginner</h4>
-                                        </a>
-                                        <div class="course-teacher">
-                                            <div class="thum">
-                                                <a href="#"><img src="../public/images/course/teacher/t-2.jpg" alt="teacher"></a>
-                                            </div>
-                                            <div class="name">
-                                                <a href="#">
-                                                    <h6>Mark anthem</h6>
-                                                </a>
-                                            </div>
-                                            <div class="admin">
-                                                <ul>
-                                                    <li><a href="#"><i class="fa fa-user"></i><span>31</span></a></li>
-                                                    <li><a href="#"><i class="fa fa-heart"></i><span>10</span></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--  row  -->
-                        </div>
-                        <!-- singel course -->
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="singel-course mt-30">
-                            <div class="row no-gutters">
-                                <div class="col-md-6">
-                                    <div class="thum">
-                                        <div class="image">
-                                            <img src="../public/images/course/cu-3.jpg" alt="Course">
-                                        </div>
-                                        <div class="price">
-                                            <span>Free</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="cont">
-                                        <ul>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                        <span>(20 Reviws)</span>
-                                        <a href="#">
-                                            <h4>Learn basis javascirpt from start for beginner</h4>
-                                        </a>
-                                        <div class="course-teacher">
-                                            <div class="thum">
-                                                <a href="#"><img src="../public/images/course/teacher/t-3.jpg" alt="teacher"></a>
-                                            </div>
-                                            <div class="name">
-                                                <a href="#">
-                                                    <h6>Mark anthem</h6>
-                                                </a>
-                                            </div>
-                                            <div class="admin">
-                                                <ul>
-                                                    <li><a href="#"><i class="fa fa-user"></i><span>31</span></a></li>
-                                                    <li><a href="#"><i class="fa fa-heart"></i><span>10</span></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--  row  -->
-                        </div>
-                        <!-- singel course -->
-                    </div>
-
+                            <!-- while loop end -->
+                    <?php }
+                    } ?>
                 </div>
                 <!-- row -->
             </div>
+            <div class="tab-pane fade" id="courses-list" role="tabpanel" aria-labelledby="courses-list-tab">
+                <div class="row">
+                    <!-- cards in column -->
+                </div>
+            </div>
         </div>
-        <!-- tab content -->
+        <!-- pagination -->
         <div class="row">
             <div class="col-lg-12">
                 <nav class="courses-pagination mt-50">
                     <ul class="pagination justify-content-center">
-                        <li class="page-item">
-                            <a href="#" aria-label="Previous">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="active" href="#">1</a></li>
-                        <li class="page-item"><a href="#">2</a></li>
-                        <li class="page-item"><a href="#">3</a></li>
-                        <li class="page-item">
-                            <a href="#" aria-label="Next">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
+                        <?php
+                        $per_result = $db->query("SELECT * FROM courses");
+                        $total_record = mysqli_num_rows($per_result);
+                        if ($total_record) {
+                            $total_page = ceil($total_record / $number_per_page);
+                            if ($page > 1) {
+                             ?>
+                                <li class='page-item'><a href='courses.php?page=<?php echo ($page - 1)?>'><i class='fa fa-angle-left'></i></a></li>
+                            <?php }
+                            for ($i = 1; $i <= $total_page; $i++) { ?>
+                                <li class="page-item"><a href="courses.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+                                <?php
+                                if ($i > $page) {?>
+                                   <li class='page-item'><a href='courses.php?page=<?php echo ($page + 1)?>'><i class='fa fa-angle-right'></i></a></li>
+                        <?php }}
+                        } ?>
                     </ul>
                 </nav>
-                <!-- courses pagination -->
             </div>
         </div>
-        <!-- row -->
+
+        <!-- end pagination -->
     </div>
     <!-- container -->
 </section>

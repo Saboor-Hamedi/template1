@@ -23,12 +23,13 @@
 <!-- end timepicker -->
 <script src="assets/ajax/post.js"></script>
 <script src="assets/ajax/event.js"></script>
-<?php require_once __DIR__ . '/../modals/make_course.php'; ?>
 <?php require_once __DIR__ . '/../modals/edit_course.php'; ?>
-
+<?php require_once __DIR__ . '/../modals/make_course.php'; ?>
 <!-- add event modal -->
-<?php require_once __DIR__ . '/../modals/make_event.php'; ?>
-<?php require_once __DIR__ . '/../modals/edit_event.php'; ?>
+<?php require_once   'modals/make_event.php'; ?>
+<?php require_once   'modals/edit_event.php'; ?>
+
+
 <!-- end modals -->
 
 <!-- timepicker script -->
@@ -42,13 +43,24 @@
   $(function() {
     $('#endTime').datetimepicker({
       Default: false
-
+    });
+  });
+  $(function() {
+    $('#event_update_start_time').datetimepicker({
+      Default: false
+    });
+  });
+  $(function() {
+    $('#event_update_end_time').datetimepicker({
+      Default: false
     });
   });
   // 
 
 
 </script>
+
+<!--  -->
 
 <!-- end -->
 <script>
@@ -127,6 +139,7 @@
 
   });
 </script>
+
 </body>
 
 <!-- Mirrored from educhamp.themetrades.com/demo/admin/main.php by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Feb 2019 13:09:05 GMT -->

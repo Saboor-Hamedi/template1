@@ -40,7 +40,9 @@
     margin-bottom: 0;
 }
 
-
+textarea{
+    resize: none;
+}
 /*without top bar*/
 
 .secondary-menu {
@@ -2279,10 +2281,12 @@ button.back-to-top {
     display: inline-block;
     font-size: 13px;
     text-transform: capitalize;
-    font-family: ;
     margin-right: 5px;
 }
-
+.modal__row{
+    height: 350px;
+     overflow:auto;
+}
 .media-post li a {
     color: #878787;
     vertical-align: middle;

@@ -89,9 +89,9 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="teachers.html">Our teachers</a>
+                                        <a href="teachers.php">Our teachers</a>
                                         <ul class="sub-menu">
-                                            <li><a href="teachers.html">teachers</a></li>
+                                            <li><a href="teachers.php">teachers</a></li>
                                             <li><a href="teachers-singel.html">teacher Singel</a></li>
                                         </ul>
                                     </li>

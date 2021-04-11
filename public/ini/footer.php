@@ -33,7 +33,7 @@
                             <ul>
                                 <li><a href="#"><i class="fa fa-angle-right"></i>Gallery</a></li>
                                 <li><a href="shop.html"><i class="fa fa-angle-right"></i>Shop</a></li>
-                                <li><a href="teachers.html"><i class="fa fa-angle-right"></i>Teachers</a></li>
+                                <li><a href="teachers.php"><i class="fa fa-angle-right"></i>Teachers</a></li>
                                 <li><a href="#"><i class="fa fa-angle-right"></i>Support</a></li>
                                 <li><a href="contact.html"><i class="fa fa-angle-right"></i>Contact</a></li>
                             </ul>

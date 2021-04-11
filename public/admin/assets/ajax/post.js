@@ -53,8 +53,6 @@ $(document).ready(function () {
     });
 
 });
-// --------------------delete
-
 // --------------------fetch
 $(document).ready(function () {
     $(document).on("click", ".post__edit__btn", function (e) {
@@ -78,7 +76,7 @@ $(document).ready(function () {
 });
 // -----------update
 $(document).ready(function () {
-    $(document).on('click', '#make__post__btn', function (e) {
+    $(document).on('click', '#edit__post__Btn', function (e) {
         e.preventDefault();
         let course_post_id = $('#course_post_id').val().trim();
         let course_post_title = $('#course_post_title').val().trim();

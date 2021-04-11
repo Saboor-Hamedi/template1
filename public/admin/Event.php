@@ -34,22 +34,10 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="ttr-material-button">
-                        <span class="ttr-icon"><i class="ti-email"></i></span>
+                    <a href="Event.php" class="ttr-material-button">
+                        <span class="ttr-icon"><i class="ti-book"></i></span>
                         <span class="ttr-label">Event</span>
-                        <span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
                     </a>
-                    <ul>
-                        <li>
-                            <a href="Event.php" class="ttr-material-button"><span class="ttr-label">Mail Box</span></a>
-                        </li>
-                        <li>
-                            <a href="event-compose.php" class="ttr-material-button"><span class="ttr-label">Compose</span></a>
-                        </li>
-                        <li>
-                            <a href="Event-read.html" class="ttr-material-button"><span class="ttr-label">Mail Read</span></a>
-                        </li>
-                    </ul>
                 </li>
                 <li>
                     <a href="#" class="ttr-material-button">
@@ -135,7 +123,7 @@
                         <h4>All Events</h4>
                     </div>
 
-                    <?php $posts = $db->query("SELECT * FROM event"); ?>
+                    <?php $posts = $db->query("SELECT id, title, description, speaker, location, start_time, start_end FROM event ORDER BY created_at DESC "); ?>
                     <?php
                     if (is_array($posts) || is_object($posts))
                         foreach ($posts as $item) :
@@ -149,6 +137,16 @@
                                     <div class="card-courses-title">
                                         <h4><?php echo $item['title']; ?></h4>
                                     </div>
+                                    <ul class="card-courses-view">
+                                        <li class="card-courses-categories">
+                                            <h4>Location</h4>
+                                            <small class="text-primary">
+                                                <?php echo $item['location']; ?>
+                                            </small>
+                                        </li>
+
+                                    </ul>
+                                    <br />
                                     <div class="card-courses-list-bx">
                                         <ul class="card-courses-view">
                                             <li class="card-courses-user">
@@ -160,17 +158,17 @@
                                                 </div>
                                             </li>
                                             <li class="card-courses-categories">
-
                                                 <h4>Start</h4>
-                                                <small class="text-primary"> <?php echo date('jS, M, y, g:i A',  strtotime($item['start_time'])); ?>
+                                                <small class="text-primary">
+                                                    <?php echo date('jS, M, y, g:i A',  strtotime($item['start_time'])); ?>
                                                 </small>
                                             </li>
                                             <li class="card-courses-categories">
                                                 <h4>End</h4>
-                                                    <small class="text-primary"> <?php echo date('jS, M, y, g:i A',  strtotime($item['start_end'])); ?>
+                                                <small class="text-primary">
+                                                    <?php echo date('jS, M, y, g:i A',  strtotime($item['start_end'])); ?>
                                                 </small>
                                             </li>
-
                                         </ul>
                                     </div>
                                     <div class="row card-courses-dec">
@@ -181,22 +179,19 @@
                                             <p><?php echo $item['description']; ?></p>
                                         </div>
                                         <div class="col-md-12">
-                                            <!-- <a href="#" class="btn green radius-xl outline">Approve</a>
-                                        <a href="#" class="btn red outline radius-xl ">Cancel</a> -->
                                             <a href="#" class="btn red outline radius-xl btn-sm event__delete__btn" id="<?php echo $item['id']; ?>">Delete</a>
-                                            <a href="#" class="btn green outline radius-xl btn-sm event_fetch_btn" data-toggle="modal" data-target="#editEventModal" id="<?php echo $item['id']; ?>">Edit</a>
+                                            <a href="#" class="btn green outline radius-xl btn-sm fetch__event__btn" data-toggle="modal" data-target="#EventEditModal" id="<?php echo $item['id']; ?>">Edit</a>
+                                 
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     <?php endforeach; ?>
                 </div>
+                <!-- Your Profile Views Chart END-->
             </div>
-            <!-- Your Profile Views Chart END-->
         </div>
-    </div>
 </main>
 <div class="ttr-overlay"></div>
 

@@ -33,24 +33,12 @@
 						<span class="ttr-label">Courses</span>
 					</a>
 				</li>
-				<li>
-					<a href="#" class="ttr-material-button">
-						<span class="ttr-icon"><i class="ti-email"></i></span>
-						<span class="ttr-label">Event</span>
-						<span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
-					</a>
-					<ul>
-						<li>
-							<a href="Event.php" class="ttr-material-button"><span class="ttr-label">Mail Box</span></a>
-						</li>
-						<li>
-							<a href="event-compose.php" class="ttr-material-button"><span class="ttr-label">Compose</span></a>
-						</li>
-						<li>
-							<a href="Event-read.html" class="ttr-material-button"><span class="ttr-label">Mail Read</span></a>
-						</li>
-					</ul>
-				</li>
+				 <li>
+                    <a href="Event.php" class="ttr-material-button">
+                        <span class="ttr-icon"><i class="ti-book"></i></span>
+                        <span class="ttr-label">Event</span>
+                    </a>
+                </li>
 				<li>
 					<a href="#" class="ttr-material-button">
 						<span class="ttr-icon"><i class="ti-calendar"></i></span>
@@ -116,6 +104,7 @@
 			<ul class="db-breadcrumb-list">
 				<li><a href="#"><i class="fa fa-home"></i>Home</a></li>
 				<li>Dashboard</li>
+				<li><a href="../../app/certificate/certificate.php"><i class="fa fa-home"></i>Certificate</a></li>
 			</ul>
 		</div>
 		<!-- Card -->
