@@ -108,7 +108,7 @@
                                         </ul>
                                         <div>(20 Reviws)</div>
                                         <div>
-                                            <a href="courses-singel.html">
+                                            <a href="courses-singel.php">
                                                 <h4><?php echo $item['title']; ?></h4>
                                             </a>
                                         </div>

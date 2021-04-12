@@ -293,7 +293,7 @@
                                 <li><i class="fa fa-star"></i></li>
                             </ul>
                             <span>(20 Reviws)</span>
-                            <a href="courses-singel.html"><h4>Learn basis javascirpt from start for beginner</h4></a>
+                            <a href="courses-singel.php"><h4>Learn basis javascirpt from start for beginner</h4></a>
                             <div class="course-teacher">
                                 <div class="thum">
                                     <a href="#"><img src="../public/images/course/teacher/t-1.jpg" alt="teacher"></a>
@@ -330,7 +330,7 @@
                                 <li><i class="fa fa-star"></i></li>
                             </ul>
                             <span>(20 Reviws)</span>
-                            <a href="courses-singel.html"><h4>Learn basis javascirpt from start for beginner</h4></a>
+                            <a href="courses-singel.php"><h4>Learn basis javascirpt from start for beginner</h4></a>
                             <div class="course-teacher">
                                 <div class="thum">
                                     <a href="#"><img src="../public/images/course/teacher/t-2.jpg" alt="teacher"></a>
@@ -367,7 +367,7 @@
                                 <li><i class="fa fa-star"></i></li>
                             </ul>
                             <span>(20 Reviws)</span>
-                            <a href="courses-singel.html"><h4>Learn basis javascirpt from start for beginner</h4></a>
+                            <a href="courses-singel.php"><h4>Learn basis javascirpt from start for beginner</h4></a>
                             <div class="course-teacher">
                                 <div class="thum">
                                     <a href="#"><img src="../public/images/course/teacher/t-3.jpg" alt="teacher"></a>
@@ -404,7 +404,7 @@
                                 <li><i class="fa fa-star"></i></li>
                             </ul>
                             <span>(20 Reviws)</span>
-                            <a href="courses-singel.html"><h4>Learn basis javascirpt from start for beginner</h4></a>
+                            <a href="courses-singel.php"><h4>Learn basis javascirpt from start for beginner</h4></a>
                             <div class="course-teacher">
                                 <div class="thum">
                                     <a href="#"><img src="../public/images/course/teacher/t-4.jpg" alt="teacher"></a>
@@ -441,7 +441,7 @@
                                 <li><i class="fa fa-star"></i></li>
                             </ul>
                             <span>(20 Reviws)</span>
-                            <a href="courses-singel.html"><h4>Learn basis javascirpt from start for beginner</h4></a>
+                            <a href="courses-singel.php"><h4>Learn basis javascirpt from start for beginner</h4></a>
                             <div class="course-teacher">
                                 <div class="thum">
                                     <a href="#"><img src="../public/images/course/teacher/t-5.jpg" alt="teacher"></a>
@@ -548,7 +548,7 @@
                                         <img src="../public/images/teachers/t-1.jpg" alt="Teachers">
                                     </div>
                                     <div class="cont">
-                                        <a href="teachers-singel.html"><h6>Mark alen</h6></a>
+                                        <a href="teachers-singel.php"><h6>Mark alen</h6></a>
                                         <span>Vice chencelor</span>
                                     </div>
                                 </div> <!-- singel teachers -->
@@ -559,7 +559,7 @@
                                         <img src="../public/images/teachers/t-2.jpg" alt="Teachers">
                                     </div>
                                     <div class="cont">
-                                        <a href="teachers-singel.html"><h6>David card</h6></a>
+                                        <a href="teachers-singel.php"><h6>David card</h6></a>
                                         <span>Pro chencelor</span>
                                     </div>
                                 </div> <!-- singel teachers -->
@@ -570,7 +570,7 @@
                                         <img src="../public/images/teachers/t-3.jpg" alt="Teachers">
                                     </div>
                                     <div class="cont">
-                                        <a href="teachers-singel.html"><h6>Rebeka alig</h6></a>
+                                        <a href="teachers-singel.php"><h6>Rebeka alig</h6></a>
                                         <span>Pro chencelor</span>
                                     </div>
                                 </div> <!-- singel teachers -->
@@ -581,7 +581,7 @@
                                         <img src="../public/images/teachers/t-4.jpg" alt="Teachers">
                                     </div>
                                     <div class="cont">
-                                        <a href="teachers-singel.html"><h6>Hanna bein</h6></a>
+                                        <a href="teachers-singel.php"><h6>Hanna bein</h6></a>
                                         <span>Aerobics head</span>
                                     </div>
                                 </div> <!-- singel teachers -->
@@ -626,7 +626,7 @@
                         </div>
                         <div class="cont">
                             <div class="name">
-                                <a href="shop-singel.html"><h6>Set for life </h6></a>
+                                <a href="shop-singel.php"><h6>Set for life </h6></a>
                                 <span>By Scott Trench</span>
                             </div>
                             <div class="button text-right">
@@ -648,7 +648,7 @@
                         </div>
                         <div class="cont">
                             <div class="name">
-                                <a href="shop-singel.html"><h6>A Daughters </h6></a>
+                                <a href="shop-singel.php"><h6>A Daughters </h6></a>
                                 <span>By Scott Trench</span>
                             </div>
                             <div class="button text-right">
@@ -670,7 +670,7 @@
                         </div>
                         <div class="cont">
                             <div class="name">
-                                <a href="shop-singel.html"><h6>A Magnet </h6></a>
+                                <a href="shop-singel.php"><h6>A Magnet </h6></a>
                                 <span>By Scott Trench</span>
                             </div>
                             <div class="button text-right">
@@ -692,7 +692,7 @@
                         </div>
                         <div class="cont">
                             <div class="name">
-                                <a href="shop-singel.html"><h6>Pices of light</h6></a>
+                                <a href="shop-singel.php"><h6>Pices of light</h6></a>
                                 <span>By Scott Trench</span>
                             </div>
                             <div class="button text-right">
@@ -794,7 +794,7 @@
                                 <li><a href="#"><i class="fa fa-calendar"></i>2 December 2018 </a></li>
                                 <li><a href="#"> <span>By</span> Adam linn</a></li>
                             </ul>
-                            <a href="blog-singel.html"><h3>Tips to grade high cgpa in university life</h3></a>
+                            <a href="blog-singel.php"><h3>Tips to grade high cgpa in university life</h3></a>
                             <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt .</p>
                         </div>
                     </div> <!-- singel news -->
@@ -813,7 +813,7 @@
                                         <li><a href="#"><i class="fa fa-calendar"></i>2 December 2018 </a></li>
                                         <li><a href="#"> <span>By</span> Adam linn</a></li>
                                     </ul>
-                                    <a href="blog-singel.html"><h3>Intellectual communication</h3></a>
+                                    <a href="blog-singel.php"><h3>Intellectual communication</h3></a>
                                     <p>Gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons  vel.</p>
                                 </div>
                             </div>
@@ -832,7 +832,7 @@
                                         <li><a href="#"><i class="fa fa-calendar"></i>2 December 2018 </a></li>
                                         <li><a href="#"> <span>By</span> Adam linn</a></li>
                                     </ul>
-                                    <a href="blog-singel.html"><h3>Study makes you perfect</h3></a>
+                                    <a href="blog-singel.php"><h3>Study makes you perfect</h3></a>
                                     <p>Gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons  vel.</p>
                                 </div>
                             </div>
@@ -851,7 +851,7 @@
                                         <li><a href="#"><i class="fa fa-calendar"></i>2 December 2018 </a></li>
                                         <li><a href="#"> <span>By</span> Adam linn</a></li>
                                     </ul>
-                                    <a href="blog-singel.html"><h3>Technology edcution is now....</h3></a>
+                                    <a href="blog-singel.php"><h3>Technology edcution is now....</h3></a>
                                     <p>Gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons  vel.</p>
                                 </div>
                             </div>

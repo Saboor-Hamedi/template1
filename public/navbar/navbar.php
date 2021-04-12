@@ -78,43 +78,23 @@
                                         <a href="courses.php">Courses</a>
                                         <ul class="sub-menu">
                                             <li><a href="courses.php">Courses</a></li>
-                                            <li><a href="courses-singel.html">Course Singel</a></li>
+                                            <li><a href="courses-singel.php">Course Singel</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item">
                                         <a href="events.php">Events</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="events.php">Events</a></li>
-                                            <li><a href="events-singel.php">Event Singel</a></li>
-                                        </ul>
                                     </li>
                                     <li class="nav-item">
                                         <a href="teachers.php">Our teachers</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="teachers.php">teachers</a></li>
-                                            <li><a href="teachers-singel.html">teacher Singel</a></li>
-                                        </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="blog.html">Blog</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="blog-singel.html">Blog Singel</a></li>
-                                        </ul>
+                                        <a href="blog.php">Blog</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="shop.html">Shop</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="shop.html">Shop</a></li>
-                                            <li><a href="shop-singel.html">Shop Singel</a></li>
-                                        </ul>
+                                        <a href="shop.php">Shop</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="contact.html">Contact</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="contact.html">Contact Us</a></li>
-                                            <li><a href="contact-2.html">Contact Us 2</a></li>
-                                        </ul>
+                                        <a href="contact.php">Contact</a>
                                     </li>
                                     <li class="nav-item">
                                         <!-- login  -->

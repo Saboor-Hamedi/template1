@@ -95,4 +95,4 @@
         </div>
         <!-- container -->
     </section>
-<?php require_once __DIR__ . '../public/ini/footer.php'; ?>
+    <?php require_once __DIR__ . '../public/ini/footer.php'; ?>

@@ -27,15 +27,15 @@
                                 <li><a href="index-2.php"><i class="fa fa-angle-right"></i>Home</a></li>
                                 <li><a href="about.php"><i class="fa fa-angle-right"></i>About us</a></li>
                                 <li><a href="courses.php"><i class="fa fa-angle-right"></i>Courses</a></li>
-                                <li><a href="blog.html"><i class="fa fa-angle-right"></i>News</a></li>
+                                <li><a href="blog.php"><i class="fa fa-angle-right"></i>News</a></li>
                                 <li><a href="events.php"><i class="fa fa-angle-right"></i>Event</a></li>
                             </ul>
                             <ul>
                                 <li><a href="#"><i class="fa fa-angle-right"></i>Gallery</a></li>
-                                <li><a href="shop.html"><i class="fa fa-angle-right"></i>Shop</a></li>
+                                <li><a href="shop.php"><i class="fa fa-angle-right"></i>Shop</a></li>
                                 <li><a href="teachers.php"><i class="fa fa-angle-right"></i>Teachers</a></li>
                                 <li><a href="#"><i class="fa fa-angle-right"></i>Support</a></li>
-                                <li><a href="contact.html"><i class="fa fa-angle-right"></i>Contact</a></li>
+                                <li><a href="contact.php"><i class="fa fa-angle-right"></i>Contact</a></li>
                             </ul>
                         </div> <!-- footer link -->
                     </div>
@@ -108,25 +108,11 @@
         </div> <!-- footer copyright -->
     </footer>
     
-    <!--====== FOOTER PART ENDS ======-->
-   
-    <!--====== BACK TO TP PART START ======-->
     
     <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
-    
-    <!--====== BACK TO TP PART ENDS ======-->
-   
-    
-    
-    
-    
-    
-    
-    
     <!--====== jquery js ======-->
     <script src="../public/resources/js/vendor/modernizr-3.6.0.min.js"></script>
     <script src="../public/resources/js/vendor/jquery-1.12.4.min.js"></script>
-
     <!--====== Bootstrap js ======-->
     <script src="../public/resources/js/bootstrap.min.js"></script>
     

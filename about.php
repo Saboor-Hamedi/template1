@@ -43,9 +43,6 @@
     <!-- container -->
 </section>
 
-<!--====== PAGE BANNER PART ENDS ======-->
-
-<!--====== ABOUT PART START ======-->
 
 <section id="about-page" class="pt-70 pb-110">
     <div class="container">
@@ -106,7 +103,7 @@
 
 <!--====== ABOUT PART ENDS ======-->
 
-<!--====== COUNTER PART START ======-->
+
 
 <div id="counter-part" class="bg_cover pt-65 pb-110" data-overlay="8" style="background-image: url(../public/images/bg-2.jpg)">
     <div class="container">
@@ -147,7 +144,6 @@
 
 <!--====== COUNTER PART ENDS ======-->
 
-<!--====== TEACHERS PART START ======-->
 
 <section id="teachers-part" class="pt-65 pb-120">
     <div class="container">
@@ -168,7 +164,7 @@
                         <img src="../public/images/teachers/t-1.jpg" alt="Teachers">
                     </div>
                     <div class="cont">
-                        <a href="teachers-singel.html">
+                        <a href="teachers-singel.php">
                             <h6>Mark alen</h6>
                         </a>
                         <span>Vice chencelor</span>
@@ -182,7 +178,7 @@
                         <img src="../public/images/teachers/t-2.jpg" alt="Teachers">
                     </div>
                     <div class="cont">
-                        <a href="teachers-singel.html">
+                        <a href="teachers-singel.php">
                             <h6>Mark alen</h6>
                         </a>
                         <span>Vice chencelor</span>
@@ -196,7 +192,7 @@
                         <img src="../public/images/teachers/t-3.jpg" alt="Teachers">
                     </div>
                     <div class="cont">
-                        <a href="teachers-singel.html">
+                        <a href="teachers-singel.php">
                             <h6>Mark alen</h6>
                         </a>
                         <span>Vice chencelor</span>
@@ -210,7 +206,7 @@
                         <img src="../public/images/teachers/t-4.jpg" alt="Teachers">
                     </div>
                     <div class="cont">
-                        <a href="teachers-singel.html">
+                        <a href="teachers-singel.php">
                             <h6>Mark alen</h6>
                         </a>
                         <span>Vice chencelor</span>
@@ -224,7 +220,7 @@
                         <img src="../public/images/teachers/t-5.jpg" alt="Teachers">
                     </div>
                     <div class="cont">
-                        <a href="teachers-singel.html">
+                        <a href="teachers-singel.php">
                             <h6>Mark alen</h6>
                         </a>
                         <span>Vice chencelor</span>
@@ -238,7 +234,7 @@
                         <img src="../public/images/teachers/t-6.jpg" alt="Teachers">
                     </div>
                     <div class="cont">
-                        <a href="teachers-singel.html">
+                        <a href="teachers-singel.php">
                             <h6>Mark alen</h6>
                         </a>
                         <span>Vice chencelor</span>
@@ -252,7 +248,7 @@
                         <img src="../public/images/teachers/t-7.jpg" alt="Teachers">
                     </div>
                     <div class="cont">
-                        <a href="teachers-singel.html">
+                        <a href="teachers-singel.php">
                             <h6>Mark alen</h6>
                         </a>
                         <span>Vice chencelor</span>
@@ -266,7 +262,7 @@
                         <img src="../public/images/teachers/t-8.jpg" alt="Teachers">
                     </div>
                     <div class="cont">
-                        <a href="teachers-singel.html">
+                        <a href="teachers-singel.php">
                             <h6>Mark alen</h6>
                         </a>
                         <span>Vice chencelor</span>
@@ -281,9 +277,6 @@
 </section>
 
 <!--====== TEACHERS PART ENDS ======-->
-
-<!--====== TEASTIMONIAL PART START ======-->
-
 <section id="testimonial" class="bg_cover pt-115 pb-120" data-overlay="8" style="background-image: url(../public/images/bg-2.jpg)">
     <div class="container">
         <div class="row">
@@ -353,8 +346,6 @@
 
 <!--====== TEASTIMONIAL PART ENDS ======-->
 
-<!--====== PATNAR LOGO PART START ======-->
-
 <div id="patnar-logo" class="pt-40 pb-80 gray-bg">
     <div class="container">
         <div class="row patnar-slied">
@@ -393,57 +384,6 @@
     </div>
     <!-- container -->
 </div>
-
 <!--====== FOOTER PART START ======-->
 <?php require_once __DIR__ . '../public/ini/footer.php'; ?>
 
-
-
-
-
-
-
-
-
-<!--====== jquery js ======-->
-<script src="js/vendor/modernizr-3.6.0.min.js"></script>
-<script src="js/vendor/jquery-1.12.4.min.js"></script>
-
-<!--====== Bootstrap js ======-->
-<script src="js/bootstrap.min.js"></script>
-
-<!--====== Slick js ======-->
-<script src="js/slick.min.js"></script>
-
-<!--====== Magnific Popup js ======-->
-<script src="js/jquery.magnific-popup.min.js"></script>
-
-<!--====== Counter Up js ======-->
-<script src="js/waypoints.min.js"></script>
-<script src="js/jquery.counterup.min.js"></script>
-
-<!--====== Nice Select js ======-->
-<script src="js/jquery.nice-select.min.js"></script>
-
-<!--====== Nice Number js ======-->
-<script src="js/jquery.nice-number.min.js"></script>
-
-<!--====== Count Down js ======-->
-<script src="js/jquery.countdown.min.js"></script>
-
-<!--====== Validator js ======-->
-<script src="js/validator.min.js"></script>
-
-<!--====== Ajax Contact js ======-->
-<script src="js/ajax-contact.js"></script>
-
-<!--====== Main js ======-->
-<script src="js/main.js"></script>
-
-<!--====== Map js ======-->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC3Ip9iVC0nIxC6V14CKLQ1HZNF_65qEQ"></script>
-<script src="js/map-script.js"></script>
-
-</body>
-
-</html>

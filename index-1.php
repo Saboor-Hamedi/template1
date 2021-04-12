@@ -231,7 +231,7 @@
                             </div>
                             <div class="course-teacher">
                                 <div class="thum">
-                                    <a href="courses-singel.html"><img src="../public/images/course/teacher/t-1.jpg" alt="teacher"></a>
+                                    <a href="courses-singel.php"><img src="../public/images/course/teacher/t-1.jpg" alt="teacher"></a>
                                 </div>
                                 <div class="name">
                                     <a href="#">
@@ -268,7 +268,7 @@
                             </div>
                             <div class="course-teacher">
                                 <div class="thum">
-                                    <a href="courses-singel.html"><img src="../public/images/course/teacher/t-2.jpg" alt="teacher"></a>
+                                    <a href="courses-singel.php"><img src="../public/images/course/teacher/t-2.jpg" alt="teacher"></a>
                                 </div>
                                 <div class="name">
                                     <a href="#">
@@ -305,7 +305,7 @@
                             </div>
                             <div class="course-teacher">
                                 <div class="thum">
-                                    <a href="courses-singel.html"><img src="../public/images/course/teacher/t-3.jpg" alt="teacher"></a>
+                                    <a href="courses-singel.php"><img src="../public/images/course/teacher/t-3.jpg" alt="teacher"></a>
                                 </div>
                                 <div class="name">
                                     <a href="#">
@@ -342,7 +342,7 @@
                             </div>
                             <div class="course-teacher">
                                 <div class="thum">
-                                    <a href="courses-singel.html"><img src="../public/images/course/teacher/t-4.jpg" alt="teacher"></a>
+                                    <a href="courses-singel.php"><img src="../public/images/course/teacher/t-4.jpg" alt="teacher"></a>
                                 </div>
                                 <div class="name">
                                     <a href="#">
@@ -379,7 +379,7 @@
                             </div>
                             <div class="course-teacher">
                                 <div class="thum">
-                                    <a href="courses-singel.html"><img src="../public/images/course/teacher/t-5.jpg" alt="teacher"></a>
+                                    <a href="courses-singel.php"><img src="../public/images/course/teacher/t-5.jpg" alt="teacher"></a>
                                 </div>
                                 <div class="name">
                                     <a href="#">
@@ -473,7 +473,7 @@
                                         <img src="../public/images/teachers/teacher-2/tc-1.jpg" alt="Teacher">
                                     </div>
                                     <div class="cont">
-                                        <a href="teachers-singel.html">
+                                        <a href="teachers-singel.php">
                                             <h5>Mark anthem</h5>
                                         </a>
                                         <p>JAVA Expert</p>
@@ -488,7 +488,7 @@
                                         <img src="../public/images/teachers/teacher-2/tc-2.jpg" alt="Teacher">
                                     </div>
                                     <div class="cont">
-                                        <a href="teachers-singel.html">
+                                        <a href="teachers-singel.php">
                                             <h5>Hellen Mark</h5>
                                         </a>
                                         <p>Laravel Expert</p>
@@ -503,7 +503,7 @@
                                         <img src="../public/images/teachers/teacher-2/tc-1.jpg" alt="Teacher">
                                     </div>
                                     <div class="cont">
-                                        <a href="teachers-singel.html">
+                                        <a href="teachers-singel.php">
                                             <h5>Maria Noor</h5>
                                         </a>
                                         <p>JAVA Expert</p>
@@ -518,7 +518,7 @@
                                         <img src="../public/images/teachers/teacher-2/tc-1.jpg" alt="Teacher">
                                     </div>
                                     <div class="cont">
-                                        <a href="teachers-singel.html">
+                                        <a href="teachers-singel.php">
                                             <h5>Alan hen</h5>
                                         </a>
                                         <p>Laravel Expert</p>
@@ -660,7 +660,7 @@
                                     <a href="#"> <span>By</span> Adam linn</a>
                                 </li>
                             </ul>
-                            <a href="blog-singel.html">
+                            <a href="blog-singel.php">
                                 <h3>Tips to grade high cgpa in university life</h3>
                             </a>
                             <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec
@@ -685,7 +685,7 @@
                                             <a href="#"> <span>By</span> Adam linn</a>
                                         </li>
                                     </ul>
-                                    <a href="blog-singel.html">
+                                    <a href="blog-singel.php">
                                         <h3>Intellectual communication</h3>
                                     </a>
                                     <p>Gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons vel.</p>
@@ -710,7 +710,7 @@
                                             <a href="#"> <span>By</span> Adam linn</a>
                                         </li>
                                     </ul>
-                                    <a href="blog-singel.html">
+                                    <a href="blog-singel.php">
                                         <h3>Study makes you perfect</h3>
                                     </a>
                                     <p>Gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons vel.</p>
@@ -735,7 +735,7 @@
                                             <a href="#"> <span>By</span> Adam linn</a>
                                         </li>
                                     </ul>
-                                    <a href="blog-singel.html">
+                                    <a href="blog-singel.php">
                                         <h3>Technology edcution is now....</h3>
                                     </a>
                                     <p>Gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons vel.</p>
@@ -796,4 +796,4 @@
     </div>
 
        <!--====== PATNAR LOGO PART ENDS ======-->
-    <?php require_once __DIR__ . '../public/ini/footer.php'; ?>
+       <?php require_once __DIR__ . '../public/ini/footer.php'; ?>

@@ -326,7 +326,7 @@
                             <li><i class="fa fa-star"></i></li>
                         </ul>
                         <span>(20 Reviws)</span>
-                        <a href="courses-singel.html">
+                        <a href="courses-singel.php">
                             <h4>Learn basis javascirpt from start for beginner</h4>
                         </a>
                         <div class="course-teacher">
@@ -368,7 +368,7 @@
                             <li><i class="fa fa-star"></i></li>
                         </ul>
                         <span>(20 Reviws)</span>
-                        <a href="courses-singel.html">
+                        <a href="courses-singel.php">
                             <h4>Learn basis javascirpt from start for beginner</h4>
                         </a>
                         <div class="course-teacher">
@@ -410,7 +410,7 @@
                             <li><i class="fa fa-star"></i></li>
                         </ul>
                         <span>(20 Reviws)</span>
-                        <a href="courses-singel.html">
+                        <a href="courses-singel.php">
                             <h4>Learn basis javascirpt from start for beginner</h4>
                         </a>
                         <div class="course-teacher">
@@ -452,7 +452,7 @@
                             <li><i class="fa fa-star"></i></li>
                         </ul>
                         <span>(20 Reviws)</span>
-                        <a href="courses-singel.html">
+                        <a href="courses-singel.php">
                             <h4>Learn basis javascirpt from start for beginner</h4>
                         </a>
                         <div class="course-teacher">
@@ -494,7 +494,7 @@
                             <li><i class="fa fa-star"></i></li>
                         </ul>
                         <span>(20 Reviws)</span>
-                        <a href="courses-singel.html">
+                        <a href="courses-singel.php">
                             <h4>Learn basis javascirpt from start for beginner</h4>
                         </a>
                         <div class="course-teacher">
@@ -619,7 +619,7 @@
                                     <img src="../public/images/teachers/t-1.jpg" alt="Teachers">
                                 </div>
                                 <div class="cont">
-                                    <a href="teachers-singel.html">
+                                    <a href="teachers-singel.php">
                                         <h6>Mark alen</h6>
                                     </a>
                                     <span>Vice chencelor</span>
@@ -633,7 +633,7 @@
                                     <img src="../public/images/teachers/t-2.jpg" alt="Teachers">
                                 </div>
                                 <div class="cont">
-                                    <a href="teachers-singel.html">
+                                    <a href="teachers-singel.php">
                                         <h6>David card</h6>
                                     </a>
                                     <span>Pro chencelor</span>
@@ -647,7 +647,7 @@
                                     <img src="../public/images/teachers/t-3.jpg" alt="Teachers">
                                 </div>
                                 <div class="cont">
-                                    <a href="teachers-singel.html">
+                                    <a href="teachers-singel.php">
                                         <h6>Rebeka alig</h6>
                                     </a>
                                     <span>Pro chencelor</span>
@@ -661,7 +661,7 @@
                                     <img src="../public/images/teachers/t-4.jpg" alt="Teachers">
                                 </div>
                                 <div class="cont">
-                                    <a href="teachers-singel.html">
+                                    <a href="teachers-singel.php">
                                         <h6>Hanna bein</h6>
                                     </a>
                                     <span>Aerobics head</span>
@@ -716,7 +716,7 @@
                     </div>
                     <div class="cont">
                         <div class="name">
-                            <a href="shop-singel.html">
+                            <a href="shop-singel.php">
                                 <h6>Set for life </h6>
                             </a>
                             <span>By Scott Trench</span>
@@ -741,7 +741,7 @@
                     </div>
                     <div class="cont">
                         <div class="name">
-                            <a href="shop-singel.html">
+                            <a href="shop-singel.php">
                                 <h6>A Daughters </h6>
                             </a>
                             <span>By Scott Trench</span>
@@ -766,7 +766,7 @@
                     </div>
                     <div class="cont">
                         <div class="name">
-                            <a href="shop-singel.html">
+                            <a href="shop-singel.php">
                                 <h6>A Magnet </h6>
                             </a>
                             <span>By Scott Trench</span>
@@ -791,7 +791,7 @@
                     </div>
                     <div class="cont">
                         <div class="name">
-                            <a href="shop-singel.html">
+                            <a href="shop-singel.php">
                                 <h6>Pices of light</h6>
                             </a>
                             <span>By Scott Trench</span>
@@ -909,7 +909,7 @@
                                 <a href="#"> <span>By</span> Adam linn</a>
                             </li>
                         </ul>
-                        <a href="blog-singel.html">
+                        <a href="blog-singel.php">
                             <h3>Tips to grade high cgpa in university life</h3>
                         </a>
                         <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec
@@ -934,7 +934,7 @@
                                         <a href="#"> <span>By</span> Adam linn</a>
                                     </li>
                                 </ul>
-                                <a href="blog-singel.html">
+                                <a href="blog-singel.php">
                                     <h3>Intellectual communication</h3>
                                 </a>
                                 <p>Gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons vel.</p>
@@ -959,7 +959,7 @@
                                         <a href="#"> <span>By</span> Adam linn</a>
                                     </li>
                                 </ul>
-                                <a href="blog-singel.html">
+                                <a href="blog-singel.php">
                                     <h3>Study makes you perfect</h3>
                                 </a>
                                 <p>Gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons vel.</p>
@@ -984,7 +984,7 @@
                                         <a href="#"> <span>By</span> Adam linn</a>
                                     </li>
                                 </ul>
-                                <a href="blog-singel.html">
+                                <a href="blog-singel.php">
                                     <h3>Technology edcution is now....</h3>
                                 </a>
                                 <p>Gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons vel.</p>
