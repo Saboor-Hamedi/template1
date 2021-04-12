@@ -124,6 +124,39 @@ INSERT INTO `all_subjects` VALUES ('Anthropology\r',1),('Archaeology\r',2),('Are
 UNLOCK TABLES;
 
 --
+-- Table structure for table `certificate`
+--
+
+DROP TABLE IF EXISTS `certificate`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `certificate` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `certificate_name` varchar(100) NOT NULL,
+  `certificate_desc` text DEFAULT NULL,
+  `student_id` bigint(20) NOT NULL,
+  `event_id` int(11) NOT NULL,
+  `courses_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `student_id` (`student_id`),
+  KEY `event_id` (`event_id`),
+  KEY `courses_id` (`courses_id`),
+  CONSTRAINT `certificate_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`nim`) ON DELETE CASCADE,
+  CONSTRAINT `certificate_ibfk_2` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `certificate_ibfk_3` FOREIGN KEY (`courses_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `certificate`
+--
+
+LOCK TABLES `certificate` WRITE;
+/*!40000 ALTER TABLE `certificate` DISABLE KEYS */;
+/*!40000 ALTER TABLE `certificate` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `class_grade_student`
 --
 
@@ -208,7 +241,7 @@ CREATE TABLE `courses` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `courses_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `login` (`admin_nim`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -217,7 +250,7 @@ CREATE TABLE `courses` (
 
 LOCK TABLES `courses` WRITE;
 /*!40000 ALTER TABLE `courses` DISABLE KEYS */;
-INSERT INTO `courses` VALUES (1,11160930000120,'HTML',10,'This is the full HTML courese','2021-03-30 13:56:12'),(2,11160930000120,'asdf',23,'asdfasdf','2021-03-30 13:59:56'),(3,11160930000120,'asdfasdf',41,'asdfasdfasdf','2021-03-30 14:00:06'),(4,11160930000120,'gfadfa23',2342,'asdfasdfasdf','2021-03-30 14:00:18'),(5,11160930000120,'asdfasdf',34,'asdfgasdfasdf','2021-03-30 14:00:31');
+INSERT INTO `courses` VALUES (2,11160930000120,'asdf',23,'asdfasdf','2021-03-30 13:59:56'),(3,11160930000120,'asdfasdf',41,'asdfasdfasdf','2021-03-30 14:00:06'),(4,11160930000120,'Java',35,'asdfasdfasdf','2021-03-30 14:00:18'),(5,11160930000120,'asdfasdf',34,'asdfgasdfasdf','2021-03-30 14:00:31'),(6,11160930000120,'Et voluptatem quis e',639,'Qui tempor laborum n','2021-04-12 07:03:02'),(7,11160930000120,'Aliquam voluptatem',576,'Qui rerum irure aut','2021-04-12 07:03:26'),(8,11160930000120,'Voluptas fugit aut new',831,'Laudantium quo a re','2021-04-12 08:32:31');
 /*!40000 ALTER TABLE `courses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -257,10 +290,12 @@ CREATE TABLE `event` (
   `title` varchar(50) NOT NULL,
   `description` text DEFAULT NULL,
   `speaker` varchar(100) NOT NULL,
+  `location` text DEFAULT NULL,
   `start_time` varchar(80) DEFAULT current_timestamp(),
   `start_end` varchar(80) DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -269,7 +304,7 @@ CREATE TABLE `event` (
 
 LOCK TABLES `event` WRITE;
 /*!40000 ALTER TABLE `event` DISABLE KEYS */;
-INSERT INTO `event` VALUES (7,'New Title','This is a new title','Title','04/21/2021 4:15 AM','04/23/2021 4:15 AM'),(8,'asdf','asdfas','asdfasd','04/08/2021 10:33 AM','04/16/2021 10:33 AM'),(16,'aaa','update','aaa','04/04/2021 12:47 AM','04/04/2021 2:52 AM');
+INSERT INTO `event` VALUES (7,'New Title','This is a new title','Title','FIRST LOCATION','04/09/2021 7:20 AM','04/09/2021 7:20 AM','2021-04-09 12:25:01'),(8,'Sed qui obcaecati re','Id amet vel cupidit','Deserunt qui dolore','Dolorem nobis ipsum','04/01/2021 10:33 AM','04/03/2021 10:33 AM','2021-04-09 12:25:01'),(16,'aaa','update','aaa',NULL,'04/04/2021 12:47 AM','04/04/2021 2:52 AM','2021-04-09 12:25:01'),(17,'Et quis nihil exerci','Quia aut itaque aper','Facere et beatae rem','','04/09/2021 6:36 AM','04/24/2021 6:36 AM','2021-04-09 12:25:01'),(18,'Iste ad similique ex','Cumque soluta adipis','Distinctio Sunt co','','04/09/2021 6:37 AM','04/09/2021 6:37 AM','2021-04-09 12:25:01'),(19,'Ipsum minus distinc','Nihil recusandae Eu','Vero consequatur Ip','','04/06/2021 6:39 AM','04/06/2021 6:39 AM','2021-04-09 12:25:01'),(21,'Alias id ipsum comm','Aliqua Cupidatat vo','Laborum In voluptat','Qui vel dolore proid','04/09/2021 7:27 AM','04/09/2021 7:28 AM','2021-04-09 12:28:08'),(22,'show be on the top','Doloremque ipsum en','Quia debitis rem eos','Nulla beatae quasi u','04/22/2021 7:28 AM','04/30/2021 7:28 AM','2021-04-09 12:28:42'),(23,'Praesentium perspici update new','Non blanditiis est t','Sit eum deserunt eli','Consectetur facere','04/17/2021 7:39 AM','04/24/2021 7:39 AM','2021-04-09 12:39:35'),(24,'Adipisicing molestia','Vitae consequatur ve','Quasi voluptatem et','Ipsum et et praesen','04/03/2021 7:32 AM','04/22/2021 7:32 AM','2021-04-11 12:32:54'),(26,'Sint numquam dolorem','Velit illo enim aute 123','Culpa occaecat exce123','Adipisicing sunt inc','04/11/2021 2:35 PM','04/11/2021 2:35 PM','2021-04-11 19:36:04'),(27,'Doloribus do delectu','Ipsam voluptates ut','Dolores excepteur en','Excepturi officia in','04/12/2021 2:37 AM','04/12/2021 2:37 AM','2021-04-12 07:37:33'),(28,'Esse vitae  5','Sequi maiores autem','Nulla mollit occaeca','Accusamus reprehende','04/12/2021 2:53 AM','04/12/2021 2:53 AM','2021-04-12 07:53:07'),(29,'Nisi quibusdam eum c','In porro nihil omnis','Dolorem quo cupidita','Atque ut ut nihil co','04/21/2021 3:05 AM','04/12/2021 3:05 AM','2021-04-12 08:05:37'),(30,'Quidem enim omnis id button','Tempore dolore est','Commodi proident so','Sed animi voluptate','04/12/2021 3:11 AM','04/12/2021 3:11 AM','2021-04-12 08:11:58'),(32,'Error qui in et repu','Duis quos natus elit','Est consequuntur min','Harum sint dolorem e','04/16/2021 3:32 AM','04/07/2021 3:32 AM','2021-04-12 08:32:12');
 /*!40000 ALTER TABLE `event` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -794,4 +829,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-04  0:52:10
+-- Dump completed on 2021-04-12  3:45:19
