@@ -5,10 +5,10 @@ use App\database\Database;
 
 $db = Database::getInstance();
 $db_connection = $db->getConnection();
-$postuserid = null;
-$posttitle = null;
-$postprice = null;
-$postdescription = null;
+$postuserid = "";
+$posttitle = "";
+$postprice = "";
+$postdescription = "";
 
 if (!empty($_POST)) {
     $postuserid = validation(mysqli_real_escape_string($db->getConnection(), $_POST['postuserid']));

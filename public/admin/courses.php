@@ -122,8 +122,7 @@
                     <div class="wc-title">
                         <h4>All Courses</h4>
                     </div>
-
-                    <?php $posts = $db->query("SELECT * FROM courses ORDER BY title DESC"); ?>
+                    <?php $posts = $db->query("SELECT * FROM courses ORDER BY created_at DESC"); ?>
                     <?php
                     if (is_array($posts) || is_object($posts))
                         foreach ($posts as $item) :
@@ -179,10 +178,8 @@
                                             <p><?php echo $item['description']; ?></p>
                                         </div>
                                        <div class="col-md-12">
-                                        <!-- <a href="#" class="btn green radius-xl outline">Approve</a>
-                                        <a href="#" class="btn red outline radius-xl ">Cancel</a> -->
-                                        <a href="#" class="btn red outline radius-xl btn-sm post__delete__btn" id="<?php echo $item['id']; ?>">Delete</a>
-                                        <a href="#" class="btn green outline radius-xl btn-sm post__edit__btn" data-toggle="modal" data-target="#courseEditModal" id="<?php echo $item['id']; ?>">Edit</a>
+                                        <a href="#" class="btn red outline radius-xl btn-sm course__delete__Btn" id="<?php echo $item['id']; ?>">Delete</a>
+                                        <a href="#" class="btn green outline radius-xl btn-sm course__fetch__Btn" data-toggle="modal" data-target="#courseEditModal" id="<?php echo $item['id']; ?>">Edit</a>
                                     </div> 
                                     </div>
                                 </div>

@@ -20,49 +20,37 @@
 <script src='assets/vendors/switcher/switcher.js'></script>
 <!-- time picker -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- end timepicker -->
-<script src="assets/ajax/post.js"></script>
+<!-- link ajax for inserting data, course, event -->
+<script src="assets/ajax/course.js"></script>
 <script src="assets/ajax/event.js"></script>
-<?php require_once __DIR__ . '/../modals/edit_course.php'; ?>
-<?php require_once __DIR__ . '/../modals/make_course.php'; ?>
-<!-- add event modal -->
-<?php require_once   'modals/make_event.php'; ?>
-<?php require_once   'modals/edit_event.php'; ?>
+<!-- course modal -->
+<?php require_once __DIR__ . '/../modals/course/make_course.php'; ?>
+<?php require_once __DIR__ . '/../modals/course/edit_course.php'; ?>
+<!-- event modal -->
 
-
-<!-- end modals -->
-
+<?php require_once  __DIR__ . '/../modals/event/make.php'; ?>
+<?php require_once  __DIR__ . '/../modals/event/edit.php'; ?>
 <!-- timepicker script -->
-
 <script type="text/javascript">
   $(function() {
     $('#startTime').datetimepicker({
-      Default: false
     });
   });
   $(function() {
     $('#endTime').datetimepicker({
-      Default: false
     });
   });
   $(function() {
     $('#event_update_start_time').datetimepicker({
-      Default: false
     });
   });
   $(function() {
     $('#event_update_end_time').datetimepicker({
-      Default: false
     });
   });
-  // 
-
 
 </script>
 
-<!--  -->
-
-<!-- end -->
 <script>
   $(document).ready(function() {
     $('#calendar').fullCalendar({

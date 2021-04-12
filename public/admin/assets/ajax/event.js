@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $(document).on("click", "#make__event__btn", function (e) {
+  $(document).on("click", "#make__event__Btn", function (e) {
     e.preventDefault();
     let event_title = $("#event_title").val().trim();
     let event_description = $("#event_description").val().trim();
@@ -162,7 +162,7 @@ $(document).ready(function () {
 });
 // fetch
 $(document).ready(function () {
-  $(document).on("click", ".fetch__event__btn", function (e) {
+  $(document).on("click", ".event__fetch__Btn", function (e) {
     e.preventDefault();
     let id = $(this).attr("id");
     $.ajax({
@@ -182,11 +182,9 @@ $(document).ready(function () {
     });
   });
 });
-
-
 // --------------------delete
 $(document).ready(function () {
-  $('.event__delete__btn').on('click', function (e) {
+  $('.event__delete__Btn').on('click', function (e) {
     e.preventDefault();
     var id = $(this).attr('id');
     var confirmalert = confirm("Are you sure?");

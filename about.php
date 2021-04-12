@@ -380,9 +380,7 @@
                 </div>
             </div>
         </div>
-        <!-- row -->
     </div>
-    <!-- container -->
 </div>
 <!--====== FOOTER PART START ======-->
 <?php require_once __DIR__ . '../public/ini/footer.php'; ?>

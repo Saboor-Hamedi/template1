@@ -34,7 +34,7 @@ $(document).ready(function () {
             $('#postdescriptionError').text('');
         }
         $.ajax({
-            url: '/app/post/insert.php',
+            url: '/app/course/insert.php',
             method: 'POST',
             data: {
                 postuserid: postuserid,
@@ -55,11 +55,11 @@ $(document).ready(function () {
 });
 // --------------------fetch
 $(document).ready(function () {
-    $(document).on("click", ".post__edit__btn", function (e) {
+    $(document).on("click", ".course__fetch__Btn", function (e) {
         e.preventDefault();
         let id = $(this).attr("id");
         $.ajax({
-            url: '/app/post/fetch.php',
+            url: '/app/course/fetch.php',
             method: "POST",
             data: { id: id },
             dataType: 'json',
@@ -69,7 +69,6 @@ $(document).ready(function () {
                 $('input#course_post_price').val(data[2]);
                 $('textarea#course_post_desc').val(data[3]);
                 // $('#post_edit').html(data);
-
             }
         });
     });
@@ -117,7 +116,7 @@ $(document).ready(function () {
         }
         //====================
         $.ajax({
-            url: '/app/post/update.php',
+            url: '/app/course/update.php',
             method: 'POST',
             data: {
                 course_post_id: course_post_id,
@@ -134,34 +133,25 @@ $(document).ready(function () {
             }
         })
     });
-
-
 });
 // --------------------delete
 $(document).ready(function () {
-    $('.post__delete__btn').on('click', function (e) {
+    $('.course__delete__Btn').on('click', function (e) {
         e.preventDefault();
         var id = $(this).attr('id');
         var confirmalert = confirm("Are you sure?");
         if (confirmalert == true) {
             $.ajax({
-                url: '/app/post/delete.php',
+                url: '/app/course/delete.php',
                 type: 'POST',
                 data: { id: id },
                 success: function (data) {
                     $(this).remove();
-
                 }
             });
         }
     });
 });
-
-
-
-
-
-
 
 function isNumber(evt) {
     evt = (evt) ? evt : window.event;

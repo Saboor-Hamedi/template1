@@ -39,11 +39,11 @@ if (!empty($_POST)) {
     }
     $db->getConnection()->close();
 }
-    function validation($data)
-    {
-        $data = trim($data);
-        $data = htmlspecialchars($data);
-        $data = stripslashes($data);
-        return $data;
-        return $data;
-    }
+function validation($data)
+{
+    $data = trim($data);
+    $data = htmlspecialchars($data);
+    $data = stripslashes($data);
+    return $data;
+    return $data;
+}

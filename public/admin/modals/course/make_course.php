@@ -11,15 +11,15 @@
         <div class="alert alert-danger" id="post_error" role="alert"></div>
        <form id="make_course_mdal" method="POST">
         <div class="form-group">
-            <input type="text" value= "<?php echo $userid; ?>"id="postuserid" class="form-control" name="postuserid" placeholder="post user id">
+            <input type="hidden" value= "<?php echo $userid; ?>"id="postuserid" class="form-control" name="postuserid" placeholder="Author ID">
           <small id="postuseridError"></small>
         </div>
         <div class="form-group">
-            <input type="text" id="posttitle" name="posttitle" class="form-control" name="posttitle" placeholder="post title">
+            <input type="text" id="posttitle" name="posttitle" class="form-control" name="posttitle" placeholder="Post Title">
             <small id="posttitleError"></small>
         </div>
         <div class="form-group">
-            <input type="text" onkeypress="return isNumber(event)" id="postprice" class="form-control" name="postprice" placeholder="post price ">
+            <input type="text" onkeypress="return isNumber(event)" id="postprice" class="form-control" name="postprice" placeholder="Post Price ">
             <small id="postpriceError"></small>
         </div>
         <div class="form-group">

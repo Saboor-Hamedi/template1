@@ -115,14 +115,16 @@
                 <div class="widget-box">
                     <div class="wc-title">
 
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#EventMakeModal">
+                        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#EventMakeModal">
                             Add New Event
+                        </button> -->
+                        <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#Make__Event__Modal">
+                            Make New Event
                         </button>
                     </div>
                     <div class="wc-title">
                         <h4>All Events</h4>
                     </div>
-
                     <?php $posts = $db->query("SELECT id, title, description, speaker, location, start_time, start_end FROM event ORDER BY created_at DESC "); ?>
                     <?php
                     if (is_array($posts) || is_object($posts))
@@ -144,7 +146,6 @@
                                                 <?php echo $item['location']; ?>
                                             </small>
                                         </li>
-
                                     </ul>
                                     <br />
                                     <div class="card-courses-list-bx">
@@ -179,9 +180,10 @@
                                             <p><?php echo $item['description']; ?></p>
                                         </div>
                                         <div class="col-md-12">
-                                            <a href="#" class="btn red outline radius-xl btn-sm event__delete__btn" id="<?php echo $item['id']; ?>">Delete</a>
-                                            <a href="#" class="btn green outline radius-xl btn-sm fetch__event__btn" data-toggle="modal" data-target="#EventEditModal" id="<?php echo $item['id']; ?>">Edit</a>
-                                 
+                                            <button class="btn red  outline radius-xl btn-sm event__delete__Btn" id="<?php echo $item['id']; ?>">Delete</button>
+                                            <button type="button" class="btn green outline radius-xl btn-sm event__fetch__Btn" data-toggle="modal" data-target="#Event__Edit__Modal" id="<?php echo $item['id']; ?>">
+                                               Edit
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
