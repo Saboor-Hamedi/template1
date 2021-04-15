@@ -1,32 +1,44 @@
 <?php
 require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../FPDF/fpdf.php';
+
 use App\database\Database;
-use App\fpdf\FPDF;
+
 $db = Database::getInstance();
 $db_connection = $db->getConnection();
-// =======
-$sql = "SELECT student.nim, student.name, student.lastname
-        FROM student INNER JOIN certificate ON student.nim=certificate.student_id
-                WHERE student.nim = 11446431127385";
-    $certificate = $db->select($sql);
-    // =========
-    $pdf = new FPDF('P','mm', 'A4');
-    $pdf->AddPage();
-    $pdf->SetFont('Arial','B',16); 
-	$pdf->Cell(0, 16, 'CERTIFICATE', '0', '1', 'C', false);
-    foreach($certificate as $rows):
-	$pdf->Cell(0, 16, $rows['name'], false);
-    $pdf->SetTitle("Certificate of {$rows['name']} ", 0);
-    $pdf->Ln(3);
-    $pdf->Line(5,40,205,40);
-    endforeach;
+$pdf = new FPDF('P', 'mm', array(210, 297));
+$certificateid = (isset($_GET['certificateid']) ? ($_GET['certificateid']) : "Nothing found") ;
+// $posts = $db->select("SELECT * FROM student WHERE nim = 12926861659608 LIMIT 1");
+$posts = $db->select("SELECT student.nim, student.name 
+                        AS sname, student.lastname AS slastname,
+                         certificate.certificate_name,
+                         courses.id AS courseid,
+                         courses.title AS coursetitle,
+                         event.id,
+                         event.title AS eventTitle,
+                         event.speaker 
+                         FROM student INNER JOIN certificate ON 
+                         student.nim=certificate.student_id
+                         INNER  JOIN courses ON certificate.courses_id=courses.id
+                         INNER  JOIN event ON certificate.event_id=event.id
+                         WHERE certificate.id = ".$certificateid." LIMIT 1");
+$pdf->addPage("P", "A4");
+$pdf->GetPageWidth();  // Width of Current Page
+$pdf->GetPageHeight(); // Height of Current Page
+$pdf->SetFont('Arial', 'B', 16);
+if (mysqli_num_rows($posts) <= 0) {
+    echo '<div class="alert alert-primary" role="alert"><h1>NO student found</h1></div>';
+} else {
 
-    $pdf->Ln(5);
-    $pdf->Rect(5, 5, 200, 287, 'D'); //For A4
-
-    $row = $certificate->fetch_assoc();
-    
-   
-     
-    $pdf->Output();
-
+    while ($row = mysqli_fetch_assoc($posts)) {
+        $_SESSION['sname'] = $row['sname'];
+        $pdf->Text(30, 120, $row['coursetitle']);
+        $pdf->Line(10, 250, 80, 250);
+        $pdf->Text(20, 260, $row['sname']);
+        $pdf->Line(120, 250, 200, 250);
+        $pdf->Text(150, 260, $row['speaker']);
+        $pdf->Ln();
+        $pdf->Output();
+    }
+    $posts->free();
+}

@@ -1,14 +1,10 @@
 <?php require_once __DIR__ . '/admin_ini/header.php'; ?>
-
-<!-- header end -->
 <?php require_once __DIR__ . '/admin_navbar/admin_navbar.php'; ?>
-
 <!-- Left sidebar menu start -->
 <div class="ttr-sidebar">
 	<div class="ttr-sidebar-wrapper content-scroll">
 		<div class="ttr-sidebar-logo">
 			<a href="#"><img alt="" src="assets/images/logo.png" width="122" height="27"></a>
-			
 			<div class="ttr-sidebar-toggle-button">
 				<i class="ti-arrow-left"></i>
 			</div>
@@ -20,12 +16,6 @@
 					<a href="main.php" class="ttr-material-button">
 						<span class="ttr-icon"><i class="ti-home"></i></span>
 						<span class="ttr-label">Dashborad</span>
-					</a>
-				</li>
-				<li>
-					<a href="ceritificate.php" class="ttr-material-button">
-						<span class="ttr-icon"><i class="ti-home"></i></span>
-						<span class="ttr-label">Certificate</span>
 					</a>
 				</li>
 				<li>
@@ -101,7 +91,7 @@
 <main class="ttr-wrapper">
 	<div class="container-fluid">
 		<div class="db-breadcrumb">
-			<h4 class="breadcrumb-title">Dashboard</h4>
+			<h4 class="breadcrumb-title">Certificate</h4>
 			<ul class="db-breadcrumb-list">
 				<li><a href="#"><i class="fa fa-home"></i>Home</a></li>
 				<li>Dashboard</li>
@@ -109,6 +99,11 @@
 			</ul>
 		</div>
 		<!-- Card -->
+		<div class="row">
+		<div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12">
+			<a href="make_certificate.php" target="_blank" class="btn btn-primary mb-3">New Certificate</a>
+		</div>
+		</div>
 		<div class="row">
 			<div class="col-md-6 col-lg-3 col-xl-3 col-sm-6 col-12">
 				<div class="widget-card widget-bg1">
@@ -241,28 +236,33 @@
 			<div class="col-lg-8 m-b30">
 				<div class="widget-box">
 					<div class="wc-title">
-						<h4>Your Profile Views</h4>
+						<h4>List Of Certificates</h4>
 					</div>
 					<div class="widget-inner" id="table__scroll">
 						<table class="table small">
 							<thead>
 								<tr>
 									<th scope="col">Name</th>
-									<th scope="col">Last Name</th>
-									<th scope="col">Address</th>
-									<th scope="col">Email</th>
-									<th scope="col">Country</th>
+									<th scope="col">Description</th>
+									<th scope="col">Student ID</th>
+									<th scope="col">Event ID</th>
+									<th scope="col">Course ID</th>
+									<th scope="col">Generate</th>
+									
 								</tr>
 							</thead>
 							<tbody>
-								<?php $posts = $db->query("SELECT name, lastname, address, email, country FROM student"); ?>
+								<?php $posts = $db->query("SELECT id, certificate_name,certificate_desc,student_id,event_id,courses_id FROM certificate ORDER BY certificate_name "); ?>
 								<?php foreach ($posts as $item) : ?>
 									<tr>
-										<td><?php echo $item['name']; ?></td>
-										<td><?php echo $item['lastname']; ?></td>
-										<td><?php echo $item['address']; ?></td>
-										<td><?php echo $item['email']; ?></td>
-										<td><?php echo $item['country']; ?></td>
+										<td><?php echo $item['certificate_name']; ?></td>
+										<td><?php echo $item['certificate_desc']; ?></td>
+										<td><?php echo $item['student_id']; ?></td>
+										<td><?php echo $item['event_id']; ?></td>
+										<td><?php echo $item['courses_id']; ?></td>
+										<td>
+										<a href="../../app/certificate/certificate.php?certificateid=<?php echo $item['id']; ?>" target="_blank">Make</a>
+										</td>
 									</tr>
 								<?php endforeach; ?>
 							</tbody>
@@ -350,5 +350,5 @@
 		</div>
 	</div>
 </main>
-<div class="ttr-overlay"></div>
+
 <?php require_once __DIR__ . '/admin_ini/footer.php'; ?>
