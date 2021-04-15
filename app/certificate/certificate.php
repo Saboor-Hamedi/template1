@@ -32,7 +32,9 @@ if (mysqli_num_rows($posts) <= 0) {
 
     while ($row = mysqli_fetch_assoc($posts)) {
         
+        $pdf->SetFont('Arial','U');
         $pdf->Cell(0,-90,  strtoupper($_SESSION['sname']) , 0,true,'C');
+        $pdf->SetFont('Arial', 'B', 16);
         $pdf->Text(30, 120, $row['coursetitle']);
         $pdf->Line(10, 250, 80, 250);
         $pdf->Text(20, 260, $row['sname']);
