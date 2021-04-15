@@ -353,8 +353,7 @@ function AddPage($orientation='', $size='', $rotation=0)
 function Header()
 {
 	// Logo
-	require_once __DIR__ .'/../certificate/certificate.php';
-	session_start();
+	// require_once __DIR__ .'/../certificate/certificate.php';
 	$this->Rect(5, 5, 200, 287, 'L');
 	$this->Image('logo.jpg',10,30,30);
 	// Arial bold 15
@@ -369,7 +368,6 @@ function Header()
 	// 
 
 	$this->SetFont('Times','B',18);
-	$this->Cell(0,10,  strtoupper($_SESSION['sname']) , 0,true,'C');
 	$this->Ln(50);
 }
 	var $B=0;

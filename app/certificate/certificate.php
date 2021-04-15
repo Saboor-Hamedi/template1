@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../FPDF/fpdf.php';
-
+session_start();
 use App\database\Database;
 
 $db = Database::getInstance();
@@ -31,7 +31,8 @@ if (mysqli_num_rows($posts) <= 0) {
 } else {
 
     while ($row = mysqli_fetch_assoc($posts)) {
-        $_SESSION['sname'] = $row['sname'];
+        
+        $pdf->Cell(0,-90,  strtoupper($_SESSION['sname']) , 0,true,'C');
         $pdf->Text(30, 120, $row['coursetitle']);
         $pdf->Line(10, 250, 80, 250);
         $pdf->Text(20, 260, $row['sname']);

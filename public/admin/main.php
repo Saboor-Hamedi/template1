@@ -105,7 +105,6 @@
 			<ul class="db-breadcrumb-list">
 				<li><a href="#"><i class="fa fa-home"></i>Home</a></li>
 				<li>Dashboard</li>
-				<li><a href="../../app/certificate/certificate.php"><i class="fa fa-home"></i>Certificate</a></li>
 			</ul>
 		</div>
 		<!-- Card -->
