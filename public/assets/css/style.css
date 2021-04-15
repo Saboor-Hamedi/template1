@@ -249,6 +249,9 @@
 .header-lang-bx .btn:hover{
 	color:#000;
 }
+select, option:hover{
+color:black;
+}
 .header-lang-bx.bootstrap-select.btn-group .dropdown-toggle .caret{
 	right:0;
 	top:5px;
@@ -1972,7 +1975,6 @@ button.back-to-top {
 	display: inline-block;
 	font-size: 13px;
 	text-transform: capitalize;
-	font-family: ;
 	margin-right: 5px;
 }
 .media-post li a{

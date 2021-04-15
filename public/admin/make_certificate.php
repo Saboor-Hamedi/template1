@@ -106,43 +106,53 @@
 		<!-- content -->
 		<div class="row justify-content-center">
 			<div class="col-md-7 col-lg-8  ">
-				<h4 class="mb-3">Billing address</h4>
-				<form class="needs-validation" novalidate>
+				<h4 class="mb-3">New Certificate</h4>
+				<div class="alert alert-info" role="alert" id="certificate_message"></div>
+				<form class="needs-validation" method="POST">
 					<div class="row g-3">
-						<div class="col-sm-6">
-							<label for="firstName" class="form-label">First name</label>
-							<input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-							<div class="invalid-feedback">
-								Valid first name is required.
-							</div>
+						<div class="col-sm-12 mt-2">
+							<input type="text" oninput="process(this)" class="form-control" id="certificate__name" name="certificate__name" placeholder="Certificate Name">
+							<small id="certificate__nameError" class="text-danger"></small>
 						</div>
-						<div class="col-sm-6">
-							<label for="lastName" class="form-label">Last name</label>
-							<input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-							<div class="invalid-feedback">
-								Valid last name is required.
-							</div>
+						<div class="col-12 mt-2">
+							<textarea class="form-control" name="certificate__description" id="certificate__description" cols="30" rows="10" placeholder="Write Brief Description"></textarea>
+							<small id="certificate__descriptionError" class="text-danger"></small>
 						</div>
-						<div class="col-12">
-							<label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-							<input type="email" class="form-control" id="email" placeholder="you@example.com">
-							<div class="invalid-feedback">
-								Please enter a valid email address for shipping updates.
-							</div>
+						<!-- student or participant -->
+						<div class="col-12 mb-2 mt-2">
+							<select name="certificate__studentid" id="certificate__studentid" class="form-control">
+								<option value="0"  style="display: none" selected>Select A Participant</option>
+								<?php $post = $db->query("SELECT nim, name FROM student"); ?>
+								<?php foreach ($post as $student) : ?>
+									<option value="<?php echo $student['nim']; ?>"><?php echo $student['name']; ?></option>
+								<?php endforeach; ?>
+							</select>
+								<small id="certificate__studentidError" class="text-danger"></small>
 						</div>
-						<div class="col-12">
-							<label for="address" class="form-label">Address</label>
-							<input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
-							<div class="invalid-feedback">
-								Please enter your shipping address.
-							</div>
+						<!-- Event Speaker of Teacher -->
+						<div class="col-12 mb-2">
+							<select name="certificate__event" id="certificate__event" class="form-control">
+								<option value="0" style="display:none" selected>Select A Speaker</option>
+								<?php $post = $db->query("SELECT id, title FROM event"); ?>
+								<?php foreach ($post as $teacher) : ?>
+									<option value="<?php echo $teacher['id']; ?>"><?php echo $teacher['title']; ?></option>
+								<?php endforeach; ?>
+							</select>
+							<small id="certificate__eventError" class="text-danger"></small>
 						</div>
-						<div class="col-12">
-							<label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
-							<input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+						<!-- Course or subjects -->
+						<div class="col-12 mb-2">
+							<select name="certificate__coursesid" id="certificate__coursesid" class="form-control">
+								<option value="0" style="display:none" selected>Select A Course</option>
+								<?php $post = $db->query("SELECT id, title FROM courses"); ?>
+								<?php foreach ($post as $course) : ?>
+									<option value="<?php echo $course['id']; ?>"><?php echo $course['title']; ?></option>
+								<?php endforeach; ?>
+							</select>
+							<small id="certificate__coursesidError" class="text-danger"></small>
 						</div>
 					</div>
-					<button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+					<button class="w-100 btn btn-primary btn-lg" id="make__certificate__Btb">Submit</button>
 				</form>
 			</div>
 		</div>

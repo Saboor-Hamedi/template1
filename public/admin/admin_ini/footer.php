@@ -23,6 +23,7 @@
 <!-- link ajax for inserting data, course, event -->
 <script src="assets/ajax/course.js"></script>
 <script src="assets/ajax/event.js"></script>
+<script src="assets/ajax/certificate.js"></script>
 <!-- course modal -->
 <?php require_once __DIR__ . '/../modals/course/make_course.php'; ?>
 <?php require_once __DIR__ . '/../modals/course/edit_course.php'; ?>
