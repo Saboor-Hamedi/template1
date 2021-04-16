@@ -40,7 +40,14 @@ if (mysqli_num_rows($posts) <= 0) {
         $pdf->Cell(0, -90,  strtoupper($row['sname']), 0, true, 'C');
         $pdf->SetFont('Courier', 'B', 12);
         
-        $pdf->Text(30, 120, strtoupper($row['coursetitle']));
+        // $pdf->Text(30, 120, strtoupper($row['coursetitle']));
+        // description
+        $pdf->WriteHTML('<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> 
+   <p align="center">Congratulations on completing the  requirements for your <br/>getting this certificate.</p>');
+        $pdf->WriteHTML('
+    <p align="center">   Doing all the word successfully
+       </p>');
+
         $pdf->Line(10, 250, 80, 250);
         if(strlen($row['sname'])<=10){
             $pdf->Text(30, 260, strtoupper($row['sname']));
