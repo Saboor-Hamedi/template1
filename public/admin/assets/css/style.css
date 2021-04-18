@@ -188,11 +188,11 @@ textarea{
 }
 
 .header-lang-bx .flag.flag-uk:after {
-    background-image: url(../../../error-404.html);
+  
 }
 
 .header-lang-bx .flag.flag-us:after {
-    background-image: url(../../../error-404.html);
+   
 }
 
 @media only screen and (max-width: 767px) {

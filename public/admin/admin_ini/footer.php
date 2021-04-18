@@ -25,6 +25,7 @@
 <script src="assets/ajax/event.js"></script>
 <script src="assets/ajax/certificate.js"></script>
 <!-- course modal -->
+
 <?php require_once __DIR__ . '/../modals/course/make_course.php'; ?>
 <?php require_once __DIR__ . '/../modals/course/edit_course.php'; ?>
 <!-- event modal -->
@@ -34,24 +35,40 @@
 <!-- timepicker script -->
 <script type="text/javascript">
   $(function() {
-    $('#startTime').datetimepicker({
-    });
+    $('#startTime').datetimepicker({});
   });
   $(function() {
-    $('#endTime').datetimepicker({
-    });
+    $('#endTime').datetimepicker({});
   });
   $(function() {
-    $('#event_update_start_time').datetimepicker({
-    });
+    $('#event_update_start_time').datetimepicker({});
   });
   $(function() {
-    $('#event_update_end_time').datetimepicker({
-    });
+    $('#event_update_end_time').datetimepicker({});
   });
-
 </script>
-
+<!-- image -->
+<script>
+  $('#course__thumbnail').change(function() {
+    var file = this.files[0];
+    var fileType = file.type;
+    var match = ['image/jpeg', 'image/png', 'image/jpg'];
+    if (!((fileType == match[0]) || (fileType == match[1]) || (fileType == match[2]) || (fileType == match[3]) || (fileType == match[4]) || (fileType == match[5]))) {
+      $('#course__thumbnailError').text("format: jpeg, png, jpg");
+      $("#course__thumbnail").val('');
+      return false;
+    } else {
+      $('#course__thumbnailError').text("");
+    }
+    
+  });
+  // $('input[type="file"]').change(function(e) {
+  //     e.preventDefault();
+  //     var fileName = e.target.files[0].name;
+  //     $('.custom-file-label').html(fileName);
+  //   });
+</script>
+<!-- end -->
 <script>
   $(document).ready(function() {
     $('#calendar').fullCalendar({

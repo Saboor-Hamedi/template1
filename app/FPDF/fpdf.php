@@ -353,12 +353,14 @@ function AddPage($orientation='', $size='', $rotation=0)
 function Header()
 {
 	// Logo
-	// require_once __DIR__ .'/../certificate/certificate.php';
-	$this->Rect(5, 5, 200, 287, 'L');
-	$this->Image('logo.jpg',10,30,30);
-	// Arial bold 15
-
+	 $this->SetTextColor(0,0,0);//text color
+ 	$this->Image('frame.jpg', 0, 0, 210 , 300); // add frame on the page
+	 $this->SetFillColor(255,255, 255);//change background
+	$this->Rect(5, 5, 200, 287, 'F');
+	
+	
 	// this is the title of certificate
+	$this->Image('logo.jpg',10,30,30);// logo
 	$this->SetFont('Times','B',20);
 	$this->Cell(0,40,'Certificate of attendance', 0, true, 'C');
 	// 
@@ -530,6 +532,8 @@ function Header()
 	}
 
 	// end
+
+	
 function Footer()
 {
 	

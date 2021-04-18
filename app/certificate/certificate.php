@@ -9,7 +9,6 @@ $db = Database::getInstance();
 $db_connection = $db->getConnection();
 $pdf = new FPDF('P', 'mm', array(210, 297));
 $certificateid = (isset($_GET['certificateid']) ? ($_GET['certificateid']) : null);
-// $posts = $db->select("SELECT * FROM student WHERE nim = 12926861659608 LIMIT 1");
 $posts = $db->select("SELECT student.nim, student.name 
     AS sname, student.lastname AS slastname,
      certificate.certificate_name,

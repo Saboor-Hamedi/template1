@@ -130,7 +130,7 @@
                         <div class="widget-inner">
                             <div class="card-courses-list admin-courses">
                                 <div class="card-courses-media">
-                                    <img src="assets/images/courses/pic1.jpg" alt="" />
+                                    <img src="<?php echo $item['thubnial']; ?>" alt="" />
                                 </div>
                                 <div class="card-courses-full-dec">
                                     <div class="card-courses-title">

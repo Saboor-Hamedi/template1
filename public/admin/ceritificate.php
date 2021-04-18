@@ -248,7 +248,6 @@
 									<th scope="col">Event ID</th>
 									<th scope="col">Course ID</th>
 									<th scope="col">Generate</th>
-									
 								</tr>
 							</thead>
 							<tbody>
