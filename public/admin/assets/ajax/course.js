@@ -43,31 +43,38 @@ $(document).ready(function () {
             $('#course__thumbnailError').text('Select a File');
             return false;
         }
-       
-        $.ajax({
-            url: '/app/course/insert.php',
-            method: 'POST',
-            data: {
-                postuserid: postuserid,
-                posttitle: posttitle,
-                postprice: postprice,
-                postdescription: postdescription,
-                course__thumbnail: course__thumbnail,
-            },
-            beforeSend: function () {
-                $('#make__post__btn').attr("disabled", "disabled");
-                $('#make_course_mdal').css("opacity", ".5");
-            },
-            success: function (data) {
-                $('#course_message').html(data);
-                $("#make_course_mdal").trigger("reset");
-                // setTimeout(() => {
-                //     window.location.reload();
-                // }, 3000);
-                $('#make_course_mdal').css("opacity", "");
-                $("#make__post__btn").removeAttr("disabled");
-            },
-        });
+        var fd = new FormData();
+        var files = $('#course__thumbnail')[0].files;
+        if (files.length > 0) {
+            fd.append('file', files[0]);
+            $.ajax({
+                url: '/app/course/insert.php',
+                method: 'POST',
+                data: fd,
+                contentType: false,
+                processData: false,
+                // data: {
+                //     postuserid: postuserid,
+                //     posttitle: posttitle,
+                //     postprice: postprice,
+                //     postdescription: postdescription,
+                //     course__thumbnail: course__thumbnail,
+                // },
+                // beforeSend: function () {
+                //     $('#make__post__btn').attr("disabled", "disabled");
+                //     $('#make_course_mdal').css("opacity", ".5");
+                // },
+                success: function (data) {
+                    $('#course_message').html(data);
+                    $("#make_course_mdal").trigger("reset");
+                    // setTimeout(() => {
+                    //     window.location.reload();
+                    // }, 3000);
+                    // $('#make_course_mdal').css("opacity", "");
+                    // $("#make__post__btn").removeAttr("disabled");
+                },
+            });
+        }
 
     });
 

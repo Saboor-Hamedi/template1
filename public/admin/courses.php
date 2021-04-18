@@ -1,5 +1,4 @@
 <?php require_once __DIR__ . '/admin_ini/header.php'; ?>
-
 <!-- header end -->
 <?php require_once __DIR__ . '/admin_navbar/admin_navbar.php'; ?>
 <!-- header end -->
@@ -108,16 +107,15 @@
         </div>
         <div class="row">
             <!-- Your Profile Views Chart -->
-
             <div class="col-lg-12 m-b30">
-
-
                 <div class="widget-box">
                     <div class="wc-title">
-
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#courseMakeModal">
+                        <!-- <a href="course_form.php" class="btn btn-primary" data-toggle="modal" data-target="#courseMakeModal">
                            Add New Course
-                        </button>
+                        </a> -->
+                          <a href="/public/admin/courses_form.php" class="btn btn-primary" target="_blank" >
+                           Add New Course
+                        </a>
                     </div>
                     <div class="wc-title">
                         <h4>All Courses</h4>

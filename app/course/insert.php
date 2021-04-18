@@ -7,8 +7,9 @@ $postuserid = "";
 $posttitle = "";
 $postprice = "";
 $postdescription = "";
+$message = "";
 // isset($_POST['submitCourse'])
-if (!empty($_POST)) {
+if (isset($_POST['makeCourseBtn'])) {
     $postuserid = validation(mysqli_real_escape_string($db->getConnection(), $_POST['postuserid']));
     $posttitle = validation(mysqli_real_escape_string($db->getConnection(), $_POST['posttitle']));
     $postprice = validation(mysqli_real_escape_string($db->getConnection(), $_POST['postprice']));
@@ -41,12 +42,12 @@ if (!empty($_POST)) {
                                  , '" . $postdescription . "'
                                  , '" . $fileDes . "')";
                          if ($db->insert($sql) === TRUE) {
-                             echo 'New Post Uploaded';
+                             $message = 'New Post Uploaded';
                          } else {
-                             echo 'Something went wrong';
+                            $message ='Something went wrong';
                          }
                      } catch (\Throwable $th) {
-                         echo 'Something went wrong';
+                        $message = 'Something went wrong';
                      }
                 }else{
                     echo "File did not upload";

@@ -29,7 +29,6 @@
 <?php require_once __DIR__ . '/../modals/course/make_course.php'; ?>
 <?php require_once __DIR__ . '/../modals/course/edit_course.php'; ?>
 <!-- event modal -->
-
 <?php require_once  __DIR__ . '/../modals/event/make.php'; ?>
 <?php require_once  __DIR__ . '/../modals/event/edit.php'; ?>
 <!-- timepicker script -->
