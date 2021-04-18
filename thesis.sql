@@ -144,7 +144,7 @@ CREATE TABLE `certificate` (
   CONSTRAINT `certificate_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`nim`) ON DELETE CASCADE,
   CONSTRAINT `certificate_ibfk_2` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`) ON DELETE CASCADE,
   CONSTRAINT `certificate_ibfk_3` FOREIGN KEY (`courses_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -153,7 +153,7 @@ CREATE TABLE `certificate` (
 
 LOCK TABLES `certificate` WRITE;
 /*!40000 ALTER TABLE `certificate` DISABLE KEYS */;
-INSERT INTO `certificate` VALUES (1,'English Certificate','This is an English Certificate',12926861659608,7,2),(2,'English Certificate','This is an English Certificate',18793286422779,16,8);
+INSERT INTO `certificate` VALUES (5,'Bruno Abbott','Ut fuga Qui duis vo',65384502317782,19,97);
 /*!40000 ALTER TABLE `certificate` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -239,10 +239,11 @@ CREATE TABLE `courses` (
   `price` float NOT NULL,
   `description` text DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `thubnial` blob DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `courses_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `login` (`admin_nim`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -251,7 +252,7 @@ CREATE TABLE `courses` (
 
 LOCK TABLES `courses` WRITE;
 /*!40000 ALTER TABLE `courses` DISABLE KEYS */;
-INSERT INTO `courses` VALUES (2,11160930000120,'asdf',23,'asdfasdf','2021-03-30 13:59:56'),(3,11160930000120,'asdfasdf',41,'asdfasdfasdf','2021-03-30 14:00:06'),(4,11160930000120,'Java',35,'asdfasdfasdf','2021-03-30 14:00:18'),(5,11160930000120,'asdfasdf',34,'asdfgasdfasdf','2021-03-30 14:00:31'),(6,11160930000120,'Et voluptatem quis e',639,'Qui tempor laborum n','2021-04-12 07:03:02'),(7,11160930000120,'Aliquam voluptatem',576,'Qui rerum irure aut','2021-04-12 07:03:26'),(8,11160930000120,'Voluptas fugit aut new',831,'Laudantium quo a re','2021-04-12 08:32:31');
+INSERT INTO `courses` VALUES (97,11160930000120,'Adipisci rerum maior',399,'Et in non velit inci','2021-04-18 13:55:19','../../public/courseThubnail/Adipisci rerum maior_1618754119.jpg'),(98,11160930000120,'Sint a voluptatem ut',46,'Officia deserunt omn','2021-04-18 13:58:37','../../public/courseThubnail/Sint a voluptatem ut_1618754317.jpg');
 /*!40000 ALTER TABLE `courses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -830,4 +831,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-15  6:53:56
+-- Dump completed on 2021-04-18  9:03:49
