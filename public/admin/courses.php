@@ -173,7 +173,7 @@
                                                 word-wrap: break-word;
                                                 hyphens: auto;">
                                             <h6 class="m-b10">Course Description</h6>
-                                            <p><?php echo $item['description']; ?></p>
+                                            <p><?php echo substr($item['description'], 0, 50); ?></p>
                                         </div>
                                        <div class="col-md-12">
                                         <a href="#" class="btn red outline radius-xl btn-sm course__delete__Btn" id="<?php echo $item['id']; ?>">Delete</a>

@@ -1,13 +1,17 @@
 <?php require_once __DIR__ . '/admin_ini/header.php'; ?>
 <?php
-
 use App\login\Login;
-
 $login = new Login();
 if (isset($_POST['loginBtn'])) {
     if (!empty($_POST['userid'])) {
         $loginResult =  $login->loginUser();
+        exit;
     }
+        if (!empty($_POST['userid'])) {
+            $loginResult =  $login->loginUser();
+            exit;
+        }
+  
 }
 
 ?>
