@@ -30,40 +30,24 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-8 col-md-8">
-                        <div class="support-button float-right d-none d-md-block">
-                            <div class="support float-left">
-                                <div class="icon">
-                                    <img src="../public/images/all-icon/support.png" alt="icon">
-                                </div>
-                                <div class="cont">
-                                    <p>Need Help? call us free</p>
-                                    <span>321 325 5678</span>
-                                </div>
-                            </div>
-                            <div class="button float-left">
-                                <a href="#" class="main-btn">Apply Now</a>
-                            </div>
-                        </div>
-                    </div>
                 </div> <!-- row -->
             </div> <!-- container -->
         </div> <!-- header logo support -->
         
         <div class="navigation">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 col-md-10 col-sm-9 col-8">
-                        <nav class="navbar navbar-expand-lg">
+                <div class="row ">
+                    <div class="col-lg-12 col-md-10 col-sm-9 col-8">
+                        <nav class="navbar navbar-expand-lg ">
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
 
-                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                                <ul class="navbar-nav mr-auto">
-                                    <li class="nav-item">
+                            <div class="collapse navbar-collapse sub-menu-bar " id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto ">
+                                    <li class="nav-item ">
                                         <a class="active" href="/">Home</a>
                                         <ul class="sub-menu">
                                             <li><a class="active" href="index-1.php">Home 01</a></li>
@@ -76,11 +60,10 @@
                                     </li>
                                     <li class="nav-item">
                                         <a href="courses.php">Courses</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="courses.php">Courses</a></li>
-                                            <li><a href="courses-singel.php">Course Singel</a></li>
-                                        </ul>
                                     </li>
+                                    <!-- <li class="nav-item">
+                                        <a href="check_event.php"></a>
+                                    </li> -->
                                     <li class="nav-item">
                                         <a href="events.php">Events</a>
                                     </li>
@@ -104,14 +87,14 @@
                             </div>
                         </nav> <!-- nav -->
                     </div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-4">
+                    <!-- <div class="col-lg-2 col-md-2 col-sm-3 col-4">
                         <div class="right-icon text-right">
                             <ul>
                                 <li><a href="#" id="search"><i class="fa fa-search"></i></a></li>
                                 <li><a href="#"><i class="fa fa-shopping-bag"></i><span>0</span></a></li>
                             </ul>
-                        </div> <!-- right icon -->
-                    </div>
+                        </div> 
+                    </div> -->
                 </div> <!-- row -->
             </div> <!-- container -->
         </div>

@@ -187,3 +187,6 @@ function isNumber(evt) {
     }
     return true;
 }
+
+
+// send request from user to course for entrollment

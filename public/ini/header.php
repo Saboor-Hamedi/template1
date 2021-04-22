@@ -1,8 +1,8 @@
     <?php
         use App\database\Database;
         require_once __DIR__ . '/../../vendor/autoload.php';
-        $db_connection = Database::getInstance();
-        $db = $db_connection->getConnection();
+        $db = Database::getInstance();
+        $db->getConnection();
     ?>
     <!doctype html>
     <html lang="en">

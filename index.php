@@ -4,13 +4,14 @@
     <!--====== Header and PreHeader with title ======-->
     <?php require_once __DIR__ . '../public/navbar/navbar.php'; ?>
     <?php 
-       $result = $db_connection->get_by_id('student', 0);
+       $result = $db->get_by_id('student', 0);
        if(is_array($result) || is_object($result)){
            foreach($result as $items): 
             echo $items['name'];
            endforeach;
        }
     ?>
+  
     <div class="search-box">
         <div class="serach-form">
             <div class="closebtn">
@@ -293,7 +294,7 @@
                                 <li><i class="fa fa-star"></i></li>
                             </ul>
                             <span>(20 Reviws)</span>
-                            <a href="courses-singel.php"><h4>Learn basis javascirpt from start for beginner</h4></a>
+                            <a href="check_event.php"><h4>Learn basis javascirpt from start for beginner</h4></a>
                             <div class="course-teacher">
                                 <div class="thum">
                                     <a href="#"><img src="../public/images/course/teacher/t-1.jpg" alt="teacher"></a>
@@ -330,7 +331,7 @@
                                 <li><i class="fa fa-star"></i></li>
                             </ul>
                             <span>(20 Reviws)</span>
-                            <a href="courses-singel.php"><h4>Learn basis javascirpt from start for beginner</h4></a>
+                            <a href="check_event.php"><h4>Learn basis javascirpt from start for beginner</h4></a>
                             <div class="course-teacher">
                                 <div class="thum">
                                     <a href="#"><img src="../public/images/course/teacher/t-2.jpg" alt="teacher"></a>
@@ -367,7 +368,7 @@
                                 <li><i class="fa fa-star"></i></li>
                             </ul>
                             <span>(20 Reviws)</span>
-                            <a href="courses-singel.php"><h4>Learn basis javascirpt from start for beginner</h4></a>
+                            <a href="check_event.php"><h4>Learn basis javascirpt from start for beginner</h4></a>
                             <div class="course-teacher">
                                 <div class="thum">
                                     <a href="#"><img src="../public/images/course/teacher/t-3.jpg" alt="teacher"></a>
@@ -404,7 +405,7 @@
                                 <li><i class="fa fa-star"></i></li>
                             </ul>
                             <span>(20 Reviws)</span>
-                            <a href="courses-singel.php"><h4>Learn basis javascirpt from start for beginner</h4></a>
+                            <a href="check_event.php"><h4>Learn basis javascirpt from start for beginner</h4></a>
                             <div class="course-teacher">
                                 <div class="thum">
                                     <a href="#"><img src="../public/images/course/teacher/t-4.jpg" alt="teacher"></a>
@@ -441,7 +442,7 @@
                                 <li><i class="fa fa-star"></i></li>
                             </ul>
                             <span>(20 Reviws)</span>
-                            <a href="courses-singel.php"><h4>Learn basis javascirpt from start for beginner</h4></a>
+                            <a href="check_event.php"><h4>Learn basis javascirpt from start for beginner</h4></a>
                             <div class="course-teacher">
                                 <div class="thum">
                                     <a href="#"><img src="../public/images/course/teacher/t-5.jpg" alt="teacher"></a>

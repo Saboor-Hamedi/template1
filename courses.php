@@ -92,10 +92,11 @@
                                 <div class="singel-course mt-30">
                                     <div class="thum">
                                         <div class="image">
-                                            <img src="../public/images/course/cu-1.jpg" alt="Course">
+                                            <!-- ../public/images/course/cu-1.jpg -->
+                                            <img src="<?php echo $item['thubnial']; ?>" height="200px;" alt="Course">
                                         </div>
                                         <div class="price">
-                                            <span>Free</span>
+                                            <a href="check_event.php?checkout=<?php echo $item['id']; ?>"> <span>Check</span></a>
                                         </div>
                                     </div>
                                     <div class="cont">
@@ -108,26 +109,22 @@
                                         </ul>
                                         <div>(20 Reviws)</div>
                                         <div>
-                                            <a href="courses-singel.php">
+                                            <a href="check_event.php">
                                                 <h4><?php echo $item['title']; ?></h4>
                                             </a>
                                         </div>
-                                        <div class="course-teacher">
-                                            <div class="thum">
-                                                <a href="#"><img src="../public/images/course/teacher/t-1.jpg" alt="teacher"></a>
-                                            </div>
-                                            <div class="name">
-                                                <a href="#">
-                                                    <h6>Mark anthem</h6>
-                                                </a>
-                                            </div>
-                                            <div class="admin">
-                                                <ul>
-                                                    <li><a href="#"><i class="fa fa-user"></i><span>31</span></a></li>
-                                                    <li><a href="#"><i class="fa fa-heart"></i><span>10</span></a></li>
-                                                </ul>
-                                            </div>
+
+                                        <div class="card-header mt-1">
+                                            <?php
+                                            if (isset($_SESSION["guest_login_id"])) {
+                                                $guest_login_id = $_SESSION["guest_login_id"];
+                                                session_write_close();
+                                            ?>
+                                            <?php }else{ ?> 
+                                                <a href="/public/admin/login.php" class="btn btn-primary btn-sm">Enroll Now</a>
+                                            <?php } ?>
                                         </div>
+
                                     </div>
                                 </div>
                                 <!-- singel course -->
@@ -155,15 +152,16 @@
                         if ($total_record) {
                             $total_page = ceil($total_record / $number_per_page);
                             if ($page > 1) {
-                             ?>
-                                <li class='page-item'><a href='courses.php?page=<?php echo ($page - 1)?>'><i class='fa fa-angle-left'></i></a></li>
+                        ?>
+                                <li class='page-item'><a href='courses.php?page=<?php echo ($page - 1) ?>'><i class='fa fa-angle-left'></i></a></li>
                             <?php }
                             for ($i = 1; $i <= $total_page; $i++) { ?>
                                 <li class="page-item"><a href="courses.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
                                 <?php
-                                if ($i > $page) {?>
-                                   <li class='page-item'><a href='courses.php?page=<?php echo ($page + 1)?>'><i class='fa fa-angle-right'></i></a></li>
-                        <?php }}
+                                if ($i > $page) { ?>
+                                    <li class='page-item'><a href='courses.php?page=<?php echo ($page + 1) ?>'><i class='fa fa-angle-right'></i></a></li>
+                        <?php }
+                            }
                         } ?>
                     </ul>
                 </nav>

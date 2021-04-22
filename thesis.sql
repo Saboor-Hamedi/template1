@@ -243,7 +243,7 @@ CREATE TABLE `courses` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `courses_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `login` (`admin_nim`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -252,7 +252,7 @@ CREATE TABLE `courses` (
 
 LOCK TABLES `courses` WRITE;
 /*!40000 ALTER TABLE `courses` DISABLE KEYS */;
-INSERT INTO `courses` VALUES (97,11160930000120,'Adipisci rerum maior',399,'Et in non velit inci','2021-04-18 13:55:19','../../public/courseThubnail/Adipisci rerum maior_1618754119.jpg'),(98,11160930000120,'Sint a voluptatem ut',46,'Officia deserunt omn','2021-04-18 13:58:37','../../public/courseThubnail/Sint a voluptatem ut_1618754317.jpg'),(100,11160930000120,'Consectetur quisqua',10,'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n\r\n','2021-04-19 14:39:07','../../public/courseThubnail/Consectetur quisqua_1618843147.png'),(101,11160930000120,'Voluptatem Tempora',15,'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\r\n\r\n','2021-04-19 14:39:28','../../public/courseThubnail/Voluptatem Tempora_1618843168.jpg');
+INSERT INTO `courses` VALUES (97,11160930000120,'Adipisci rerum maior',399,'Et in non velit inci','2021-04-18 13:55:19','../../public/courseThubnail/Adipisci rerum maior_1618754119.jpg'),(98,11160930000120,'Sint a voluptatem ut',46,'Officia deserunt omn','2021-04-18 13:58:37','../../public/courseThubnail/Sint a voluptatem ut_1618754317.jpg'),(100,11160930000120,'Consectetur quisqua',10,'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n\r\n','2021-04-19 14:39:07','../../public/courseThubnail/Consectetur quisqua_1618843147.png'),(101,11160930000120,'Voluptatem Tempora',15,'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\r\n\r\n','2021-04-19 14:39:28','../../public/courseThubnail/Voluptatem Tempora_1618843168.jpg'),(102,11160930000120,'Nesciunt sint magna',667,'Esse molestiae illo ','2021-04-22 02:04:01','../../public/courseThubnail/Nesciunt sint magna_1619057041.jpg'),(103,11160930000120,'Labore dolorem disti',64,'Sequi aut libero vol','2021-04-22 02:04:35','../../public/courseThubnail/Labore dolorem disti_1619057074.jpg'),(104,11160930000120,'Corrupti ea qui qui',579,'Labore perspiciatis','2021-04-22 02:04:42','../../public/courseThubnail/Corrupti ea qui qui_1619057081.png'),(105,11160930000120,'Est laboris facilis',827,'Tempore illum offi','2021-04-22 02:04:49','../../public/courseThubnail/Est laboris facilis_1619057089.jpg'),(106,11160930000120,'Voluptatem eum do o',1,'Omnis quo dicta ad v','2021-04-22 02:04:57','../../public/courseThubnail/Voluptatem eum do o_1619057097.jpg');
 /*!40000 ALTER TABLE `courses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -278,6 +278,29 @@ LOCK TABLES `eletter` WRITE;
 /*!40000 ALTER TABLE `eletter` DISABLE KEYS */;
 INSERT INTO `eletter` VALUES (1,'Scholarship Recommendation Letter'),(2,'PKL Letter');
 /*!40000 ALTER TABLE `eletter` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `enroll`
+--
+
+DROP TABLE IF EXISTS `enroll`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `enroll` (
+  `enrollid` int(10) unsigned NOT NULL,
+  `course_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`enrollid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `enroll`
+--
+
+LOCK TABLES `enroll` WRITE;
+/*!40000 ALTER TABLE `enroll` DISABLE KEYS */;
+/*!40000 ALTER TABLE `enroll` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -428,6 +451,41 @@ LOCK TABLES `grades` WRITE;
 /*!40000 ALTER TABLE `grades` DISABLE KEYS */;
 INSERT INTO `grades` VALUES (1,100,9223372036854775807,43632372818789,23412,1),(2,200,83789553791438,43632372818789,73218,1),(5,300,83789553791438,43632372818789,35216,1);
 /*!40000 ALTER TABLE `grades` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `guest_login`
+--
+
+DROP TABLE IF EXISTS `guest_login`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `guest_login` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `email` varchar(50) NOT NULL,
+  `name` varchar(40) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `guest_id` bigint(20) NOT NULL,
+  `password` text NOT NULL,
+  `level` varchar(10) NOT NULL DEFAULT 'guest',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `guest_id` (`guest_id`),
+  UNIQUE KEY `guest_id_2` (`guest_id`),
+  UNIQUE KEY `guest_id_3` (`guest_id`),
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `email_2` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `guest_login`
+--
+
+LOCK TABLES `guest_login` WRITE;
+/*!40000 ALTER TABLE `guest_login` DISABLE KEYS */;
+INSERT INTO `guest_login` VALUES (1,'dyjo@mailinator.com','Lani Daniel','Hester',310381860,'$2y$10$MBmA.QU0alNNGSB.Noqn/uXzH0rPuXXPxglnIl.iM7e6eAAMdz.Bi','guest','2021-04-22 03:41:18'),(2,'guest@gmail.com','d','dd',262856591,'$2y$10$oOIg7KEGpZxjroTGLvuGA.lNBqu0nY.1OyzXQIFbJt.jgCRNyPxFW','guest','2021-04-22 03:41:54');
+/*!40000 ALTER TABLE `guest_login` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -831,4 +889,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-19  9:45:03
+-- Dump completed on 2021-04-22  7:50:30

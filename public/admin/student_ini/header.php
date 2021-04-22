@@ -31,7 +31,6 @@ $db->getConnection();
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
     <title>Blog Template for Bootstrap</title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/blog/">
     <!-- Bootstrap core CSS -->
     <link href="student_ini/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->

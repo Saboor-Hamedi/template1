@@ -19,7 +19,6 @@ $db = $db_connection->getConnection();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<!-- Mirrored from educhamp.themetrades.com/demo/admin/main.php by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Feb 2019 13:08:15 GMT -->
 <head>
 	<!-- META ============================================= -->
 	<meta charset="utf-8">

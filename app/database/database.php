@@ -73,7 +73,6 @@ class Database
         } else {
             return false;
         }
-        $this->query->close();
         $this->query_closed = TRUE;
         return $result;
     }
@@ -87,7 +86,7 @@ class Database
         } else {
             return null;
         }
-        $this->query->close();
+        
         $this->query_closed = TRUE;
     }
 
@@ -131,6 +130,9 @@ class Database
             exit($error);
         }
     }
+    public function numRows() {
+		
+	}
     public function close()
     {
         return $this->conn->close();

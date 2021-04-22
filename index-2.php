@@ -326,7 +326,7 @@
                             <li><i class="fa fa-star"></i></li>
                         </ul>
                         <span>(20 Reviws)</span>
-                        <a href="courses-singel.php">
+                        <a href="check_event.php">
                             <h4>Learn basis javascirpt from start for beginner</h4>
                         </a>
                         <div class="course-teacher">
@@ -368,7 +368,7 @@
                             <li><i class="fa fa-star"></i></li>
                         </ul>
                         <span>(20 Reviws)</span>
-                        <a href="courses-singel.php">
+                        <a href="check_event.php">
                             <h4>Learn basis javascirpt from start for beginner</h4>
                         </a>
                         <div class="course-teacher">
@@ -410,7 +410,7 @@
                             <li><i class="fa fa-star"></i></li>
                         </ul>
                         <span>(20 Reviws)</span>
-                        <a href="courses-singel.php">
+                        <a href="check_event.php">
                             <h4>Learn basis javascirpt from start for beginner</h4>
                         </a>
                         <div class="course-teacher">
@@ -452,7 +452,7 @@
                             <li><i class="fa fa-star"></i></li>
                         </ul>
                         <span>(20 Reviws)</span>
-                        <a href="courses-singel.php">
+                        <a href="check_event.php">
                             <h4>Learn basis javascirpt from start for beginner</h4>
                         </a>
                         <div class="course-teacher">
@@ -494,7 +494,7 @@
                             <li><i class="fa fa-star"></i></li>
                         </ul>
                         <span>(20 Reviws)</span>
-                        <a href="courses-singel.php">
+                        <a href="check_event.php">
                             <h4>Learn basis javascirpt from start for beginner</h4>
                         </a>
                         <div class="course-teacher">
@@ -532,7 +532,7 @@
         <div class="row align-items-center">
             <div class="col-lg-6 order-last order-lg-first">
                 <div class="video text-lg-left text-center pt-50">
-                    <a class="Video-popup" href="https://www.youtube.com/watch?v=bRRtdzJH1oE"><i class="fa fa-play"></i></a>
+                    <a class="Video-popup" href="#"><i class="fa fa-play"></i></a>
                 </div>
                 <!-- row -->
             </div>

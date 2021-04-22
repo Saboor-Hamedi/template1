@@ -19,7 +19,7 @@
 <script src='assets/vendors/calendar/fullcalendar.js'></script>
 <script src='assets/vendors/switcher/switcher.js'></script>
 <!-- time picker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/js/tempusdominus-bootstrap-4.min.js"></script>
+<script src='assets/js/tempusdominus-bootstrap-4.min.js'></script>
 <!-- link ajax for inserting data, course, event -->
 <script src="assets/ajax/course.js"></script>
 <script src="assets/ajax/event.js"></script>
@@ -147,6 +147,5 @@
 
 </body>
 
-<!-- Mirrored from educhamp.themetrades.com/demo/admin/main.php by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Feb 2019 13:09:05 GMT -->
 
 </html>

@@ -1,37 +1,35 @@
 <?php require_once __DIR__ . '/admin_ini/header.php'; ?>
 <?php
+
 use App\login\Login;
+
 $login = new Login();
 if (isset($_POST['loginBtn'])) {
     if (!empty($_POST['userid'])) {
         $loginResult =  $login->loginUser();
-        exit;
     }
-        if (!empty($_POST['userid'])) {
-            $loginResult =  $login->loginUser();
-            exit;
-        }
-  
+    if (!empty($_POST['userid'])) {
+        $loginResult =  $login->loginUser();
+    }
+    if (!empty($_POST['userid'])) {
+        $loginResult =  $login->loginUser();
+    }
 }
 
 ?>
 <div class="page-wraper">
-    <!-- <div id="loading-icon-bx"></div> -->
-    <!-- this is animation -->
+    <nav class="navbar">
+        <a href="register.php" class="navbar-brand"><strong>Register</strong></a>
+    </nav>
     <div class="account-form">
-        <!-- <div class="account-head" style="background-image:url(assets/images/background/bg2.jpg);">
-        <a href="/"><img src="assets/images/logo-white-2.png" alt=""></a>
-</div> -->
         <div class="account-form-inner">
             <div class="account-container">
                 <div class="heading-bx left">
                     <h2 class="title-head">Login to your <span>Account</span></h2>
-                    <p>Don't have an account? <a href="register.html">Create one here</a></p>
-
+                   
                     <?php if (!empty($loginResult)) { ?>
                         <div class="error-msg"><?php echo $loginResult; ?></div>
                     <?php } ?>
-
                 </div>
                 <form class="contact-bx" id="login__form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
                     <div class="row placeani">
@@ -39,7 +37,7 @@ if (isset($_POST['loginBtn'])) {
                             <div class="form-group">
                                 <div class="input-group">
                                     <label>ID: (1139329481)</label>
-                                    <input name="userid" id="userid" type="text" class="form-control">
+                                    <input name="userid" id="userid" type="text" class="form-control" autocapitalize="off" required>
                                 </div>
                             </div>
                         </div>
@@ -47,7 +45,7 @@ if (isset($_POST['loginBtn'])) {
                             <div class="form-group">
                                 <div class="input-group">
                                     <label>Your Password</label>
-                                    <input name="password" id="password" type="password" class="form-control">
+                                    <input name="password" id="password" type="password" class="form-control" autocapitalize="off" required>
                                 </div>
                             </div>
                         </div>

@@ -25,7 +25,7 @@ jQuery(window).on('load',function(){
 $(function(){		
 	"use strict";
 	
-	addSwitcher();
+	// addSwitcher(); color picker
 	//=== Switcher panal slide function	=====================//
 	jQuery('.switch-btn').on('click',function () {	
 		if (jQuery(this).hasClass('open')) {

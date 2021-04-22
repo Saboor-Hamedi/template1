@@ -200,7 +200,7 @@
                             </div>
                             <div class="course-teacher">
                                 <div class="thum">
-                                    <a href="courses-singel.php"><img src="../public/images/course/teacher/t-1.jpg" alt="teacher"></a>
+                                    <a href="check_event.php"><img src="../public/images/course/teacher/t-1.jpg" alt="teacher"></a>
                                 </div>
                                 <div class="name">
                                     <a href="#">
@@ -237,7 +237,7 @@
                             </div>
                             <div class="course-teacher">
                                 <div class="thum">
-                                    <a href="courses-singel.php"><img src="../public/images/course/teacher/t-2.jpg" alt="teacher"></a>
+                                    <a href="check_event.php"><img src="../public/images/course/teacher/t-2.jpg" alt="teacher"></a>
                                 </div>
                                 <div class="name">
                                     <a href="#">
@@ -274,7 +274,7 @@
                             </div>
                             <div class="course-teacher">
                                 <div class="thum">
-                                    <a href="courses-singel.php"><img src="../public/images/course/teacher/t-3.jpg" alt="teacher"></a>
+                                    <a href="check_event.php"><img src="../public/images/course/teacher/t-3.jpg" alt="teacher"></a>
                                 </div>
                                 <div class="name">
                                     <a href="#">
@@ -311,7 +311,7 @@
                             </div>
                             <div class="course-teacher">
                                 <div class="thum">
-                                    <a href="courses-singel.php"><img src="../public/images/course/teacher/t-4.jpg" alt="teacher"></a>
+                                    <a href="check_event.php"><img src="../public/images/course/teacher/t-4.jpg" alt="teacher"></a>
                                 </div>
                                 <div class="name">
                                     <a href="#">
@@ -348,7 +348,7 @@
                             </div>
                             <div class="course-teacher">
                                 <div class="thum">
-                                    <a href="courses-singel.php"><img src="../public/images/course/teacher/t-5.jpg" alt="teacher"></a>
+                                    <a href="check_event.php"><img src="../public/images/course/teacher/t-5.jpg" alt="teacher"></a>
                                 </div>
                                 <div class="name">
                                     <a href="#">
