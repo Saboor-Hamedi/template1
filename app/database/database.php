@@ -3,7 +3,7 @@ namespace App\database;
 
 class Database
 {
-    protected $conn;
+    public $conn;
     protected $query;
     protected $query_closed = TRUE;
     public $query_count = 0;

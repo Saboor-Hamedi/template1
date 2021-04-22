@@ -1,9 +1,6 @@
 <?php
-
 namespace App\guest;
-
 use App\database\Database;
-
 class Register
 {
     private $errors = array();

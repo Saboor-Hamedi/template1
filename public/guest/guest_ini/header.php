@@ -38,7 +38,6 @@ if (is_array($posts) || is_object($posts)) {
                 <!-- Custom styles for this template -->
                 <link href="css/blog.css" rel="stylesheet">
             </head>
-
             <body>
                 <div class="container">
                     <header class="blog-header py-3">
@@ -52,16 +51,18 @@ if (is_array($posts) || is_object($posts)) {
 
                         </div>
                     </header>
-                    <div class="nav-scroller py-1 mb-2">
+                   <div class="container">
+                   <div class="nav-scroller py-1 mb-2">
                         <nav class="nav ">
                             <a class="p-2 text-muted" href="#">New</a>
                             <a class="p-2 text-muted" href="../../courses.php">Events</a>
                             <a class="p-2 text-muted" href="../admin/logout.php">Login</a>
                         </nav>
                     </div>
-        <?php
-
-        }
+                   </div>
+        <?php  }}} ?>
+        <script>
+         if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
     }
-}
-        ?>
+        </script>

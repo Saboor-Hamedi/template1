@@ -288,8 +288,9 @@ DROP TABLE IF EXISTS `enroll`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enroll` (
-  `enrollid` int(10) unsigned NOT NULL,
+  `enrollid` int(11) NOT NULL AUTO_INCREMENT,
   `course_id` int(10) unsigned NOT NULL,
+  `guest_apply_id` bigint(20) NOT NULL,
   PRIMARY KEY (`enrollid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -889,4 +890,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-22  7:50:30
+-- Dump completed on 2021-04-22  9:42:09
