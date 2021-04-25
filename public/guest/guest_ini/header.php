@@ -48,7 +48,6 @@ if (is_array($posts) || is_object($posts)) {
                             <div class="col-4 text-center">
                                 <a class="blog-header-logo text-dark" href="#"><?php echo $post['name']; ?></a>
                             </div>
-
                         </div>
                     </header>
                    <div class="container">

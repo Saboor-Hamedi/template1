@@ -25,7 +25,7 @@ if (!empty($_POST)) {
                         "', '" . $event_location . 
                         "', '" . $starttimepicker . 
                         "' , '" . $endtimepicker . "' )";
-        if ($db->insert($sql) === TRUE) {
+        if ($db->insert($sql) == TRUE) {
             echo 'New Event Uploaded';
         } else {
             echo 'Something went wrong';

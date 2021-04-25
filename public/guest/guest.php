@@ -1,6 +1,5 @@
     <?php
      require_once __DIR__ . '/guest_ini/header.php';
-
     ?>
   
     <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">

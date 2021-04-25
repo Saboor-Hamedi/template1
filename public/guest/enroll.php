@@ -1,5 +1,7 @@
 <?php require_once __DIR__ . '/guest_ini/header.php'; ?>
-<?php require_once __DIR__ . '/../../app/guest/apply.php'; ?>
+<?php 
+  // require_once __DIR__ . '/../../app/guest/apply.php';
+ ?>
 <?php
 if (!isset($_GET['id'])) {
   return false;
@@ -30,7 +32,6 @@ if (!isset($_GET['id'])) {
               <div class="card mb-4 box-shadow">
                 <img class="card-img-top" height="150px" src="../courseThubnail/<?php echo  $card['thubnial']; ?>" alt="Card image cap">
                 <div class="card-body d-flex flex-column align-items-start">
-
                   <h5 class="mb-0">
                     <?php echo $card['title']; ?>
                   </h5>
@@ -49,18 +50,21 @@ if (!isset($_GET['id'])) {
         <h2 class="blog-post-title">Sample blog post</h2>
         <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
       </div>
-
     </div>
     <aside class="col-md-4 blog-sidebar">
+        <div class="alert alert-info" role="alert" id="apply__message"></div>
       <div class="p-4 mb-3 bg-light rounded">
-        <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <form action = ""  method = "post" id="apply__form">
           <div class="form-group">
-            <input type="hidden" value="<?php echo $course_id; ?>" class="form-control" name="course_apply_id">
+            <input type="text" value="<?php echo $course_id; ?>" class="form-control" name="course_apply_id">
           </div>
           <div class="form-group">
-            <input type="hidden" value="<?php echo $guest_login_id; ?>" class="form-control" name="guest_apply_id">
+            <input type="text" value="<?php echo $guest_login_id; ?>" class="form-control" name="guest_apply_id">
           </div>
-          <button type="submit" class="btn btn-primary mb-1" name="apply_btn">Apply</button>
+          <div class="form-group">
+            <input type="text" value="1" class="form-control" name="is_active" id="is_active">
+          </div>
+          <button class="btn btn-primary mb-1" name="apply_btn"id="apply_btn">Apply</button>
         </form>
       </div>
 

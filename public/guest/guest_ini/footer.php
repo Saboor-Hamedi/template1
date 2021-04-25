@@ -5,22 +5,7 @@
 <script src="guest_ini/js/bootstrap.min.js"></script>
 <script src="guest_ini/js/holder.min.js"></script>
 <script src="guest_ini/js/popper.min.js"></script>
-<script>
-// $(document).ready(function () {
-//     $(document).on('click', '.enroll__request', function(){
-//         let id = $(this).data('id');
-//         $.ajax({
-//             type: "POST",
-//             url: '/app/guest/enroll.php',
-//             data:{
-//                 id: id,
-//             },
-//             success: function (data) {
-//                alert(data);
-//             }
-//     });
-//     });
-// });
-</script>
+<script src="ajax/apply.js"></script>
+
 </body>
 </html>
