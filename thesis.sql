@@ -1,4 +1,4 @@
--- MariaDB dump 10.18  Distrib 10.4.17-MariaDB, for Win64 (AMD64)
+-- MariaDB dump 10.17  Distrib 10.4.10-MariaDB, for Win64 (AMD64)
 --
 -- Host: localhost    Database: thesis
 -- ------------------------------------------------------
@@ -95,7 +95,6 @@ CREATE TABLE `agency` (
 
 LOCK TABLES `agency` WRITE;
 /*!40000 ALTER TABLE `agency` DISABLE KEYS */;
-INSERT INTO `agency` VALUES (82,'Computer Science and Engineering',83789553791438,'Networking with one\'s fellow scientists and engineers is extremely important for personal and professional development.  Professional societies sponsor conferences, publish journals, and serve as reviewers or editors.  They set professional and educational standards and provide job and career services for their members.','1','03/01/2021','03/31/2021','Electronic');
 /*!40000 ALTER TABLE `agency` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -211,7 +210,7 @@ CREATE TABLE `classes` (
   CONSTRAINT `classes_ibfk_2` FOREIGN KEY (`teacherid`) REFERENCES `teacher` (`teacherid`),
   CONSTRAINT `classes_ibfk_4` FOREIGN KEY (`class_grade`) REFERENCES `class_grade_student` (`class_grade`),
   CONSTRAINT `classes_ibfk_5` FOREIGN KEY (`year_name`) REFERENCES `academic_year` (`year_name`),
-  CONSTRAINT `classes_ibfk_6` FOREIGN KEY (`nim`) REFERENCES `student` (`nim`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `classes_ibfk_6` FOREIGN KEY (`nim`) REFERENCES `student` (`nim`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -221,7 +220,6 @@ CREATE TABLE `classes` (
 
 LOCK TABLES `classes` WRITE;
 /*!40000 ALTER TABLE `classes` DISABLE KEYS */;
-INSERT INTO `classes` VALUES (2,1,42485,'56XR','Moday','2010-01-01','2020-06-30 20:25:00',89124,43632372818789,83789553791438),(3,1,95819,'WRTJ','Moday','2010-01-01','2020-06-30 20:40:00',23412,43632372818789,99325320048831),(4,2,60908,'FHIB','Moday','2010-01-01','2020-06-30 20:42:00',23412,43632372818789,83789553791438),(5,1,41603,'WSD9','Moday','2011-01-30 ','2020-06-30 20:58:00',35216,43632372818789,83789553791438),(6,1,4635,'LA5G','Moday','2011-01-30','2020-06-25 21:02:00',54566,43632372818789,83789553791438),(7,2,88533,'JX57','Tuesday','2011-01-30','2020-06-06 21:04:00',30183,43632372818789,17034213768553),(8,5,10964,'B4YU','Moday','2010-01-01','2020-06-30 21:24:00',11511,43632372818789,17034213768553),(9,3,28822,'PLCE','Moday','2010-01-01','2020-09-16 22:40:00',26156,17352183302292,83789553791438),(11,2,21309,'OMFJ','Wednesday','2010-01-01','2020-09-10 22:43:00',23412,18154898755021,83789553791438),(16,3,40302,'EA13','tuesday','2020-01-01','02:00 AM',9314,42030737204174,83789553791438),(45,3,14104,'Y2PK','wednesday','2020-01-01','01:30 AM',9314,28152121636563,83789553791438),(58,4,40423,'DXKA','monday','2021-01-01','12:00 AM',72186,56871005568266,83789553791438),(59,4,13124,'ODW1','tuesday','2021-01-01','02:30 AM',54566,28152121636563,83789553791438),(61,4,30004,'23QF','thursay','2021-01-01','10:30 PM',30183,31084335760364,83789553791438),(62,3,21244,'8HEK','sunday','2020-01-01','01:30 AM',11511,18154898755021,83789553791438),(63,2,43322,'AHF2','friday','2020-01-01','02:00 AM',9298,38635016401032,83789553791438);
 /*!40000 ALTER TABLE `classes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -291,8 +289,15 @@ CREATE TABLE `enroll` (
   `enrollid` int(11) NOT NULL AUTO_INCREMENT,
   `course_id` int(10) unsigned NOT NULL,
   `guest_apply_id` bigint(20) NOT NULL,
-  PRIMARY KEY (`enrollid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `token` varchar(250) DEFAULT NULL,
+  `status` varchar(255) NOT NULL DEFAULT '0',
+  `bought_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`enrollid`),
+  KEY `guest_apply_id` (`guest_apply_id`),
+  KEY `course_id` (`course_id`),
+  CONSTRAINT `enroll_ibfk_1` FOREIGN KEY (`guest_apply_id`) REFERENCES `guest_login` (`guest_id`) ON DELETE CASCADE,
+  CONSTRAINT `enroll_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -301,6 +306,7 @@ CREATE TABLE `enroll` (
 
 LOCK TABLES `enroll` WRITE;
 /*!40000 ALTER TABLE `enroll` DISABLE KEYS */;
+INSERT INTO `enroll` VALUES (1,104,262856591,' 75c04d053aa2ebab41a1e123fc422c65','1','2021-07-02 13:54:53'),(2,104,262856591,' 75c04d053aa2ebab41a1e123fc422c65','1','2021-07-02 13:54:53'),(3,98,262856591,' e85dff990e70c4fc0cb9b7627b6b5016','0','2021-07-03 12:05:56');
 /*!40000 ALTER TABLE `enroll` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -359,7 +365,7 @@ CREATE TABLE `family` (
 
 LOCK TABLES `family` WRITE;
 /*!40000 ALTER TABLE `family` DISABLE KEYS */;
-INSERT INTO `family` VALUES (5,47228610344222,'Asdf',NULL,NULL),(6,83789553791438,'Asdf',NULL,NULL),(8,47228610344221,'Asdf',NULL,NULL),(10,47228610344266,'Asdf',NULL,NULL),(11,16747873726784,'aaa',NULL,NULL),(12,16747873726784,'aaa',NULL,NULL),(13,99325320048831,'Emma',NULL,NULL),(14,18793286422779,'Olivia',NULL,NULL),(15,17034213768553,'Charlotte',NULL,NULL),(16,54141807378939,'Parker',NULL,NULL),(17,62960424079990,'Gavin',NULL,NULL),(18,62498751658254,'Kayden',NULL,NULL),(19,65384502317782,'Asdf',NULL,NULL),(20,12926861659608,'aa',NULL,NULL),(21,84614188815285,'Mike',NULL,NULL),(22,19654297179939,'asdf',NULL,NULL),(23,13124286433889,'codeigniter',NULL,NULL),(24,15643314587511,'codeigniter',NULL,NULL),(25,32452345234521,'codeigniter',NULL,NULL),(26,16469843373399,'codeigniter',NULL,NULL),(27,13712226564318,'asdfasd',NULL,NULL),(28,18565196249818,'Jordan',NULL,NULL),(29,12367227813729,'asdfasd',NULL,NULL),(30,18933889855648,'Dominic',NULL,NULL),(31,11446431127385,'Austin',NULL,NULL),(32,18224933851118,'Ian',NULL,NULL),(33,27054705240581,'test',NULL,NULL),(34,15756282592211,'INSERT',NULL,NULL),(35,63051738704130,'asdfasdf',NULL,NULL),(36,58517486632460,'asdfasdf',NULL,NULL),(37,58574236318147,'sdfasdfas',NULL,NULL),(38,14604327012522,'asdfasdf',NULL,NULL),(39,42773036300353,'adsfasdf',NULL,NULL),(40,20584232423423,'asdfasdf',NULL,NULL),(41,82487346006071,'asdfasdf',NULL,NULL),(42,84574802185024,'Asdfa',NULL,NULL),(43,87206712581231,'Asdf',NULL,NULL),(44,98720671258123,'Asdf',NULL,NULL),(45,98720671258111,'ddddddd',NULL,NULL),(46,16328062132605,'Asdfas',NULL,NULL),(47,26242752772112,'Adf',NULL,NULL),(48,73477631735544,'Asdfasdf',NULL,NULL),(49,47228610344232,'Asdf',NULL,NULL),(50,47228610344111,'Asdf',NULL,NULL),(51,47228610344222,'Asdf',NULL,NULL),(52,47228610344221,'Asdf',NULL,NULL),(53,47228610344229,'Asdf',NULL,NULL),(54,47228610344266,'Asdf',NULL,NULL);
+INSERT INTO `family` VALUES (5,47228610344222,'Asdf',NULL,NULL),(8,47228610344221,'Asdf',NULL,NULL),(10,47228610344266,'Asdf',NULL,NULL),(11,16747873726784,'aaa',NULL,NULL),(12,16747873726784,'aaa',NULL,NULL),(19,65384502317782,'Asdf',NULL,NULL),(20,12926861659608,'aa',NULL,NULL),(21,84614188815285,'Mike',NULL,NULL),(22,19654297179939,'asdf',NULL,NULL),(23,13124286433889,'codeigniter',NULL,NULL),(25,32452345234521,'codeigniter',NULL,NULL),(28,18565196249818,'Jordan',NULL,NULL),(29,12367227813729,'asdfasd',NULL,NULL),(30,18933889855648,'Dominic',NULL,NULL),(31,11446431127385,'Austin',NULL,NULL),(32,18224933851118,'Ian',NULL,NULL),(33,27054705240581,'test',NULL,NULL),(34,15756282592211,'INSERT',NULL,NULL),(35,63051738704130,'asdfasdf',NULL,NULL),(36,58517486632460,'asdfasdf',NULL,NULL),(37,58574236318147,'sdfasdfas',NULL,NULL),(38,14604327012522,'asdfasdf',NULL,NULL),(39,42773036300353,'adsfasdf',NULL,NULL),(40,20584232423423,'asdfasdf',NULL,NULL),(41,82487346006071,'asdfasdf',NULL,NULL),(42,84574802185024,'Asdfa',NULL,NULL),(43,87206712581231,'Asdf',NULL,NULL),(44,98720671258123,'Asdf',NULL,NULL),(45,98720671258111,'ddddddd',NULL,NULL),(46,16328062132605,'Asdfas',NULL,NULL),(47,26242752772112,'Adf',NULL,NULL),(48,73477631735544,'Asdfasdf',NULL,NULL),(49,47228610344232,'Asdf',NULL,NULL),(50,47228610344111,'Asdf',NULL,NULL),(51,47228610344222,'Asdf',NULL,NULL),(52,47228610344221,'Asdf',NULL,NULL),(53,47228610344229,'Asdf',NULL,NULL),(54,47228610344266,'Asdf',NULL,NULL);
 /*!40000 ALTER TABLE `family` ENABLE KEYS */;
 UNLOCK TABLES;
 ALTER DATABASE `thesis` CHARACTER SET latin1 COLLATE latin1_swedish_ci ;
@@ -403,8 +409,8 @@ CREATE TABLE `files` (
   PRIMARY KEY (`file_id`),
   KEY `nim` (`nim`),
   KEY `teacherid` (`teacherid`),
-  CONSTRAINT `files_ibfk_1` FOREIGN KEY (`nim`) REFERENCES `student` (`nim`),
-  CONSTRAINT `files_ibfk_2` FOREIGN KEY (`teacherid`) REFERENCES `teacher` (`teacherid`)
+  CONSTRAINT `files_ibfk_2` FOREIGN KEY (`teacherid`) REFERENCES `teacher` (`teacherid`),
+  CONSTRAINT `files_ibfk_3` FOREIGN KEY (`nim`) REFERENCES `student` (`nim`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -414,7 +420,6 @@ CREATE TABLE `files` (
 
 LOCK TABLES `files` WRITE;
 /*!40000 ALTER TABLE `files` DISABLE KEYS */;
-INSERT INTO `files` VALUES (23,99325320048831,92254794233844,'asdf','asdfasdf','Vol3_No2_2.pdf','2020-12-04 13:34:19'),(25,99325320048831,92254794233844,'asdfasd','fasdfasdf','laravel.pdf','2020-12-04 13:35:09');
 /*!40000 ALTER TABLE `files` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -437,10 +442,10 @@ CREATE TABLE `grades` (
   KEY `teacherid` (`teacherid`),
   KEY `subjectid` (`subjectid`),
   KEY `class_grade_id` (`class_grade_id`),
-  CONSTRAINT `grades_ibfk_1` FOREIGN KEY (`nim`) REFERENCES `student` (`nim`),
   CONSTRAINT `grades_ibfk_2` FOREIGN KEY (`teacherid`) REFERENCES `teacher` (`teacherid`),
   CONSTRAINT `grades_ibfk_3` FOREIGN KEY (`subjectid`) REFERENCES `subjects` (`subjectid`),
-  CONSTRAINT `grades_ibfk_4` FOREIGN KEY (`class_grade_id`) REFERENCES `classes` (`class_grade`)
+  CONSTRAINT `grades_ibfk_5` FOREIGN KEY (`nim`) REFERENCES `student` (`nim`) ON DELETE CASCADE,
+  CONSTRAINT `grades_ibfk_6` FOREIGN KEY (`class_grade_id`) REFERENCES `classes` (`class_grade`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -450,7 +455,6 @@ CREATE TABLE `grades` (
 
 LOCK TABLES `grades` WRITE;
 /*!40000 ALTER TABLE `grades` DISABLE KEYS */;
-INSERT INTO `grades` VALUES (1,100,9223372036854775807,43632372818789,23412,1),(2,200,83789553791438,43632372818789,73218,1),(5,300,83789553791438,43632372818789,35216,1);
 /*!40000 ALTER TABLE `grades` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -476,7 +480,7 @@ CREATE TABLE `guest_login` (
   UNIQUE KEY `guest_id_3` (`guest_id`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `email_2` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -485,7 +489,7 @@ CREATE TABLE `guest_login` (
 
 LOCK TABLES `guest_login` WRITE;
 /*!40000 ALTER TABLE `guest_login` DISABLE KEYS */;
-INSERT INTO `guest_login` VALUES (1,'dyjo@mailinator.com','Lani Daniel','Hester',310381860,'$2y$10$MBmA.QU0alNNGSB.Noqn/uXzH0rPuXXPxglnIl.iM7e6eAAMdz.Bi','guest','2021-04-22 03:41:18'),(2,'guest@gmail.com','d','dd',262856591,'$2y$10$oOIg7KEGpZxjroTGLvuGA.lNBqu0nY.1OyzXQIFbJt.jgCRNyPxFW','guest','2021-04-22 03:41:54');
+INSERT INTO `guest_login` VALUES (1,'dyjo@mailinator.com','Lani Daniel','Hester',310381860,'$2y$10$MBmA.QU0alNNGSB.Noqn/uXzH0rPuXXPxglnIl.iM7e6eAAMdz.Bi','guest','2021-04-22 03:41:18'),(2,'guest@gmail.com','Guest','Guesty',262856591,'$2y$10$oOIg7KEGpZxjroTGLvuGA.lNBqu0nY.1OyzXQIFbJt.jgCRNyPxFW','guest','2021-04-22 03:41:54');
 /*!40000 ALTER TABLE `guest_login` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -508,7 +512,7 @@ CREATE TABLE `login` (
   `admin_level` varchar(15) DEFAULT 'admin',
   PRIMARY KEY (`admin_id`),
   UNIQUE KEY `admin_nim` (`admin_nim`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -517,7 +521,7 @@ CREATE TABLE `login` (
 
 LOCK TABLES `login` WRITE;
 /*!40000 ALTER TABLE `login` DISABLE KEYS */;
-INSERT INTO `login` VALUES (2,11160930000192,'Administration',NULL,'newadminy@yahoo.com','$2y$10$AlaBU3MM2EdXswOehLr1ruHL2JmE/W7akUxDOjleb/5Euky0/Qyny','$2y$10$LM/rPc.XIMRNCPMQOzxoBurxtDgOODPP1LSs/ZozbGITSTcxVWHAe','1592747020_back5.jpg','admin'),(11,11160930000120,'Saboor','Hamedi','saboorhamedi49@gmail.com','$2y$10$ry1f/9iInlTthHNIdVGTq.PT3Nh9fW5QlwOhvNiTd1NhH09dVPVJ6','$2y$10$EeL64huBmcj0z6QDFUtsDOuyJ1ZpDgXuEp7LoOu0Aw7mumiwf3jDG','1605844930-IMG_0969.JPG','admin'),(12,26748282305214,'pak Eri','Rustam','pakerirustam@gmail.com','$2y$10$xsPK02E4g76UuUWnAc3hv.a9.ZQc8FnuOusgAaeorPyDQiv8SN8em','123','1606472826-pp.jpg','admin'),(13,61068775746818,'hkl','jkh','kjhkl@gmail.com','$2y$10$EFsO0Z7iWF86QtHeBdwk2OicQH6LISBWwLqdI3kBGFanCAcbXFIX2','123','1606983194-admission activity diagram.png','admin');
+INSERT INTO `login` VALUES (2,11160930000192,'Administration',NULL,'newadminy@yahoo.com','$2y$10$AlaBU3MM2EdXswOehLr1ruHL2JmE/W7akUxDOjleb/5Euky0/Qyny','$2y$10$LM/rPc.XIMRNCPMQOzxoBurxtDgOODPP1LSs/ZozbGITSTcxVWHAe','1592747020_back5.jpg','admin'),(11,11160930000120,'Saboor','Hamedi','saboorhamedi49@gmail.com','$2y$10$pcjg4xArWnQbrfUYAw6qnORMxNj2xiM5Vqwl/RSAUJxDGLQhUffGG','$2y$10$EeL64huBmcj0z6QDFUtsDOuyJ1ZpDgXuEp7LoOu0Aw7mumiwf3jDG','1605844930-IMG_0969.JPG','admin'),(12,26748282305214,'pak Eri','Rustam','pakerirustam@gmail.com','$2y$10$xsPK02E4g76UuUWnAc3hv.a9.ZQc8FnuOusgAaeorPyDQiv8SN8em','123','1606472826-pp.jpg','admin');
 /*!40000 ALTER TABLE `login` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -546,7 +550,7 @@ CREATE TABLE `parent` (
 
 LOCK TABLES `parent` WRITE;
 /*!40000 ALTER TABLE `parent` DISABLE KEYS */;
-INSERT INTO `parent` VALUES (3,83789553791438,6),(5,47228610344221,8),(7,47228610344266,10),(8,16747873726784,11),(9,16747873726784,12),(10,99325320048831,13),(11,18793286422779,14),(12,17034213768553,15),(13,54141807378939,16),(14,62960424079990,17),(15,62498751658254,18),(16,65384502317782,19),(17,12926861659608,20),(18,84614188815285,21),(19,19654297179939,22),(20,13124286433889,23),(21,15643314587511,24),(22,32452345234521,25),(23,16469843373399,26),(24,13712226564318,27),(25,18565196249818,28),(26,12367227813729,29),(27,18933889855648,30),(28,11446431127385,31),(29,18224933851118,32),(30,27054705240581,33),(31,15756282592211,34),(32,63051738704130,35),(33,58517486632460,36),(34,58574236318147,37),(35,14604327012522,38),(36,42773036300353,39),(37,20584232423423,40),(38,82487346006071,41),(39,84574802185024,42),(40,87206712581231,43),(41,98720671258123,44),(42,98720671258111,45),(43,16328062132605,46),(44,26242752772112,47),(45,73477631735544,48),(46,47228610344232,49),(47,47228610344111,50),(48,47228610344222,51),(49,47228610344221,52),(50,47228610344229,53),(51,47228610344266,54);
+INSERT INTO `parent` VALUES (5,47228610344221,8),(7,47228610344266,10),(8,16747873726784,11),(9,16747873726784,12),(16,65384502317782,19),(17,12926861659608,20),(18,84614188815285,21),(19,19654297179939,22),(20,13124286433889,23),(22,32452345234521,25),(25,18565196249818,28),(26,12367227813729,29),(27,18933889855648,30),(28,11446431127385,31),(29,18224933851118,32),(30,27054705240581,33),(31,15756282592211,34),(32,63051738704130,35),(33,58517486632460,36),(34,58574236318147,37),(35,14604327012522,38),(36,42773036300353,39),(37,20584232423423,40),(38,82487346006071,41),(39,84574802185024,42),(40,87206712581231,43),(41,98720671258123,44),(42,98720671258111,45),(43,16328062132605,46),(44,26242752772112,47),(45,73477631735544,48),(46,47228610344232,49),(47,47228610344111,50),(48,47228610344222,51),(49,47228610344221,52),(50,47228610344229,53),(51,47228610344266,54);
 /*!40000 ALTER TABLE `parent` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -575,6 +579,32 @@ LOCK TABLES `password_resets` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `player`
+--
+
+DROP TABLE IF EXISTS `player`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `player` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(40) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` varchar(50) NOT NULL,
+  `image` blob DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `player`
+--
+
+LOCK TABLES `player` WRITE;
+/*!40000 ALTER TABLE `player` DISABLE KEYS */;
+/*!40000 ALTER TABLE `player` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `post`
 --
 
@@ -599,7 +629,6 @@ CREATE TABLE `post` (
 
 LOCK TABLES `post` WRITE;
 /*!40000 ALTER TABLE `post` DISABLE KEYS */;
-INSERT INTO `post` VALUES (1,'New THML course ','<p>dsfddddddddddddddd</p><p>dsfddddddddddddddd</p><p>dsfddddddddddddddd</p><p>dsfddddddddddddddd</p>','2021-03-03 09:14:34',83789553791438);
 /*!40000 ALTER TABLE `post` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -653,7 +682,6 @@ CREATE TABLE `recommendationletter` (
 
 LOCK TABLES `recommendationletter` WRITE;
 /*!40000 ALTER TABLE `recommendationletter` DISABLE KEYS */;
-INSERT INTO `recommendationletter` VALUES (3,83789553791438,'ACM (Association for Computing Machinery)\n“world’s largest educational and scientific computing society;” focused on advancing computing as a science and a profession.\n','Manual','2021-03-08 14:28:45','2021-03-08 14:28:45');
 /*!40000 ALTER TABLE `recommendationletter` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -689,7 +717,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` VALUES (1,83789553791438,'Omer','Omer','Indonesia','Omer@gmail.com',12,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-01 07:41:02','2021-02-22 13:00:24'),(2,99325320048831,'Liam','Emma','Amercia','liamemma@gmail.com',5,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-04 21:16:30','2021-02-22 21:21:44'),(3,18793286422779,'Noah','Olivia','China','soliviachina@gmail.com',12,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-26 06:36:48','2021-02-24 15:03:39'),(4,22092393858586,'James','Isabella','French','jamesIsabella@gmail.com',19,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-24 12:31:49','2021-03-04 06:29:18'),(9,17034213768553,'Benjamin','Charlotte','Afghanistan','Benjamin@gmail.com',12,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-07 14:06:06','2021-02-23 06:31:45'),(10,54141807378939,'Xavier','Parker','asdf','Xavier@gmail.com',17,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-26 04:12:24','2021-02-25 08:27:03'),(13,62960424079990,'Sawyer','Gavin','asdfasdf','asdfasdf@gmail.com',17,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-01 22:01:04','2021-03-06 17:56:12'),(14,62498751658254,'Leonardo','Kayden','asdf','sadfsad199@yahoo.com',12,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-06 20:45:33','2021-03-05 11:36:05'),(15,65384502317782,'Validate','Asdf','asdfasd','alajs98@yahoo.com',16,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-06 09:01:53','2021-02-26 23:28:01'),(16,12926861659608,'Name updated','aa','afghanistan','asdfas@yahoo.com',7,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-03 02:10:10','2021-02-26 05:48:03'),(17,84614188815285,'Name updated','Mike','Australia','asdf72@yahoo.com',9,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-02 03:02:34','2021-02-28 01:52:25'),(18,19654297179939,'Name updated','asdf','asdf','asdfasdf@gmail.com',8,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-07 03:59:44','2021-02-25 11:14:08'),(23,13124286433889,'Name updated','codeigniter','asdfasdfa','asdfasdf',8,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-07 06:08:18','2021-03-06 21:49:38'),(26,15643314587511,'Asher','codeigniter','asdfasdfa','asdfasdf',12,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-06 13:59:42','2021-03-05 22:41:57'),(28,32452345234521,'Name updated','codeigniter','asdfasdfa','asdfasdf',8,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-02 22:50:58','2021-02-28 19:17:03'),(30,16469843373399,'Name updated','codeigniter','asdfasdfa','asdfasdf',9,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-28 19:33:07','2021-03-05 23:35:39'),(33,13712226564318,'Asher','asdfasd','fasdfasdf','asdfasdf',12,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-01 00:30:03','2021-03-05 07:23:15'),(36,18565196249818,'Brayden','Jordan','adfasdf','asdfasdfasdf',15,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-22 11:08:16','2021-02-28 09:25:34'),(44,12367227813729,'adsfasdf','asdfasd','adfasdf','asdfasdf',18,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-03 01:28:32','2021-03-05 20:14:15'),(45,18933889855648,'Bryson','Dominic','asdfasdf','asdfasd',23,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-23 17:15:17','2021-03-05 20:10:46'),(46,11446431127385,'Tom','Tomy','America','tom@gmail.com',12,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-03 05:08:09','2021-03-03 11:27:18'),(47,18224933851118,'asdfasdf','Ian','asdfasdf','asdfasdf',12,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-06 17:12:17','2021-03-05 16:00:24'),(49,16747873726784,'asdfasdf','Ian','asdfasd','asdfasd',12,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-01 17:54:23','2021-02-23 16:56:19'),(50,27054705240581,'Seminar','test','test','test@gmail.com',10,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-22 09:12:24','2021-02-23 07:56:33'),(51,42803670603152,'Naweed','Nazari','Kabul','naweednazari@gmail.com',10,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-28 11:36:12','2021-02-23 08:10:04'),(52,15756282592211,'INSERT','INSERT','INSERT','INSERT',12,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-25 01:41:12','2021-02-24 12:16:52'),(53,63051738704130,'asdfasdf','asdfasdf','asdfasdf','asdfasdf@gmail.com',15,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-03 16:54:48','2021-03-02 08:10:20'),(54,58517486632460,'asdfasdf','asdfasdf','asdfasdf','asdfasdf@gmail.com',17,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-05 02:47:45','2021-02-27 23:17:15'),(56,58574236318147,'Name updated','sdfasdfas','dfasdf','asdfasdfasd@gmail.com',7,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-06 06:31:42','2021-02-26 15:11:28'),(57,14604327012522,'asdfasdf','asdfasdf','asdfasdf','asdfasdf@gmail.com',16,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-07 19:32:40','2021-02-27 01:21:48'),(58,42773036300353,'asdfasdf','adsfasdf','asdfasdf','asdfasdh@gmail.cm',15,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-26 01:25:34','2021-03-05 04:30:50'),(59,20584232423423,'asdfasdfasd','asdfasdf','asdfasdf','asdfasdf@gmail.com',19,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-28 15:47:13','2021-03-06 13:44:56'),(60,82487346006071,'Name updated','asdfasdf','asdfasdf','asdfklj@gmail.cmo',9,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-28 21:56:46','2021-02-23 02:28:24'),(61,84574802185024,'Asdfa','Asdfa','asdf','adsfasdf@gmail.com',18,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-22 09:39:33','2021-03-03 14:23:25'),(62,87206712581231,'Asdf','Asdf','asdf','asdf@gmail.com',19,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-03 01:44:49','2021-02-24 11:48:06'),(63,98720671258123,'Asdf','Asdf','asdf','asdf@gmail.com',15,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-23 23:02:48','2021-03-05 11:06:28'),(64,98720671258111,'Asdf','ddddddd','asdf','asdf@gmail.com',15,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-04 09:16:55','2021-03-01 15:24:15'),(65,16328062132605,'Asdf','Asdfas','adsfasdf','sdfasdf@gmail.com',12,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-25 20:33:34','2021-02-25 14:58:03'),(66,26242752772112,'Ad','Adf','asdf','asfasdf@gmail.com',12,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-23 22:14:29','2021-03-02 23:53:42'),(67,73477631735544,'Asdf','Asdfasdf','asdfasdf','aksdfj@gmail.com',18,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-05 20:49:04','2021-02-27 21:50:33'),(68,47228610344232,'Asdf','Asdf','asdf','asdfasdf@gmail.com',19,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-05 08:39:16','2021-02-24 08:47:50'),(69,47228610344111,'Asdf','Asdf','asdf','asdfasdf@gmail.com',19,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-01 00:06:30','2021-03-01 21:43:44'),(78,47228610344222,'Asdf','Asdf','asdf','asdfasdf@gmail.com',19,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-22 17:52:06','2021-02-26 05:31:22'),(80,47228610344221,'Asdf','Asdf','asdf','asdfasdf@gmail.com',19,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-04 12:18:20','2021-03-05 05:41:50'),(81,47228610344229,'Asdf','Asdf','asdf','asdfasdf@gmail.com',19,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-02 03:12:45','2021-02-23 07:11:19'),(82,47228610344266,'Asdf','Asdf','asdf','asdfasdf@gmail.com',19,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-02 22:26:06','2021-02-22 14:07:15');
+INSERT INTO `student` VALUES (15,65384502317782,'Validate','Asdf','asdfasd','alajs98@yahoo.com',16,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-06 09:01:53','2021-02-26 23:28:01'),(16,12926861659608,'Name updated','aa','afghanistan','asdfas@yahoo.com',7,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-03 02:10:10','2021-02-26 05:48:03'),(17,84614188815285,'Name updated','Mike','Australia','asdf72@yahoo.com',9,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-02 03:02:34','2021-02-28 01:52:25'),(18,19654297179939,'Name updated','asdf','asdf','asdfasdf@gmail.com',8,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-07 03:59:44','2021-02-25 11:14:08'),(23,13124286433889,'Name updated','codeigniter','asdfasdfa','asdfasdf',8,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-07 06:08:18','2021-03-06 21:49:38'),(28,32452345234521,'Name updated','codeigniter','asdfasdfa','asdfasdf',8,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-02 22:50:58','2021-02-28 19:17:03'),(36,18565196249818,'Brayden','Jordan','adfasdf','asdfasdfasdf',15,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-22 11:08:16','2021-02-28 09:25:34'),(44,12367227813729,'adsfasdf','asdfasd','adfasdf','asdfasdf',18,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-03 01:28:32','2021-03-05 20:14:15'),(45,18933889855648,'Bryson','Dominic','asdfasdf','asdfasd',23,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-23 17:15:17','2021-03-05 20:10:46'),(46,11446431127385,'Mike','Tomy','America','tom@gmail.com',12,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-03 05:08:09','2021-03-03 11:27:18'),(47,18224933851118,'asdfasdf','Ian','asdfasdf','asdfasdf',12,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-06 17:12:17','2021-03-05 16:00:24'),(49,16747873726784,'asdfasdf','Ian','asdfasd','asdfasd',12,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-01 17:54:23','2021-02-23 16:56:19'),(50,27054705240581,'Seminar','test','test','test@gmail.com',10,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-22 09:12:24','2021-02-23 07:56:33'),(51,42803670603152,'Naweed','Nazari','Kabul','naweednazari@gmail.com',10,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-28 11:36:12','2021-02-23 08:10:04'),(52,15756282592211,'INSERT','INSERT','INSERT','INSERT',12,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-25 01:41:12','2021-02-24 12:16:52'),(53,63051738704130,'asdfasdf','asdfasdf','asdfasdf','asdfasdf@gmail.com',15,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-03 16:54:48','2021-03-02 08:10:20'),(54,58517486632460,'asdfasdf','asdfasdf','asdfasdf','asdfasdf@gmail.com',17,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-05 02:47:45','2021-02-27 23:17:15'),(56,58574236318147,'Name updated','sdfasdfas','dfasdf','asdfasdfasd@gmail.com',7,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-06 06:31:42','2021-02-26 15:11:28'),(57,14604327012522,'asdfasdf','asdfasdf','asdfasdf','asdfasdf@gmail.com',16,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-07 19:32:40','2021-02-27 01:21:48'),(58,42773036300353,'asdfasdf','adsfasdf','asdfasdf','asdfasdh@gmail.cm',15,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-26 01:25:34','2021-03-05 04:30:50'),(59,20584232423423,'asdfasdfasd','asdfasdf','asdfasdf','asdfasdf@gmail.com',19,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-28 15:47:13','2021-03-06 13:44:56'),(60,82487346006071,'Name updated','asdfasdf','asdfasdf','asdfklj@gmail.cmo',9,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-28 21:56:46','2021-02-23 02:28:24'),(61,84574802185024,'Asdfa','Asdfa','asdf','adsfasdf@gmail.com',18,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-22 09:39:33','2021-03-03 14:23:25'),(62,87206712581231,'Asdf','Asdf','asdf','asdf@gmail.com',19,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-03 01:44:49','2021-02-24 11:48:06'),(63,98720671258123,'Asdf','Asdf','asdf','asdf@gmail.com',15,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-23 23:02:48','2021-03-05 11:06:28'),(64,98720671258111,'Asdf','ddddddd','asdf','asdf@gmail.com',15,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-04 09:16:55','2021-03-01 15:24:15'),(65,16328062132605,'Asdf','Asdfas','adsfasdf','sdfasdf@gmail.com',12,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-25 20:33:34','2021-02-25 14:58:03'),(66,26242752772112,'Ad','Adf','asdf','asfasdf@gmail.com',12,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-23 22:14:29','2021-03-02 23:53:42'),(67,73477631735544,'asdfsss','Asdfasdf','asdfasdf','aksdfj@gmail.com',18,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-05 20:49:04','2021-02-27 21:50:33'),(68,47228610344232,'aaaaaaaaaaaaaaaa','Asdf','asdf','asdfasdf@gmail.com',19,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-05 08:39:16','2021-02-24 08:47:50'),(69,47228610344111,'Asdffffffff','Asdf','asdf','asdfasdf@gmail.com',19,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-01 00:06:30','2021-03-01 21:43:44'),(78,47228610344222,'Asdfccccccccc','Asdf','asdf','asdfasdf@gmail.com',19,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-02-22 17:52:06','2021-02-26 05:31:22'),(80,47228610344221,'Asdf','Asdf','asdf','asdfasdf@gmail.com',19,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-04 12:18:20','2021-03-05 05:41:50'),(81,47228610344229,'Asdf','Asdf','asdf','asdfasdf@gmail.com',19,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-02 03:12:45','2021-02-23 07:11:19'),(82,47228610344266,'Mike','Asdf','asdf','asdfasdf@gmail.com',19,'Afghanistan','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','$2y$10$MC/oRT07.kNHLCzujRKzu.wfwc67NTYdK..AV/DRdVYarjzwfnvcW','student','2021-03-02 22:26:06','2021-02-22 14:07:15');
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 ALTER DATABASE `thesis` CHARACTER SET latin1 COLLATE latin1_swedish_ci ;
@@ -756,7 +784,7 @@ CREATE TABLE `student_details` (
   `location` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `nim` (`nim`),
-  CONSTRAINT `student_details_ibfk_1` FOREIGN KEY (`nim`) REFERENCES `student` (`nim`)
+  CONSTRAINT `student_details_ibfk_1` FOREIGN KEY (`nim`) REFERENCES `student` (`nim`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -766,7 +794,7 @@ CREATE TABLE `student_details` (
 
 LOCK TABLES `student_details` WRITE;
 /*!40000 ALTER TABLE `student_details` DISABLE KEYS */;
-INSERT INTO `student_details` VALUES (1,83789553791438,'I\'m Saboor, majoring Information System, I\'m specialist on Java computer Language, PHP, MySQL, SQL, HTML CSS, and a little JavaScript and jQuery','https://web.facebook.com/saboor.hamedi.7/','https://www.youtube.com/channel/UCssGbxijAmdGv7kjmOpNinA?view_as=subscriber','https://www.instagram.com/hamedisaboor/','','Indonesia'),(2,9223372036854775807,'Hello I\'m Liam from America','https://www.facebook.com','','','','America'),(4,22092393858586,'Hello everyone, I\'m James from America, I came here to study and I love this place wooo','','','','',''),(8,12367227813729,'','https://web.facebook.com/','https://web.youtube.com/','https://www.instagram.com/','https://twitter.com/','America'),(9,98720671258111,NULL,NULL,NULL,NULL,NULL,NULL),(10,16328062132605,NULL,NULL,NULL,NULL,NULL,NULL),(11,26242752772112,NULL,NULL,NULL,NULL,NULL,NULL),(12,73477631735544,NULL,NULL,NULL,NULL,NULL,NULL),(13,47228610344232,'asdfasdfasdf','','','','',''),(14,47228610344111,NULL,NULL,NULL,NULL,NULL,NULL),(23,47228610344222,NULL,NULL,NULL,NULL,NULL,NULL),(24,807382473145,NULL,NULL,NULL,NULL,NULL,NULL),(25,47228610344221,NULL,NULL,NULL,NULL,NULL,NULL),(26,47228610344229,NULL,NULL,NULL,NULL,NULL,NULL),(27,47228610344266,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `student_details` VALUES (2,9223372036854775807,'Hello I\'m Liam from America','https://www.facebook.com','','','','America'),(8,12367227813729,'','https://web.facebook.com/','https://web.youtube.com/','https://www.instagram.com/','https://twitter.com/','America'),(9,98720671258111,NULL,NULL,NULL,NULL,NULL,NULL),(10,16328062132605,NULL,NULL,NULL,NULL,NULL,NULL),(11,26242752772112,NULL,NULL,NULL,NULL,NULL,NULL),(12,73477631735544,NULL,NULL,NULL,NULL,NULL,NULL),(13,47228610344232,'asdfasdfasdf','','','','',''),(14,47228610344111,NULL,NULL,NULL,NULL,NULL,NULL),(23,47228610344222,NULL,NULL,NULL,NULL,NULL,NULL),(24,807382473145,NULL,NULL,NULL,NULL,NULL,NULL),(25,47228610344221,NULL,NULL,NULL,NULL,NULL,NULL),(26,47228610344229,NULL,NULL,NULL,NULL,NULL,NULL),(27,47228610344266,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `student_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -783,7 +811,7 @@ CREATE TABLE `studentlastlogged` (
   `nim` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `nim` (`nim`),
-  CONSTRAINT `studentlastlogged_ibfk_1` FOREIGN KEY (`nim`) REFERENCES `student` (`nim`)
+  CONSTRAINT `studentlastlogged_ibfk_1` FOREIGN KEY (`nim`) REFERENCES `student` (`nim`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -793,7 +821,7 @@ CREATE TABLE `studentlastlogged` (
 
 LOCK TABLES `studentlastlogged` WRITE;
 /*!40000 ALTER TABLE `studentlastlogged` DISABLE KEYS */;
-INSERT INTO `studentlastlogged` VALUES (1,'2020-11-25 18:29:39',83789553791438),(2,'2020-11-26 02:19:25',98720671258111),(3,'2020-11-26 02:24:16',84574802185024),(4,'2020-11-26 02:58:27',47228610344232),(5,'2020-12-13 15:47:54',99325320048831),(6,'2021-03-03 09:15:52',11446431127385);
+INSERT INTO `studentlastlogged` VALUES (2,'2020-11-26 02:19:25',98720671258111),(3,'2020-11-26 02:24:16',84574802185024),(4,'2020-11-26 02:58:27',47228610344232),(6,'2021-03-03 09:15:52',11446431127385);
 /*!40000 ALTER TABLE `studentlastlogged` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -857,6 +885,57 @@ INSERT INTO `teacher` VALUES (1,43632372818789,'Wahid','Rahimi','Kabul','Afghani
 UNLOCK TABLES;
 
 --
+-- Table structure for table `test`
+--
+
+DROP TABLE IF EXISTS `test`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `test` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `test`
+--
+
+LOCK TABLES `test` WRITE;
+/*!40000 ALTER TABLE `test` DISABLE KEYS */;
+INSERT INTO `test` VALUES (1,'saboor','hamedi'),(2,'saboor','hamedi'),(3,'saboor','hamedi'),(4,'saboor','saboor');
+/*!40000 ALTER TABLE `test` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `todo`
+--
+
+DROP TABLE IF EXISTS `todo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `todo` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(250) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `checked` tinyint(1) DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `todo`
+--
+
+LOCK TABLES `todo` WRITE;
+/*!40000 ALTER TABLE `todo` DISABLE KEYS */;
+INSERT INTO `todo` VALUES (56,'asdfasdf','2021-05-04 09:00:25',1),(57,'asdf','2021-05-04 09:00:26',1),(58,'asdf','2021-05-04 09:00:27',1),(59,'asdf','2021-05-04 09:00:28',1),(60,'asdf','2021-05-04 09:00:30',1),(61,'Non molestias unde a','2021-05-04 23:04:55',1),(62,'Quod consectetur des','2021-05-04 23:05:09',1),(63,'Qui dolores sunt et ','2021-05-04 23:05:41',1);
+/*!40000 ALTER TABLE `todo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `users`
 --
 
@@ -890,4 +969,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-22  9:42:09
+-- Dump completed on 2021-07-03 20:20:02
