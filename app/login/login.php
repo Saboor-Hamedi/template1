@@ -123,7 +123,7 @@ class Login
                     session_start();
                     $_SESSION["guest_login_id"] = $guest_record[0]["guest_id"];
                     session_write_close();
-                    $url = "../guest/guest.php";
+                    $url = "../guest/home.php";
                     header("Location: $url");
                 } else {
                     $guest_status = 'Invalid ID or Password';

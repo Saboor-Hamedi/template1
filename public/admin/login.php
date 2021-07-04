@@ -36,16 +36,15 @@ if (isset($_POST['loginBtn'])) {
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <div class="input-group">
-                                    <label>ID: (1139329481)</label>
-                                    <input name="userid" id="userid" type="text" class="form-control" autocapitalize="off" required>
+                                    <input name="userid" id="userid" type="text" class="form-control" placeholder="example@gmail.com" autocapitalize="off" required>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <div class="input-group">
-                                    <label>Your Password</label>
-                                    <input name="password" id="password" type="password" class="form-control" autocapitalize="off" required>
+                                    
+                                    <input name="password" id="password" type="password" class="form-control" placeholder="Your Password" autocapitalize="off" required>
                                 </div>
                             </div>
                         </div>

@@ -14,6 +14,7 @@ $(document).ready(function () {
             data: $( "#apply__form" ).serialize(),
             success: function (data) {
                 $('#apply__message').html(data);
+                $('#apply__message').show();
             },
            
         });

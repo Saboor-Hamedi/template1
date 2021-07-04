@@ -7,7 +7,6 @@
 	<div class="ttr-sidebar-wrapper content-scroll">
 		<div class="ttr-sidebar-logo">
 			<a href="#"><img alt="" src="assets/images/logo.png" width="122" height="27"></a>
-			
 			<div class="ttr-sidebar-toggle-button">
 				<i class="ti-arrow-left"></i>
 			</div>
@@ -19,6 +18,12 @@
 					<a href="main.php" class="ttr-material-button">
 						<span class="ttr-icon"><i class="ti-home"></i></span>
 						<span class="ttr-label">Dashborad</span>
+					</a>
+				</li>
+				<li>
+					<a href="purchase.php" class="ttr-material-button">
+						<span class="ttr-icon"><i class="fas fa-store"></i></span>
+						<span class="ttr-label">Purchase</span>
 					</a>
 				</li>
 				<li>

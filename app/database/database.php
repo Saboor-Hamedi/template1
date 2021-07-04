@@ -131,7 +131,6 @@ class Database
         }
     }
     public function numRows() {
-		
 	}
     public function close()
     {

@@ -96,7 +96,8 @@
                                             <img src="<?php echo $item['thubnial']; ?>" height="200px;" alt="Course">
                                         </div>
                                         <div class="price">
-                                            <a href="check_event.php?checkout=<?php echo $item['id']; ?>"> <span>Check</span></a>
+                                            <a href="check_event.php?checkout=<?php echo $item['id']; ?>">
+                                                <span>Check</span></a>
                                         </div>
                                     </div>
                                     <div class="cont">
@@ -115,14 +116,7 @@
                                         </div>
 
                                         <div class="card-header mt-1">
-                                            <?php
-                                            if (isset($_SESSION["guest_login_id"])) {
-                                                $guest_login_id = $_SESSION["guest_login_id"];
-                                                session_write_close();
-                                            ?>
-                                            <?php }else{ ?> 
                                                 <a href="/public/admin/login.php" class="btn btn-primary btn-sm">Enroll Now</a>
-                                            <?php } ?>
                                         </div>
 
                                     </div>

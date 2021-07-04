@@ -53,6 +53,7 @@ $db = $db_connection->getConnection();
 
 	<!-- STYLESHEETS ============================================= -->
 	<!-- css timepicker -->
+	<link rel="stylesheet" href="/public/font/css/all.css">
 	<link rel="stylesheet" href="assets/css/tempusdominus-bootstrap-4.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/dashboard.css">

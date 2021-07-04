@@ -1,6 +1,9 @@
 <?php
+
 namespace App\guest;
+
 use App\database\Database;
+
 class Register
 {
     private $errors = array();
@@ -57,12 +60,11 @@ class Register
         try {
 
             if (count($this->errors) == 0) {
-                $command = 'SELECT  COUNT(*) FROM guest_login WHERE email =  "' . $post["guest_email"] . '"
-                OR guest_id =  "' . $post["guest_mainid"] . '"   ';
-                 $this->db->query($command);
-                 if($command == 0){
-                    $this->errors[] = "Duplicate";
-                 }else{
+                $command = "SELECT email FROM guest_login WHERE email = '" . $post['guest_email'] . "' ";
+                $result =  $this->db->query($command);
+                if ($result->num_rows > 0) {
+                    $this->errors[] = "Duplicate entry";
+                } else {
                     $query = $this->db->insert('INSERT INTO guest_login(email, 
                     name, 
                     lastname, 
@@ -72,14 +74,14 @@ class Register
                     ,"' . $post["guest_name"] . '"
                     ,"' . $post["guest_lastname"] . '"
                     ,"' . $post["guest_mainid"] . '"
-                    ,"' . password_hash($post['guest_password'], PASSWORD_DEFAULT) . '")');;
+                    ,"' . password_hash($post['guest_password'], PASSWORD_DEFAULT) . '")');
                     if ($query == true) {
                         $this->errors[] = "Successfully Registerd";
                     }
                     $this->db->close();
-                 }
+                }
             }
-        } catch (\Throwable $th) {
+        } catch (\PDOException $e) {
             $this->errors[] = "Something went wrong";
         }
         return $this->errors;

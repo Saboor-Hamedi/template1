@@ -262,7 +262,6 @@ Theme Version:	1.0.0
 						jQuery('html').animate({ scrollTop: 0 }, 500);
 						return false;
 					})
-
 					jQuery(window).on("scroll", function() {
 						var scrollWindowHeight = jQuery(window).scrollTop();
 						if (scrollWindowHeight > 900) {

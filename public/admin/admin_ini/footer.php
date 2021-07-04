@@ -24,6 +24,7 @@
 <script src="assets/ajax/course.js"></script>
 <script src="assets/ajax/event.js"></script>
 <script src="assets/ajax/certificate.js"></script>
+<script src="/public/guest/ajax/approve.js"></script>
 <!-- course modal -->
 
 <?php require_once __DIR__ . '/../modals/course/make_course.php'; ?>

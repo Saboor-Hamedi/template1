@@ -1,8 +1,6 @@
 <?php
-
 use App\database\Database;
 use App\guest\Register;
-
 require_once __DIR__ . '/../../vendor/autoload.php';
 $db = Database::getInstance();
 $db->getConnection();
@@ -18,9 +16,9 @@ if (count($_POST) > 0) {
 }
 ?>
 <?php require_once __DIR__ . '/admin_ini/header.php'; ?>
-    <nav class="navbar">
-        <a href="login.php" class="navbar-brand"><strong>Login</strong></a>
-    </nav>
+<nav class="navbar">
+    <a href="login.php" class="navbar-brand"><strong>Login</strong></a>
+</nav>
 <div class="page-wraper">
     <div class="account-form ">
         <div class="account-form-inner" style="margin-top:5rem;">
@@ -28,17 +26,16 @@ if (count($_POST) > 0) {
                 <div class="heading-bx left">
                     <h3 class="title-head">Register New Account</h3>
                 </div>
-              
                 <!-- display error -->
                 <?php if (isset($errors) && is_array($errors) && count($errors) > 0) : ?>
                     <div class="alert alert-danger" role="alert">
-                      
+
                         <?php foreach ($errors as $error) : ?>
                             <small>
                                 <?php echo $error; ?><br>
                             </small>
                         <?php endforeach; ?>
-                       
+
                     </div>
                 <?php endif; ?>
                 <form class="contact-bx" id="register__form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
@@ -71,7 +68,7 @@ if (count($_POST) > 0) {
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" name="guest_mainid" id="guest_mainid"  class="form-control" placeholder="Your Main ID" autocomplete="off">
+                                    <input type="text" name="guest_mainid" id="guest_mainid" class="form-control" placeholder="Your Main ID" autocomplete="off">
                                 </div>
                             </div>
                         </div>
@@ -79,7 +76,7 @@ if (count($_POST) > 0) {
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="password" name="guest_password" id="guest_password"  class="form-control" placeholder="Enter Your Password" autocomplete="off">
+                                    <input type="password" name="guest_password" id="guest_password" class="form-control" placeholder="Enter Your Password" autocomplete="off">
                                 </div>
                             </div>
                         </div>
